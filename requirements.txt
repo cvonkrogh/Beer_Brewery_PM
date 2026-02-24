@@ -51,3 +51,5 @@ tzdata==2025.3
 urllib3==2.6.3
 scikit-learn==1.8.0
 xgboost==3.2.0
+plotly==6.5.2
+streamlit==1.54.0

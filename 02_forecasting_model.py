@@ -48,6 +48,8 @@ def forecast_beer(beer_df, beer_name):
     beer_df = create_lag_features(beer_df)
     beer_df = beer_df.dropna().copy()
 
+    beer_df["liters"] = beer_df["liters"].clip(lower=0)
+
     feature_cols = [f"lag_{lag}" for lag in LAGS] + [
         "week_of_year",
         "month",
