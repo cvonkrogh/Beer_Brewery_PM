@@ -56,6 +56,32 @@ fig_total = px.bar(
 st.plotly_chart(fig_total, use_container_width=True)
 
 # ==============================
+# heatmap view
+# ==============================
+
+st.header("🗓 Demand Heatmap (Year Overview)")
+
+heatmap_data = forecast_df.copy()
+heatmap_data["year_month"] = heatmap_data["week"].dt.to_period("M").astype(str)
+
+heatmap_grouped = (
+    heatmap_data.groupby(["beer", "year_month"])["forecast_liters"]
+    .sum()
+    .reset_index()
+)
+
+fig_heatmap = px.density_heatmap(
+    heatmap_grouped,
+    x="year_month",
+    y="beer",
+    z="forecast_liters",
+    color_continuous_scale="Blues",
+    title="Monthly Demand Intensity per Beer"
+)
+
+st.plotly_chart(fig_heatmap, width="stretch")
+
+# ==============================
 # MONTHLY DEMAND VIEW
 # ==============================
 
