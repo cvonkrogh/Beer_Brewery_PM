@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 import numpy as np
+import plotly.express as px
+from datetime import datetime
 
 # ==============================
 # CONFIG
@@ -10,9 +11,13 @@ import numpy as np
 FORECAST_PATH = "data/processed/forecast_results.csv"
 PRODUCTION_PATH = "data/processed/production_schedule.csv"
 
-SMALL_TANK = 2000
-LARGE_TANK = 6000
-
+CONTAINER_LITER_MAP = {
+    "Can 33cl": 0.33,
+    "Bottle 33cl": 0.33,
+    "Bottle 75cl": 0.75,
+    "Keg 20L": 20,
+    "Keg 50L": 50
+}
 
 # ==============================
 # LOAD DATA
@@ -27,139 +32,177 @@ def load_data():
     production["production_week"] = pd.to_datetime(production["production_week"])
     production["available_week"] = pd.to_datetime(production["available_week"])
 
-    forecast["month"] = forecast["week"].dt.month
-    forecast["year"] = forecast["week"].dt.year
-
     return forecast, production
 
 
 forecast_df, production_df = load_data()
 
 st.set_page_config(layout="wide")
-st.title("🍺 Brewery Forecast & Production Dashboard")
+st.title("🍺 Brewery Production Planning Cockpit")
 
 # ==============================
-# YEAR OVERVIEW
+# DEFAULT TIME WINDOW
 # ==============================
 
-st.header("📅 Annual Production Overview")
+today = pd.Timestamp.today().normalize()
+default_end = today + pd.Timedelta(weeks=52)
 
-annual_summary = forecast_df.groupby("beer")["forecast_liters"].sum().reset_index()
+st.sidebar.header("📅 Time Selection")
 
-fig_total = px.bar(
-    annual_summary,
-    x="beer",
-    y="forecast_liters",
-    title="Total Forecasted Sales (Next 52 Weeks)"
+start_date = st.sidebar.date_input("Start Date", today)
+end_date = st.sidebar.date_input("End Date", default_end)
+
+start_date = pd.to_datetime(start_date)
+end_date = pd.to_datetime(end_date)
+
+filtered_forecast = forecast_df[
+    (forecast_df["week"] >= start_date) &
+    (forecast_df["week"] <= end_date)
+]
+
+filtered_production = production_df[
+    (production_df["production_week"] >= start_date) &
+    (production_df["production_week"] <= end_date)
+]
+
+# ==============================
+# BEER SELECTION
+# ==============================
+
+st.sidebar.header("🍺 Beer Selection")
+selected_beer = st.sidebar.selectbox(
+    "Select Beer",
+    sorted(filtered_forecast["beer"].unique())
 )
 
-st.plotly_chart(fig_total, use_container_width=True)
+beer_forecast = filtered_forecast[
+    filtered_forecast["beer"] == selected_beer
+]
+
+beer_production = filtered_production[
+    filtered_production["beer"] == selected_beer
+]
 
 # ==============================
-# heatmap view
+# CONTAINER UNIT CONVERSION
 # ==============================
 
-st.header("🗓 Demand Heatmap (Year Overview)")
+beer_forecast["units"] = beer_forecast.apply(
+    lambda row: row["forecast_liters"] / CONTAINER_LITER_MAP.get(row["container"], 1),
+    axis=1
+)
 
-heatmap_data = forecast_df.copy()
-heatmap_data["year_month"] = heatmap_data["week"].dt.to_period("M").astype(str)
+# ==============================
+# KPI SECTION
+# ==============================
 
-heatmap_grouped = (
-    heatmap_data.groupby(["beer", "year_month"])["forecast_liters"]
+st.header("📊 Forecast Overview")
+
+total_liters = beer_forecast["forecast_liters"].sum()
+total_units = beer_forecast["units"].sum()
+
+col1, col2 = st.columns(2)
+col1.metric("Total Forecasted Liters", f"{total_liters:,.0f} L")
+col2.metric("Total Forecasted Units", f"{total_units:,.0f}")
+
+# ==============================
+# CONTAINER BREAKDOWN
+# ==============================
+
+st.subheader("📦 Container Breakdown")
+
+container_summary = (
+    beer_forecast.groupby("container")
+    .agg({
+        "forecast_liters": "sum",
+        "units": "sum"
+    })
+    .reset_index()
+)
+
+fig_container = px.bar(
+    container_summary,
+    x="container",
+    y="units",
+    title="Forecasted Units per Container"
+)
+
+st.plotly_chart(fig_container, width="stretch")
+
+# ==============================
+# PRODUCTION SCHEDULE
+# ==============================
+
+st.header("🏭 Brewing Schedule")
+
+if beer_production.empty:
+    st.warning("No brewing scheduled in selected timeframe.")
+else:
+
+    fig_prod = px.bar(
+        beer_production,
+        x="production_week",
+        y="volume",
+        title="Scheduled Brewing Volume (Liters)"
+    )
+
+    st.plotly_chart(fig_prod, width="stretch")
+
+    st.subheader("🧠 Packaging Strategy")
+    st.write(f"Strategy: **{beer_production['packaging_strategy'].iloc[0]}**")
+
+    st.dataframe(
+        beer_production[
+            ["production_week", "available_week", "volume"]
+        ],
+        width="stretch"
+    )
+
+# ==============================
+# STOCKOUT RISK INDICATOR
+# ==============================
+
+st.header("⚠ Stockout Risk Indicator")
+
+weekly_demand = (
+    beer_forecast.groupby("week")["forecast_liters"]
+    .sum()
+    .reset_index()
+)
+
+avg_demand = weekly_demand["forecast_liters"].mean()
+
+if avg_demand == 0:
+    st.success("No demand forecasted.")
+else:
+    coverage_weeks = total_liters / avg_demand
+
+    if coverage_weeks < 12:
+        st.error("⚠ Risk of stockout — insufficient planned coverage.")
+    else:
+        st.success("✅ Low stockout risk — coverage sufficient.")
+
+# ==============================
+# DEMAND HEATMAP
+# ==============================
+
+st.header("🔥 Demand Heatmap")
+
+beer_forecast["year_month"] = beer_forecast["week"].dt.to_period("M").astype(str)
+
+heatmap_data = (
+    beer_forecast.groupby(["year_month", "container"])["units"]
     .sum()
     .reset_index()
 )
 
 fig_heatmap = px.density_heatmap(
-    heatmap_grouped,
+    heatmap_data,
     x="year_month",
-    y="beer",
-    z="forecast_liters",
+    y="container",
+    z="units",
     color_continuous_scale="Blues",
-    title="Monthly Demand Intensity per Beer"
+    title="Monthly Container Demand Intensity"
 )
 
 st.plotly_chart(fig_heatmap, width="stretch")
-
-# ==============================
-# MONTHLY DEMAND VIEW
-# ==============================
-
-st.header("📊 Monthly Demand Overview")
-
-monthly = forecast_df.groupby(["year", "month", "beer"])["forecast_liters"].sum().reset_index()
-
-fig_month = px.bar(
-    monthly,
-    x="month",
-    y="forecast_liters",
-    color="beer",
-    barmode="stack",
-    title="Monthly Demand per Beer"
-)
-
-st.plotly_chart(fig_month, use_container_width=True)
-
-# ==============================
-# PRODUCTION CALENDAR
-# ==============================
-
-st.header("🏭 Production Schedule Calendar")
-
-prod_calendar = production_df.groupby("production_week")["volume"].sum().reset_index()
-
-fig_prod = px.bar(
-    prod_calendar,
-    x="production_week",
-    y="volume",
-    title="Weekly Brewing Volume"
-)
-
-st.plotly_chart(fig_prod, use_container_width=True)
-
-# ==============================
-# INTERACTIVE BREWING CALCULATOR
-# ==============================
-
-st.header("🧮 Brewing Requirement Calculator")
-
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    selected_beer = st.selectbox("Select Beer", forecast_df["beer"].unique())
-
-with col2:
-    selected_year = st.selectbox("Select Year", sorted(forecast_df["year"].unique()))
-
-with col3:
-    selected_month = st.selectbox("Select Month", range(1, 13))
-
-filtered = forecast_df[
-    (forecast_df["beer"] == selected_beer) &
-    (forecast_df["year"] == selected_year) &
-    (forecast_df["month"] == selected_month)
-]
-
-if not filtered.empty:
-
-    monthly_demand = filtered["forecast_liters"].sum()
-
-    # Calculate brewing recommendation
-    large_tanks_needed = int(monthly_demand // LARGE_TANK)
-    remainder = monthly_demand % LARGE_TANK
-
-    small_tanks_needed = int(np.ceil(remainder / SMALL_TANK))
-
-    total_brew_volume = large_tanks_needed * LARGE_TANK + small_tanks_needed * SMALL_TANK
-
-    st.subheader(f"📦 Forecasted Sales for {selected_beer} in {selected_month}/{selected_year}")
-    st.write(f"Expected Sales: **{monthly_demand:,.0f} liters**")
-
-    st.subheader("🏭 Brewing Recommendation")
-
-    st.write(f"6000L Tanks Needed: **{large_tanks_needed}**")
-    st.write(f"2000L Tanks Needed: **{small_tanks_needed}**")
-    st.write(f"Total Brew Volume: **{total_brew_volume:,.0f} liters**")
-
-else:
-    st.warning("No forecast data available for this selection.")

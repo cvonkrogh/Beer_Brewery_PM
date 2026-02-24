@@ -18,8 +18,29 @@ CORE_BEERS = [
 RAW_DATA_PATH = "data/raw/sales_data.csv"
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
 
-WEATHER_LAT = 52.3676  # Amsterdam
+WEATHER_LAT = 52.3676
 WEATHER_LON = 4.9041
+
+
+# ==============================
+# CONTAINER EXTRACTION
+# ==============================
+
+def extract_container(name):
+    name = str(name).lower()
+
+    if "20l" in name:
+        return "Keg 20L"
+    elif "50l" in name:
+        return "Keg 50L"
+    elif "0,75" in name:
+        return "Bottle 75cl"
+    elif "0,33" in name and "fles" in name:
+        return "Bottle 33cl"
+    elif "blik" in name or "can" in name:
+        return "Can 33cl"
+    else:
+        return "Other"
 
 
 # ==============================
@@ -35,11 +56,13 @@ def load_raw_data():
         encoding="latin1"
     )
 
-    # Parse Dutch date format
     df["Factuurdatum"] = pd.to_datetime(
         df["Factuurdatum"],
         dayfirst=True
     )
+
+    # ADD CONTAINER COLUMN HERE (correct place)
+    df["container"] = df["Naam product"].apply(extract_container)
 
     return df
 
@@ -54,7 +77,7 @@ def filter_core_beers(df):
 
 
 # ==============================
-# WEEKLY AGGREGATION
+# WEEKLY AGGREGATION (NOW WITH CONTAINER)
 # ==============================
 
 def aggregate_weekly(df):
@@ -63,7 +86,7 @@ def aggregate_weekly(df):
     df["week"] = df["Factuurdatum"].dt.to_period("W").apply(lambda r: r.start_time)
 
     weekly = (
-        df.groupby(["week", "Grondstof"])["Liter"]
+        df.groupby(["week", "Grondstof", "container"])["Liter"]
         .sum()
         .reset_index()
     )
@@ -77,13 +100,14 @@ def aggregate_weekly(df):
 
 
 # ==============================
-# FILL MISSING WEEKS
+# FILL MISSING WEEKS (BEER + CONTAINER)
 # ==============================
 
 def create_full_timeline(weekly):
     print("Creating continuous weekly timeline...")
 
     beers = weekly["beer"].unique()
+    containers = weekly["container"].unique()
 
     full_range = pd.date_range(
         weekly["week"].min(),
@@ -92,12 +116,12 @@ def create_full_timeline(weekly):
     )
 
     full_index = pd.MultiIndex.from_product(
-        [full_range, beers],
-        names=["week", "beer"]
+        [full_range, beers, containers],
+        names=["week", "beer", "container"]
     )
 
     full_df = (
-        weekly.set_index(["week", "beer"])
+        weekly.set_index(["week", "beer", "container"])
         .reindex(full_index, fill_value=0)
         .reset_index()
     )
@@ -161,13 +185,12 @@ def add_time_features(df):
     df["month"] = df["week"].dt.month
     df["year"] = df["week"].dt.year
 
-    df = df.sort_values(["beer", "week"])
+    df = df.sort_values(["beer", "container", "week"])
 
     df["time_index"] = (
         (df["week"] - df["week"].min()).dt.days // 7
     )
 
-    # Weather flags (if weather exists)
     if "temp_mean" in df.columns:
         df["hot_week"] = (df["temp_mean"] > 20).astype(int)
         df["rainy_week"] = (df["rain_mm"] > 10).astype(int)
@@ -186,7 +209,6 @@ def save_processed(df):
     print("Saving processed dataset...")
 
     os.makedirs(os.path.dirname(PROCESSED_DATA_PATH), exist_ok=True)
-
     df.to_csv(PROCESSED_DATA_PATH, index=False)
 
 
@@ -211,7 +233,6 @@ def main():
         merged = weekly
 
     merged = add_time_features(merged)
-
     save_processed(merged)
 
     print("STEP 1 COMPLETE ✅")

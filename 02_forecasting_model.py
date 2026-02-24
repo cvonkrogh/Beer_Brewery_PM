@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
-import os
 from sklearn.ensemble import HistGradientBoostingRegressor
+import os
 
 # ==============================
 # CONFIG
@@ -13,7 +13,6 @@ FORECAST_OUTPUT_PATH = "data/processed/forecast_results.csv"
 FORECAST_HORIZON = 52
 LAGS = [1, 2, 3, 4, 8, 12, 26, 52]
 
-
 # ==============================
 # LOAD DATA
 # ==============================
@@ -24,42 +23,23 @@ def load_data():
     df["week"] = pd.to_datetime(df["week"])
     return df
 
-
 # ==============================
 # CREATE LAGS
 # ==============================
 
-def create_lag_features(df):
+def create_lags(df):
     df = df.sort_values("week")
-
     for lag in LAGS:
         df[f"lag_{lag}"] = df["liters"].shift(lag)
-
     return df
 
-
 # ==============================
-# FORECAST PER BEER
+# TRAIN MODEL
 # ==============================
 
-def forecast_beer(beer_df, beer_name):
-    print(f"Training model for {beer_name}...")
-
-    beer_df = create_lag_features(beer_df)
-    beer_df = beer_df.dropna().copy()
-
-    beer_df["liters"] = beer_df["liters"].clip(lower=0)
-
-    feature_cols = [f"lag_{lag}" for lag in LAGS] + [
-        "week_of_year",
-        "month",
-        "year",
-        "hot_week",
-        "rainy_week"
-    ]
-
-    X = beer_df[feature_cols]
-    y = np.log1p(beer_df["liters"])
+def train_model(train_df, feature_cols):
+    X = train_df[feature_cols]
+    y = np.log1p(train_df["liters"].clip(lower=0))
 
     model = HistGradientBoostingRegressor(
         max_iter=300,
@@ -69,65 +49,101 @@ def forecast_beer(beer_df, beer_name):
     )
 
     model.fit(X, y)
+    return model
 
-    history = beer_df.copy()
-    forecasts = []
+# ==============================
+# FORECAST FUNCTION
+# ==============================
 
-    for i in range(1, FORECAST_HORIZON + 1):
+def forecast_series(df, beer, container):
 
-        next_week = history["week"].max() + pd.Timedelta(weeks=1)
+    df = create_lags(df)
+    df = df.dropna().copy()
 
-        new_row = history.iloc[-1:].copy()
+    feature_cols = [f"lag_{lag}" for lag in LAGS] + [
+        "week_of_year",
+        "month",
+        "year",
+        "hot_week",
+        "rainy_week"
+    ]
+
+    train_df = df.copy()
+
+    model = train_model(train_df, feature_cols)
+
+    last_row = df.iloc[-1:].copy()
+    future_predictions = []
+
+    current_data = df.copy()
+
+    for i in range(FORECAST_HORIZON):
+
+        next_week = current_data["week"].max() + pd.Timedelta(weeks=1)
+
+        new_row = last_row.copy()
         new_row["week"] = next_week
 
-        new_row["week_of_year"] = next_week.isocalendar().week
+        # Update time features
+        new_row["week_of_year"] = next_week.isocalendar()[1]
         new_row["month"] = next_week.month
         new_row["year"] = next_week.year
 
-        new_row["hot_week"] = 0
-        new_row["rainy_week"] = 0
+        # Recompute lags from updated dataset
+        temp_df = pd.concat([current_data, new_row], ignore_index=True)
 
-        for lag in LAGS:
-            new_row[f"lag_{lag}"] = history["liters"].iloc[-lag]
+        temp_df = create_lags(temp_df)
+
+        new_row = temp_df.iloc[-1:].copy()
 
         X_new = new_row[feature_cols]
-
         pred_log = model.predict(X_new)[0]
         pred = np.expm1(pred_log)
 
         new_row["liters"] = pred
 
-        forecasts.append({
+        future_predictions.append({
             "week": next_week,
-            "beer": beer_name,
+            "beer": beer,
+            "container": container,
             "forecast_liters": pred
         })
 
-        history = pd.concat([history, new_row], ignore_index=True)
+        current_data = pd.concat([current_data, new_row], ignore_index=True)
+        last_row = new_row.copy()
 
-    return forecasts
-
+    return pd.DataFrame(future_predictions)
 
 # ==============================
 # MAIN
 # ==============================
 
 def main():
+
     df = load_data()
 
-    all_forecasts = []
+    results = []
 
-    for beer in df["beer"].unique():
-        beer_df = df[df["beer"] == beer].copy()
-        forecasts = forecast_beer(beer_df, beer)
-        all_forecasts.extend(forecasts)
+    grouped = df.groupby(["beer", "container"])
 
-    forecast_df = pd.DataFrame(all_forecasts)
+    for (beer, container), group in grouped:
 
-    os.makedirs(os.path.dirname(FORECAST_OUTPUT_PATH), exist_ok=True)
-    forecast_df.to_csv(FORECAST_OUTPUT_PATH, index=False)
+        print(f"Training model for {beer} - {container}...")
+
+        if group["liters"].sum() == 0:
+            print("Skipping (no sales)...")
+            continue
+
+        forecast_df = forecast_series(group.copy(), beer, container)
+        results.append(forecast_df)
+
+    final_forecast = pd.concat(results)
+
+    os.makedirs("data/processed", exist_ok=True)
+    final_forecast.to_csv(FORECAST_OUTPUT_PATH, index=False)
 
     print("STEP 2 COMPLETE ✅")
+    print("Forecast shape:", final_forecast.shape)
 
 
 if __name__ == "__main__":
