@@ -1,11 +1,9 @@
 # config.py
 
 CORE_BEERS = [
-    "Hoop US Lager",
     "Hoop Bleke Nelis",
-    "Hoop BulleBier",
-    "Hoop Kaper North East IPA",
-    "Hoop Anker"
+    "Hoop Lager",
+    "Hoop Kaper Tropical IPA",
 ]
 
 RAW_DATA_PATH = "data/raw/sales_data.csv"

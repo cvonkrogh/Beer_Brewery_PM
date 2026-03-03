@@ -8,12 +8,17 @@ import os
 # ==============================
 
 CORE_BEERS = [
-    "Hoop US Lager",
     "Hoop Bleke Nelis",
-    "Hoop BulleBier",
-    "Hoop Kaper North East IPA",
-    "Hoop Anker"
+    "Hoop Lager",
+    "Hoop Kaper Tropical IPA",
 ]
+
+# Map historical / old labels to the current canonical names above
+BEER_NAME_MAP = {
+    "Hoop US Lager": "Hoop Lager",
+    "Hoop Lager": "Hoop Lager",
+    "Hoop Kaper Tropical - Summer Session IPA": "Hoop Kaper Tropical IPA",
+}
 
 RAW_DATA_PATH = "data/raw/sales_data.csv"
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
@@ -63,6 +68,9 @@ def load_raw_data():
 
     # ADD CONTAINER COLUMN HERE (correct place)
     df["container"] = df["Naam product"].apply(extract_container)
+
+    # Normalize beer names so historical variants are combined
+    df["Grondstof"] = df["Grondstof"].replace(BEER_NAME_MAP)
 
     return df
 
