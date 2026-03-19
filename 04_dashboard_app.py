@@ -1,197 +1,294 @@
-import streamlit as st
 import pandas as pd
 import plotly.express as px
-from datetime import datetime
+import streamlit as st
+from model_evaluation_shared import evaluate_all_beers
 
 # ==============================
 # CONFIG
 # ==============================
 
 FORECAST_PATH = "data/processed/forecast_results.csv"
-PRODUCTION_PATH = "data/processed/production_schedule.csv"
-EVENTS_PATH = "data/events.csv"
+PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
 
-# ==============================
-# LOAD DATA
-# ==============================
+FOCUS_BEERS = [
+    "Hoop Bleke Nelis",
+    "Hoop Lager",
+    "Hoop Kaper Tropical IPA",
+]
+ALL_BEERS_OPTION = "All beers"
+
+LAGS = [1, 2, 3, 4, 8, 12, 26, 52]
+TEST_WEEKS = 12
+
 
 @st.cache_data
 def load_data():
-    forecast = pd.read_csv(FORECAST_PATH)
-    production = pd.read_csv(PRODUCTION_PATH)
-    events = pd.read_csv(EVENTS_PATH)
-
-    forecast["week"] = pd.to_datetime(forecast["week"])
-    production["production_week"] = pd.to_datetime(production["production_week"])
-
-    return forecast, production, events
+    forecast = pd.read_csv(FORECAST_PATH, parse_dates=["week"])
+    forecast = forecast[forecast["beer"].isin(FOCUS_BEERS)].copy()
+    processed = pd.read_csv(PROCESSED_DATA_PATH, parse_dates=["week"])
+    processed = processed[processed["beer"].isin(FOCUS_BEERS)].copy()
+    return forecast, processed
 
 
-forecast_df, production_df, events_df = load_data()
-
-st.set_page_config(layout="wide")
-st.title("🍺 Brewery Operational Planning Cockpit")
-
-# ======================================================
-# DEFAULT WINDOW = NEXT 52 WEEKS
-# ======================================================
-
-today = pd.Timestamp.today().normalize()
-end_date = today + pd.Timedelta(weeks=52)
+@st.cache_data
+def load_shared_evaluation(processed_df):
+    metrics_df, plot_map, overall_df = evaluate_all_beers(
+        processed_df=processed_df,
+        focus_beers=FOCUS_BEERS,
+        test_ratio=0.20,
+        max_folds=5,
+    )
+    return metrics_df, plot_map, overall_df
 
 
-def expand_event_dates(events, start, end):
-    """Expand recurring month/day events to concrete dates within the date range."""
-    rows = []
-    for year in range(start.year, end.year + 1):
-        for _, row in events.iterrows():
-            try:
-                dt = pd.Timestamp(year=year, month=int(row["month"]), day=int(row["day"]))
-                if start <= dt <= end:
-                    rows.append({"date": dt, "event": row["Event_Name"]})
-            except ValueError:
-                continue
-    return pd.DataFrame(rows)
+def _selected_beers(selected_beer):
+    if selected_beer == ALL_BEERS_OPTION:
+        return FOCUS_BEERS
+    return [selected_beer]
 
 
-event_dates_df = expand_event_dates(events_df, today, end_date)
+def build_monthly_need_chart(forecast_df, selected_beer, horizon_months):
+    monthly = forecast_df[forecast_df["beer"].isin(_selected_beers(selected_beer))].copy()
+    monthly["month"] = monthly["week"].dt.to_period("M").dt.to_timestamp()
 
-forecast_next_year = forecast_df[
-    (forecast_df["week"] >= today) &
-    (forecast_df["week"] <= end_date)
-]
+    start_month = monthly["month"].min()
+    target_months = pd.date_range(start=start_month, periods=horizon_months, freq="MS")
 
-production_next_year = production_df[
-    (production_df["production_week"] >= today) &
-    (production_df["production_week"] <= end_date)
-]
-
-# ======================================================
-# 1️⃣ IMMEDIATE BREWING ACTION BOARD
-# ======================================================
-
-st.header("🚨 Immediate Brewing Actions")
-
-next_brews = (
-    production_next_year
-    .sort_values("production_week")
-    .groupby("beer")
-    .first()
-    .reset_index()
-)
-
-if next_brews.empty:
-    st.success("No brewing required in next 52 weeks.")
-else:
-    next_brews["Weeks Until Brew"] = (
-        (next_brews["production_week"] - today).dt.days / 7
-    ).round(1)
-
-    st.dataframe(
-        next_brews[[
-            "beer",
-            "production_week",
-            "volume",
-            "packaging_strategy",
-            "Weeks Until Brew"
-        ]],
-        width="stretch"
+    monthly = monthly[monthly["month"].isin(target_months)].copy()
+    monthly_need = (
+        monthly.groupby(["month", "beer"], as_index=False)
+        .agg(liters_needed=("forecast_liters", "sum"))
+        .sort_values("month")
     )
 
-# ======================================================
-# 2️⃣ BREWING CALENDAR (YEAR VIEW)
-# ======================================================
+    if selected_beer == ALL_BEERS_OPTION:
+        fig = px.bar(
+            monthly_need,
+            x="month",
+            y="liters_needed",
+            color="beer",
+            barmode="stack",
+            title=f"Monthly Beer Needed - All Beers ({horizon_months} months)",
+            labels={"month": "Month", "liters_needed": "Liters Needed"},
+            text="liters_needed",
+        )
+        fig.update_traces(texttemplate="%{text:.0f}", textposition="inside")
+    else:
+        fig = px.bar(
+            monthly_need.groupby("month", as_index=False)["liters_needed"].sum(),
+            x="month",
+            y="liters_needed",
+            title=f"Monthly Beer Needed - {selected_beer} ({horizon_months} months)",
+            labels={"month": "Month", "liters_needed": "Liters Needed"},
+            text_auto=".0f",
+        )
+    fig.update_layout(xaxis_tickformat="%b")
 
-st.header("📅 Annual Brewing Calendar")
+    return fig, monthly_need, target_months
 
-if not production_next_year.empty:
 
-    fig_calendar = px.scatter(
-        production_next_year,
-        x="production_week",
-        y="beer",
-        size="volume",
-        color="packaging_strategy",
-        title="Brewing Start Weeks",
-        hover_data=["volume"]
+def build_historical_average_chart(processed_df, selected_beer, target_months):
+    hist = processed_df[processed_df["beer"].isin(_selected_beers(selected_beer))].copy()
+    hist["month_date"] = hist["week"].dt.to_period("M").dt.to_timestamp()
+    hist["month_num"] = hist["month_date"].dt.month
+    hist["year_num"] = hist["month_date"].dt.year
+
+    # First aggregate to monthly sales per beer/year, then average by month-of-year.
+    hist_monthly = (
+        hist.groupby(["beer", "year_num", "month_num"], as_index=False)
+        .agg(monthly_liters=("liters", "sum"))
+    )
+    month_avg = (
+        hist_monthly.groupby(["beer", "month_num"], as_index=False)
+        .agg(avg_liters=("monthly_liters", "mean"))
     )
 
-    if not event_dates_df.empty:
-        for _, evt in event_dates_df.drop_duplicates(subset=["date", "event"]).iterrows():
-            fig_calendar.add_vline(
-                x=evt["date"],
-                line_dash="dot",
-                line_color="rgba(255,165,0,0.5)",
-                annotation_text=evt["event"],
-                annotation_position="top",
-                annotation_font_size=9,
-                annotation_textangle=-45,
-            )
+    horizon_df = pd.DataFrame({"month": target_months})
+    horizon_df["month_num"] = horizon_df["month"].dt.month
 
-    fig_calendar.update_layout(
-        yaxis_title="Beer",
-        xaxis_title="Week",
-        height=500
-    )
-
-    st.plotly_chart(fig_calendar, width="stretch")
-
-else:
-    st.info("No brewing scheduled.")
-
-# ======================================================
-# 3️⃣ NEXT 52 WEEK SALES FORECAST (ALL BEERS)
-# ======================================================
-
-st.header("📈 Next 52 Week Sales Forecast (Liters)")
-
-beer_weekly_total = (
-    forecast_next_year.groupby(["week", "beer"])["forecast_liters"]
-    .sum()
-    .reset_index()
-)
-
-fig_forecast = px.line(
-    beer_weekly_total,
-    x="week",
-    y="forecast_liters",
-    color="beer",
-    title="Weekly Sales Forecast per Beer"
-)
-
-if not event_dates_df.empty:
-    for _, evt in event_dates_df.drop_duplicates(subset=["date", "event"]).iterrows():
-        fig_forecast.add_vline(
-            x=evt["date"],
-            line_dash="dot",
-            line_color="rgba(255,165,0,0.6)",
-            annotation_text=evt["event"],
-            annotation_position="top",
-            annotation_font_size=9,
-            annotation_textangle=-45,
+    if selected_beer == ALL_BEERS_OPTION:
+        beer_df = pd.DataFrame({"beer": FOCUS_BEERS})
+        horizon_beer = horizon_df.merge(beer_df, how="cross")
+        aligned = (
+            horizon_beer.merge(month_avg, on=["beer", "month_num"], how="left")
+            .fillna({"avg_liters": 0.0})
+            .sort_values(["month", "beer"])
+        )
+        fig = px.bar(
+            aligned,
+            x="month",
+            y="avg_liters",
+            color="beer",
+            barmode="stack",
+            title="Average Past Monthly Sales - All Beers (aligned to selected forecast window)",
+            labels={"month": "Month", "avg_liters": "Average Historical Liters"},
+            text="avg_liters",
+        )
+        fig.update_traces(texttemplate="%{text:.0f}", textposition="inside")
+    else:
+        aligned = (
+            horizon_df.assign(beer=selected_beer)
+            .merge(month_avg, on=["beer", "month_num"], how="left")
+            .fillna({"avg_liters": 0.0})
+            .sort_values("month")
+        )
+        fig = px.bar(
+            aligned,
+            x="month",
+            y="avg_liters",
+            title=f"Average Past Monthly Sales - {selected_beer} (aligned to selected forecast window)",
+            labels={"month": "Month", "avg_liters": "Average Historical Liters"},
+            text_auto=".0f",
         )
 
-st.plotly_chart(fig_forecast, width="stretch")
+    fig.update_layout(xaxis_tickformat="%b")
+    return fig, aligned
 
-# ======================================================
-# 4️⃣ CONTAINER MIX OVERVIEW
-# ======================================================
 
-st.header("📦 Weekly Container Demand")
+def build_container_need_chart(forecast_df, selected_beer, target_months):
+    scope = forecast_df[forecast_df["beer"].isin(_selected_beers(selected_beer))].copy()
+    scope["month"] = scope["week"].dt.to_period("M").dt.to_timestamp()
+    scope = scope[scope["month"].isin(target_months)].copy()
 
-container_weekly = (
-    forecast_next_year.groupby(["week", "container"])["forecast_liters"]
-    .sum()
-    .reset_index()
+    container_need = (
+        scope.groupby(["month", "container"], as_index=False)
+        .agg(liters_needed=("forecast_liters", "sum"))
+        .sort_values(["month", "container"])
+    )
+
+    fig = px.bar(
+        container_need,
+        x="month",
+        y="liters_needed",
+        color="container",
+        barmode="stack",
+        title=f"Monthly Container Liters Needed - {selected_beer}",
+        labels={"month": "Month", "liters_needed": "Liters Needed"},
+        text="liters_needed",
+    )
+    fig.update_traces(texttemplate="%{text:.0f}", textposition="inside")
+    fig.update_layout(xaxis_tickformat="%b")
+
+    return fig, container_need
+
+
+# ==============================
+# APP
+# ==============================
+
+st.set_page_config(layout="wide")
+st.title("Sales Forecast Performance Dashboard")
+st.caption("Focus: prediction quality and monthly liters required. Tank constraints are intentionally ignored here.")
+
+forecast_df, processed_df = load_data()
+metrics_df, plots_by_beer, overall_df = load_shared_evaluation(processed_df)
+selected_beer = st.selectbox("Select beer", [ALL_BEERS_OPTION] + FOCUS_BEERS, index=0)
+horizon_months = st.slider(
+    "Forecast horizon to display (months)",
+    min_value=3,
+    max_value=12,
+    value=12,
+    step=1,
 )
 
-fig_container = px.bar(
-    container_weekly,
-    x="week",
-    y="forecast_liters",
-    color="container",
-    title="Weekly Container Mix",
-    barmode="stack"
-)
+st.header("1) Test Results of Sales Prediction Model (Per Beer)")
 
-st.plotly_chart(fig_container, width="stretch")
+if metrics_df.empty:
+    st.warning("Not enough data to calculate test metrics.")
+else:
+    metrics_by_beer = {row["Beer"]: row for _, row in metrics_df.iterrows()}
+    if selected_beer == ALL_BEERS_OPTION:
+        display_metrics = metrics_df.copy()
+        if not overall_df.empty:
+            display_metrics = pd.concat([display_metrics, overall_df], ignore_index=True)
+    else:
+        display_metrics = pd.DataFrame([metrics_by_beer[selected_beer]])
+        if not overall_df.empty:
+            display_metrics = pd.concat([display_metrics, overall_df], ignore_index=True)
+
+    st.dataframe(display_metrics, width="stretch")
+    st.caption("Shared evaluation method: rolling time-series CV with 80% train / 20% test windows.")
+
+    if selected_beer == ALL_BEERS_OPTION:
+        combined_parts = []
+        for beer in FOCUS_BEERS:
+            if beer not in plots_by_beer:
+                continue
+            beer_plot = plots_by_beer[beer].copy()
+            beer_plot["Beer"] = beer_plot["beer"]
+            melted = beer_plot.melt(
+                id_vars=["week", "Beer"],
+                value_vars=["actual", "predicted"],
+                var_name="Series",
+                value_name="Liters",
+            )
+            melted["Series"] = melted["Series"].str.capitalize()
+            combined_parts.append(melted)
+
+        if combined_parts:
+            combined_df = pd.concat(combined_parts, ignore_index=True).sort_values(["Beer", "week"])
+
+            fig_all = px.line(
+                combined_df,
+                x="week",
+                y="Liters",
+                color="Beer",
+                line_dash="Series",
+                title="All Beers - Actual vs Predicted (Most Recent CV Test Window)",
+                markers=True,
+            )
+            fig_all.update_layout(xaxis_title="Week", yaxis_title="Liters")
+            st.plotly_chart(fig_all, width="stretch")
+    else:
+        beer_plot = plots_by_beer[selected_beer]
+        beer_plot["Beer"] = beer_plot["beer"]
+        melted = beer_plot.melt(
+            id_vars=["week", "Beer"],
+            value_vars=["actual", "predicted"],
+            var_name="Series",
+            value_name="Liters",
+        )
+        melted["Series"] = melted["Series"].str.capitalize()
+        fig = px.line(
+            melted,
+            x="week",
+            y="Liters",
+            color="Series",
+            title=f"{selected_beer} - Actual vs Predicted (Most Recent CV Test Window)",
+            markers=True,
+        )
+        fig.update_layout(xaxis_title="Week", yaxis_title="Liters")
+        st.plotly_chart(fig, width="stretch")
+
+st.header("2) Monthly Beer Needed (Forecast Horizon)")
+fig_monthly, monthly_need, target_months = build_monthly_need_chart(
+    forecast_df,
+    selected_beer,
+    horizon_months=horizon_months,
+)
+if monthly_need.empty:
+    st.warning("No forecast months available for the selected beer.")
+else:
+    st.caption(
+        f"Showing {horizon_months} predicted month(s): "
+        f"{target_months.min().strftime('%b %Y')} to {target_months.max().strftime('%b %Y')}."
+    )
+    st.plotly_chart(fig_monthly, width="stretch")
+
+st.header("3) Average Past Monthly Sales (Historical Baseline)")
+fig_hist, hist_aligned = build_historical_average_chart(processed_df, selected_beer, target_months)
+if hist_aligned.empty:
+    st.warning("No historical data available to compute monthly averages.")
+else:
+    st.caption(
+        "Historical average is computed by month-of-year and aligned to the selected forecast window."
+    )
+    st.plotly_chart(fig_hist, width="stretch")
+
+st.header("4) Monthly Container Demand")
+fig_container, container_need = build_container_need_chart(forecast_df, selected_beer, target_months)
+if container_need.empty:
+    st.warning("No container forecast data available for the selected filter and horizon.")
+else:
+    st.caption("Shows liters needed per container for each displayed month.")
+    st.plotly_chart(fig_container, width="stretch")

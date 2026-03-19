@@ -1,0 +1,4 @@
+beer,stockout_weeks,shortage_liters,ending_inventory_liters,min_inventory_liters,inventory_ok
+Hoop Bleke Nelis,12,3034.34,5043.94,0.0,False
+Hoop Kaper Tropical IPA,12,1333.39,1854.65,0.0,False
+Hoop Lager,12,4657.79,6630.32,0.0,False

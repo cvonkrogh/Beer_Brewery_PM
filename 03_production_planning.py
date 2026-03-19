@@ -8,6 +8,7 @@ import os
 
 FORECAST_PATH = "data/processed/forecast_results.csv"
 OUTPUT_PATH = "data/processed/production_schedule.csv"
+MONTHLY_OUTPUT_PATH = "data/processed/production_schedule_monthly.csv"
 
 LEAD_TIME = 12
 SMALL_TANK = 2000
@@ -113,6 +114,38 @@ def plan_production(beer_df, beer_name):
 
     return pd.DataFrame(production_schedule)
 
+
+def summarize_monthly_production(schedule_df):
+    """
+    Create a monthly production summary for management reporting while
+    keeping weekly planning as the operational output.
+    """
+    if schedule_df.empty:
+        return pd.DataFrame(
+            columns=[
+                "month",
+                "beer",
+                "packaging_strategy",
+                "planned_volume_liters",
+                "planned_batches",
+            ]
+        )
+
+    monthly = schedule_df.copy()
+    monthly["month"] = monthly["production_week"].dt.to_period("M").dt.to_timestamp()
+
+    monthly_summary = (
+        monthly.groupby(["month", "beer", "packaging_strategy"], as_index=False)
+        .agg(
+            planned_volume_liters=("volume", "sum"),
+            planned_batches=("volume", "count"),
+        )
+        .sort_values(["month", "beer"])
+        .reset_index(drop=True)
+    )
+
+    return monthly_summary
+
 # ==============================
 # MAIN
 # ==============================
@@ -138,8 +171,12 @@ def main():
     os.makedirs("data/processed", exist_ok=True)
     final_schedule.to_csv(OUTPUT_PATH, index=False)
 
+    monthly_schedule = summarize_monthly_production(final_schedule)
+    monthly_schedule.to_csv(MONTHLY_OUTPUT_PATH, index=False)
+
     print("STEP 3 COMPLETE ✅")
-    print("Production schedule shape:", final_schedule.shape)
+    print("Weekly production schedule shape:", final_schedule.shape)
+    print("Monthly summary shape:", monthly_schedule.shape)
 
 
 if __name__ == "__main__":

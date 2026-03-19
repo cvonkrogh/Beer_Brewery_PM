@@ -1,0 +1,18 @@
+month,beer,packaging_strategy,planned_volume_liters_from_weekly,planned_batches_from_weekly,planned_volume_liters_from_monthly,planned_batches_from_monthly,volume_diff,batches_diff
+2026-02-01,Hoop Bleke Nelis,BOTTLES_KEGS,6000,3,6000,3,0,0
+2026-02-01,Hoop Kaper Tropical IPA,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-02-01,Hoop Lager,BOTTLES_KEGS,8000,4,8000,4,0,0
+2026-03-01,Hoop Bleke Nelis,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-03-01,Hoop Kaper Tropical IPA,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-03-01,Hoop Lager,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-05-01,Hoop Bleke Nelis,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-05-01,Hoop Kaper Tropical IPA,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-05-01,Hoop Lager,BOTTLES_KEGS,4000,2,4000,2,0,0
+2026-06-01,Hoop Lager,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-07-01,Hoop Bleke Nelis,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-07-01,Hoop Kaper Tropical IPA,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-08-01,Hoop Bleke Nelis,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-08-01,Hoop Lager,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-09-01,Hoop Lager,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-11-01,Hoop Bleke Nelis,BOTTLES_KEGS,2000,1,2000,1,0,0
+2026-11-01,Hoop Lager,BOTTLES_KEGS,2000,1,2000,1,0,0
