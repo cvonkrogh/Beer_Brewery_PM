@@ -17,6 +17,8 @@ _prod_module = importlib.util.module_from_spec(_prod_spec)
 _prod_spec.loader.exec_module(_prod_module)
 plan_production = _prod_module.plan_production
 summarize_monthly_production = _prod_module.summarize_monthly_production
+build_inventory_projection = _prod_module.build_inventory_projection
+estimate_weeks_until_stockout_naive = _prod_module.estimate_weeks_until_stockout_naive
 
 # ==============================
 # CONFIG
@@ -42,7 +44,13 @@ def load_data():
     forecast = forecast[forecast["beer"].isin(FOCUS_BEERS)].copy()
     processed = pd.read_csv(PROCESSED_DATA_PATH, parse_dates=["week"])
     processed = processed[processed["beer"].isin(FOCUS_BEERS)].copy()
-    return forecast, processed
+    # Same shape as `03.load_processed_weekly_totals` — used for spike + starting inventory
+    historical_weekly = (
+        processed.groupby(["beer", "week"], as_index=False)
+        .agg(liters=("liters", "sum"))
+        .sort_values(["beer", "week"])
+    )
+    return forecast, processed, historical_weekly
 
 
 @st.cache_data
@@ -187,15 +195,17 @@ def build_container_need_chart(forecast_df, selected_beer, target_months):
     return fig, container_need
 
 
-def build_production_schedule_from_forecast(forecast_df: pd.DataFrame) -> pd.DataFrame:
+def build_production_schedule_from_forecast(
+    forecast_df: pd.DataFrame, historical_weekly: pd.DataFrame
+) -> pd.DataFrame:
     """
-    Same logic as `python 03_production_planning.py`, but uses the forecast already
-    loaded in the app (so the dashboard stays in sync with the CSV you view above).
+    Same logic as `python 03_production_planning.py`, using historical weekly totals
+    for spike-aware targets and opening inventory.
     """
     parts = []
     for beer in forecast_df["beer"].unique():
         beer_df = forecast_df[forecast_df["beer"] == beer].copy()
-        parts.append(plan_production(beer_df, beer))
+        parts.append(plan_production(beer_df, beer, historical_weekly=historical_weekly))
     if not parts:
         return pd.DataFrame()
     return pd.concat(parts, ignore_index=True)
@@ -212,7 +222,7 @@ st.caption(
     "Section 5: operational brew plan from Step 03 logic (tank sizes, lead time, safety buffer)."
 )
 
-forecast_df, processed_df = load_data()
+forecast_df, processed_df, historical_weekly = load_data()
 metrics_df, plots_by_beer, overall_df = load_shared_evaluation(processed_df)
 selected_beer = st.selectbox("Select beer", [ALL_BEERS_OPTION] + FOCUS_BEERS, index=0)
 horizon_months = st.slider(
@@ -325,36 +335,117 @@ else:
     st.caption("Shows liters needed per container for each displayed month.")
     st.plotly_chart(fig_container, width="stretch")
 
-st.header("5) Production plan")
+st.header("5) Production plan & stock cover")
 
+st.markdown(
+    """
+**What this shows**
 
-schedule_df = build_production_schedule_from_forecast(forecast_df)
+1. **Brew schedule** — tank batches (2k / 6k L) so beer is **ready** after the 12-week lead time.
+2. **Spike-aware planning** — if the forecast window looks volatile *or* this week is high vs the
+   same week-of-year in history, Step 03 asks for **extra cover** before peaks.
+3. **Inventory path** — simulated stock after sales + arrivals (no double-counting beer that is
+   still fermenting).
+4. **Weeks of cover** — `inventory ÷ next week’s forecast demand` (how long current stock lasts
+   at next week’s pace). **Naive run-out** = weeks until stock hits zero if you *never* brewed again
+   (uses the same forecast path).
+"""
+)
+
+schedule_df = build_production_schedule_from_forecast(forecast_df, historical_weekly)
 if schedule_df.empty:
     st.info("No production rows (check `forecast_results.csv` and focus beers).")
 else:
-    monthly_plan = summarize_monthly_production(schedule_df)
     beers_sel = _selected_beers(selected_beer)
-    sched_view = schedule_df[schedule_df["beer"].isin(beers_sel)].copy()
-    monthly_view = monthly_plan[monthly_plan["beer"].isin(beers_sel)].copy()
 
-    st.subheader("Brew batches (weekly detail)")
-    st.dataframe(
-        sched_view.sort_values(["production_week", "beer"]),
-        width="stretch",
-        hide_index=True,
-    )
+    # --- Stock risk summary (single beer clearer)
+    if selected_beer != ALL_BEERS_OPTION:
+        bdf = forecast_df[forecast_df["beer"] == selected_beer].copy()
+        wk_naive = estimate_weeks_until_stockout_naive(bdf, historical_weekly, selected_beer)
+        c1, c2 = st.columns(2)
+        with c1:
+            st.metric(
+                "Naive weeks until stockout (no more brewing)",
+                f"{wk_naive:.1f}" if wk_naive is not None else "—",
+                help="Starts from modelled opening stock, subtracts forecast demand week by week.",
+            )
+        with c2:
+            st.metric(
+                "Brew batches in plan (selected beer)",
+                int(len(schedule_df[schedule_df["beer"] == selected_beer])),
+            )
+
+    # --- Inventory + cover chart
+    inv_parts = []
+    for b in beers_sel:
+        b_fore = forecast_df[forecast_df["beer"] == b].copy()
+        if b_fore.empty:
+            continue
+        proj = build_inventory_projection(b, b_fore, schedule_df, historical_weekly)
+        if proj.empty:
+            continue
+        proj["beer"] = b
+        inv_parts.append(proj)
+    if inv_parts:
+        inv_df = pd.concat(inv_parts, ignore_index=True)
+        if selected_beer == ALL_BEERS_OPTION:
+            fig_inv = px.line(
+                inv_df,
+                x="week",
+                y="inventory_end",
+                color="beer",
+                title="Projected inventory after weekly sales (with scheduled arrivals)",
+                labels={"inventory_end": "Inventory (L)", "week": "Week"},
+            )
+            fig_cov = px.line(
+                inv_df,
+                x="week",
+                y="weeks_cover",
+                color="beer",
+                title="Weeks of cover (inventory ÷ next week demand)",
+                labels={"weeks_cover": "Weeks", "week": "Week"},
+            )
+        else:
+            one = inv_df[inv_df["beer"] == selected_beer]
+            fig_inv = px.line(
+                one,
+                x="week",
+                y="inventory_end",
+                title=f"Projected inventory — {selected_beer}",
+                labels={"inventory_end": "Inventory (L)", "week": "Week"},
+            )
+            fig_demand = px.line(
+                one,
+                x="week",
+                y="demand_liters",
+                title=f"Forecast demand (same horizon) — {selected_beer}",
+                labels={"demand_liters": "Liters", "week": "Week"},
+            )
+            fig_cov = px.line(
+                one,
+                x="week",
+                y="weeks_cover",
+                title=f"Weeks of cover — {selected_beer}",
+                labels={"weeks_cover": "Weeks", "week": "Week"},
+            )
+            st.plotly_chart(fig_demand, width="stretch")
+
+        st.plotly_chart(fig_inv, width="stretch")
+        st.plotly_chart(fig_cov, width="stretch")
+    else:
+        st.warning("Could not build inventory projection for the current selection.")
 
     st.subheader("Planned brew volume by month")
+    monthly_plan = summarize_monthly_production(schedule_df)
+    monthly_view = monthly_plan[monthly_plan["beer"].isin(beers_sel)].copy()
+
     if monthly_view.empty:
         st.warning("No monthly rows for the current beer filter.")
     else:
         common_kwargs = dict(
             x="month",
             y="planned_volume_liters",
-            title=(
-                "Sum of batch volumes scheduled in each month — "
-                f"{selected_beer}"
-            ),
+            title=f"Liters scheduled to be brewed (batch starts) — {selected_beer}",
             labels={
                 "month": "Month",
                 "planned_volume_liters": "Planned liters (sum of batches)",
@@ -377,10 +468,18 @@ else:
         fig_plan.update_layout(xaxis_tickformat="%b")
         st.plotly_chart(fig_plan, width="stretch")
 
-        with st.expander("Monthly table (includes packaging strategy)"):
-            st.dataframe(monthly_view, width="stretch", hide_index=True)
+    with st.expander("Raw brew batch list (production week → available week)"):
+        sched_view = schedule_df[schedule_df["beer"].isin(beers_sel)].copy()
+        st.dataframe(
+            sched_view.sort_values(["production_week", "beer"]),
+            width="stretch",
+            hide_index=True,
+        )
+
+    with st.expander("Monthly summary table"):
+        st.dataframe(monthly_view, width="stretch", hide_index=True)
 
     st.caption(
-        "To persist these tables to disk, run `python 03_production_planning.py` "
-        "(writes `production_schedule.csv` and `production_schedule_monthly.csv` from the forecast file)."
+        "Save schedules to CSV: `python 03_production_planning.py` → "
+        "`production_schedule.csv` & `production_schedule_monthly.csv`."
     )
