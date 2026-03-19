@@ -347,6 +347,54 @@ def build_inventory_projection(
     return pd.DataFrame(rows)
 
 
+def simulate_inventory_with_shortages(
+    beer_name: str,
+    forecast_beer_df: pd.DataFrame,
+    schedule_df: pd.DataFrame,
+    historical_weekly: pd.DataFrame | None,
+) -> pd.DataFrame:
+    """
+    Same physics as `build_inventory_projection`, but records **shortages** when demand
+    exceeds on-hand + arrivals (for Step 03b quality metrics). Does not hide stockouts.
+    """
+    wk = weekly_forecast_totals(forecast_beer_df)
+    if wk.empty:
+        return pd.DataFrame()
+
+    weeks = wk["week"].tolist()
+    demands = wk["forecast_liters"].astype(float).tolist()
+    hist_series = _history_series_for_beer(historical_weekly, beer_name)
+    inventory = initial_inventory_from_history(hist_series, demands)
+
+    arrivals: dict[pd.Timestamp, float] = defaultdict(float)
+    if schedule_df is not None and not schedule_df.empty:
+        sub = schedule_df[schedule_df["beer"] == beer_name]
+        for _, r in sub.iterrows():
+            aw = pd.Timestamp(r["available_week"])
+            arrivals[aw] += float(r["volume"])
+
+    rows = []
+    for i, w in enumerate(weeks):
+        d = demands[i]
+        inv_start = inventory + _take_arrivals_for_week(arrivals, w)
+        raw_end = inv_start - d
+        shortage = max(0.0, -raw_end)
+        inv_after = max(0.0, raw_end)
+        rows.append(
+            {
+                "week": w,
+                "demand_liters": d,
+                "inventory_start": inv_start,
+                "inventory_end": inv_after,
+                "shortage_liters": shortage,
+                "stockout": shortage > 1e-6,
+            }
+        )
+        inventory = inv_after
+
+    return pd.DataFrame(rows)
+
+
 def estimate_weeks_until_stockout_naive(forecast_beer_df: pd.DataFrame, historical_weekly: pd.DataFrame | None, beer_name: str) -> float | None:
     """
     If you never brewed again: weeks until starting inventory is depleted by forecast demand.

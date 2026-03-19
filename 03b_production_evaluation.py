@@ -1,12 +1,43 @@
+"""
+Step 03b — Evaluate production planning (Step 03) quality.
+
+What this is for
+----------------
+- **Not** ML “accuracy” (that’s 02 / 02b on demand forecasts).
+- **Operational** quality of the brew plan: stockouts vs forecast, lead-time discipline,
+  valid batch sizes, internal consistency, and how much production exceeds demand (safety).
+
+Uses the **same** opening inventory and arrival logic as `03_production_planning.py`
+(via `simulate_inventory_with_shortages`), so results match the dashboard inventory path.
+
+Run after: `python 02_forecasting_model.py` then `python 03_production_planning.py`
+"""
+from __future__ import annotations
+
+import importlib.util
+import os
+from pathlib import Path
+
 import pandas as pd
 
-FORECAST_PATH = "data/processed/forecast_results.csv"
-PRODUCTION_WEEKLY_PATH = "data/processed/production_schedule.csv"
-PRODUCTION_MONTHLY_PATH = "data/processed/production_schedule_monthly.csv"
-LEAD_TIME_WEEKS = 12
-SMALL_TANK = 2000
-LARGE_TANK = 6000
+ROOT = Path(__file__).resolve().parent
+
+_mod_path = ROOT / "03_production_planning.py"
+_spec = importlib.util.spec_from_file_location("production_planning_03", _mod_path)
+_mod = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_mod)
+
+LEAD_TIME_WEEKS = _mod.LEAD_TIME
+SMALL_TANK = _mod.SMALL_TANK
+LARGE_TANK = _mod.LARGE_TANK
 TANK_SET = {SMALL_TANK, LARGE_TANK}
+simulate_inventory_with_shortages = _mod.simulate_inventory_with_shortages
+load_processed_weekly_totals = _mod.load_processed_weekly_totals
+
+FORECAST_PATH = str(ROOT / "data/processed/forecast_results.csv")
+PRODUCTION_WEEKLY_PATH = str(ROOT / "data/processed/production_schedule.csv")
+PRODUCTION_MONTHLY_PATH = str(ROOT / "data/processed/production_schedule_monthly.csv")
+PROCESSED_PATH = str(ROOT / "data/processed/weekly_beer_data.csv")
 
 
 def load_data():
@@ -16,67 +47,59 @@ def load_data():
         parse_dates=["production_week", "available_week"],
     )
     prod_monthly = pd.read_csv(PRODUCTION_MONTHLY_PATH, parse_dates=["month"])
-    return forecast, prod_weekly, prod_monthly
+    historical_weekly = load_processed_weekly_totals()
+    return forecast, prod_weekly, prod_monthly, historical_weekly
 
 
-def check_inventory_non_negative(forecast, prod_weekly):
+def planning_service_metrics(forecast: pd.DataFrame, prod_weekly: pd.DataFrame, historical_weekly: pd.DataFrame) -> pd.DataFrame:
     """
-    Simulate inventory using forecasted demand vs planned arrivals.
-    Negative inventory means a stockout-risk in the plan.
+    Per-beer: weeks with shortage, total shortage liters, service level (% of weeks fully covered).
+    Aligned with Step 03 inventory simulation (including historical opening stock).
     """
-    demand = (
-        forecast.groupby(["beer", "week"], as_index=False)
-        .agg(demand_liters=("forecast_liters", "sum"))
-        .sort_values(["beer", "week"])
-    )
-    arrivals = (
-        prod_weekly.groupby(["beer", "available_week"], as_index=False)
-        .agg(arrival_liters=("volume", "sum"))
-        .rename(columns={"available_week": "week"})
-    )
-
-    merged = demand.merge(arrivals, on=["beer", "week"], how="left")
-    merged["arrival_liters"] = merged["arrival_liters"].fillna(0.0)
-
     rows = []
-    for beer, group in merged.groupby("beer"):
-        inv = 0.0
-        min_inventory = float("inf")
-        stockout_weeks = 0
-        shortage_total = 0.0
-
-        for _, r in group.sort_values("week").iterrows():
-            inv += float(r["arrival_liters"])
-            inv -= float(r["demand_liters"])
-
-            if inv < 0:
-                stockout_weeks += 1
-                shortage_total += abs(inv)
-                inv = 0.0
-
-            min_inventory = min(min_inventory, inv)
-
+    for beer in sorted(forecast["beer"].unique()):
+        fbeer = forecast[forecast["beer"] == beer].copy()
+        sim = simulate_inventory_with_shortages(beer, fbeer, prod_weekly, historical_weekly)
+        if sim.empty:
+            rows.append(
+                {
+                    "beer": beer,
+                    "horizon_weeks": 0,
+                    "weeks_with_shortage": 0,
+                    "total_shortage_liters": 0.0,
+                    "service_level_pct": 100.0,
+                    "max_single_week_shortage": 0.0,
+                }
+            )
+            continue
+        n = len(sim)
+        w_short = int(sim["stockout"].sum())
+        tot_short = float(sim["shortage_liters"].sum())
+        max_short = float(sim["shortage_liters"].max())
+        svc = 100.0 * (1.0 - w_short / n) if n else 100.0
         rows.append(
             {
                 "beer": beer,
-                "stockout_weeks": stockout_weeks,
-                "shortage_liters": round(shortage_total, 2),
-                "ending_inventory_liters": round(inv, 2),
-                "min_inventory_liters": round(min_inventory if min_inventory != float("inf") else 0.0, 2),
-                "inventory_ok": stockout_weeks == 0,
+                "horizon_weeks": n,
+                "weeks_with_shortage": w_short,
+                "total_shortage_liters": round(tot_short, 2),
+                "service_level_pct": round(svc, 2),
+                "max_single_week_shortage": round(max_short, 2),
             }
         )
-
     return pd.DataFrame(rows).sort_values("beer").reset_index(drop=True)
 
 
-def check_lead_time(prod_weekly):
-    delta_days = (prod_weekly["available_week"] - prod_weekly["production_week"]).dt.days
-    violations = prod_weekly[delta_days != LEAD_TIME_WEEKS * 7].copy()
-    return violations
+def check_lead_time(prod_weekly: pd.DataFrame) -> pd.DataFrame:
+    """Available week must equal production week + LEAD_TIME (calendar)."""
+    pw = pd.to_datetime(prod_weekly["production_week"])
+    aw = pd.to_datetime(prod_weekly["available_week"])
+    expected = pw + pd.Timedelta(weeks=LEAD_TIME_WEEKS)
+    bad = aw.dt.normalize() != expected.dt.normalize()
+    return prod_weekly[bad].copy()
 
 
-def check_tank_sizes(prod_weekly):
+def check_tank_sizes(prod_weekly: pd.DataFrame):
     invalid = prod_weekly[~prod_weekly["volume"].isin(TANK_SET)].copy()
     summary = (
         prod_weekly["volume"]
@@ -88,7 +111,7 @@ def check_tank_sizes(prod_weekly):
     return invalid, summary
 
 
-def check_monthly_consistency(prod_weekly, prod_monthly):
+def check_monthly_consistency(prod_weekly: pd.DataFrame, prod_monthly: pd.DataFrame):
     weekly_rollup = prod_weekly.copy()
     weekly_rollup["month"] = weekly_rollup["production_week"].dt.to_period("M").dt.to_timestamp()
     weekly_rollup = (
@@ -117,7 +140,7 @@ def check_monthly_consistency(prod_weekly, prod_monthly):
     return mismatches, cmp_df
 
 
-def reconcile_forecast_vs_monthly_production(forecast, prod_monthly):
+def reconcile_forecast_vs_monthly_production(forecast: pd.DataFrame, prod_monthly: pd.DataFrame) -> pd.DataFrame:
     monthly_forecast = forecast.copy()
     monthly_forecast["month"] = monthly_forecast["week"].dt.to_period("M").dt.to_timestamp()
     monthly_forecast = (
@@ -137,24 +160,48 @@ def reconcile_forecast_vs_monthly_production(forecast, prod_monthly):
     return rec.sort_values(["month", "beer"]).reset_index(drop=True)
 
 
-def main():
-    forecast, prod_weekly, prod_monthly = load_data()
+def overall_planning_score(service_df: pd.DataFrame) -> dict:
+    """Single-line summary for quick reading."""
+    if service_df.empty:
+        return {"mean_service_level_pct": None, "any_shortage": None, "total_shortage_liters": None}
+    return {
+        "mean_service_level_pct": round(float(service_df["service_level_pct"].mean()), 2),
+        "any_shortage": bool((service_df["weeks_with_shortage"] > 0).any()),
+        "total_shortage_liters": round(float(service_df["total_shortage_liters"].sum()), 2),
+    }
 
-    inventory_check = check_inventory_non_negative(forecast, prod_weekly)
+
+def main():
+    if not os.path.isfile(FORECAST_PATH):
+        raise FileNotFoundError(f"Missing {FORECAST_PATH} — run 02_forecasting_model.py first.")
+    if not os.path.isfile(PRODUCTION_WEEKLY_PATH):
+        raise FileNotFoundError(f"Missing {PRODUCTION_WEEKLY_PATH} — run 03_production_planning.py first.")
+
+    forecast, prod_weekly, prod_monthly, historical_weekly = load_data()
+
+    service_metrics = planning_service_metrics(forecast, prod_weekly, historical_weekly)
     lead_time_violations = check_lead_time(prod_weekly)
     invalid_tanks, tank_summary = check_tank_sizes(prod_weekly)
     monthly_mismatches, monthly_compare = check_monthly_consistency(prod_weekly, prod_monthly)
     reconciliation = reconcile_forecast_vs_monthly_production(forecast, prod_monthly)
+    score = overall_planning_score(service_metrics)
 
     print("\n==========================================")
-    print("STEP 03 PLANNING QUALITY CHECK")
+    print("STEP 03b — PRODUCTION PLAN QUALITY (vs forecast + rules)")
     print("==========================================")
+    print(
+        "\nThis measures whether the brew **plan** keeps up with **forecast demand**, "
+        "using the same opening stock as Step 03 (from history).\n"
+        "It is NOT the same as forecast model MAE (see 02b / dashboard section 1).\n"
+    )
 
-    print("\n1) INVENTORY CHECK (no negative inventory in simulation)")
-    print(inventory_check.to_string(index=False))
-    print(f"\nInventory pass all beers: {bool(inventory_check['inventory_ok'].all())}")
+    print("\n0) SERVICE LEVEL & SHORTAGES (inventory sim = Step 03 logic)")
+    print(service_metrics.to_string(index=False))
+    print(f"\n  → Mean service level across beers: {score['mean_service_level_pct']}%")
+    print(f"  → Any week with shortage: {score['any_shortage']}")
+    print(f"  → Total shortage volume (L): {score['total_shortage_liters']}")
 
-    print("\n2) LEAD-TIME CHECK (production_week -> available_week = 12 weeks)")
+    print("\n1) LEAD-TIME CHECK (production_week + 12w == available_week)")
     if lead_time_violations.empty:
         print("PASS: no lead-time violations.")
     else:
@@ -165,7 +212,7 @@ def main():
             ].to_string(index=False)
         )
 
-    print("\n3) TANK/BATCH CHECK (only 2000L or 6000L)")
+    print("\n2) TANK / BATCH CHECK (only 2000 L or 6000 L)")
     print("Batch volume distribution:")
     print(tank_summary.to_string(index=False))
     if invalid_tanks.empty:
@@ -174,26 +221,27 @@ def main():
         print("FAIL: invalid tank sizes found:")
         print(invalid_tanks[["beer", "production_week", "volume"]].to_string(index=False))
 
-    print("\n4) MONTHLY CONSISTENCY CHECK (weekly rollup equals monthly output)")
+    print("\n3) MONTHLY CONSISTENCY (weekly schedule vs monthly summary file)")
     if monthly_mismatches.empty:
-        print("PASS: monthly totals match weekly totals.")
+        print("PASS: monthly totals match weekly rollup.")
     else:
         print("FAIL: monthly mismatches found:")
         print(monthly_mismatches.to_string(index=False))
 
-    print("\n5) FORECAST vs MONTHLY PRODUCTION RECONCILIATION")
-    print("(Positive gap means planned production above forecast.)")
+    print("\n4) FORECAST vs PLANNED PRODUCTION (by month)")
+    print("(coverage_ratio ≈ planned / forecast; >1 means extra buffer / safety stock)")
     print(reconciliation.to_string(index=False))
 
-    # Optional artifacts for deeper inspection
-    inventory_check.to_csv("data/processed/production_eval_inventory_check.csv", index=False)
-    monthly_compare.to_csv("data/processed/production_eval_monthly_compare.csv", index=False)
-    reconciliation.to_csv("data/processed/production_eval_forecast_vs_monthly.csv", index=False)
+    out_dir = ROOT / "data/processed"
+    os.makedirs(out_dir, exist_ok=True)
+    service_metrics.to_csv(out_dir / "production_eval_service_level.csv", index=False)
+    monthly_compare.to_csv(out_dir / "production_eval_monthly_compare.csv", index=False)
+    reconciliation.to_csv(out_dir / "production_eval_forecast_vs_monthly.csv", index=False)
 
     print("\nSaved:")
-    print("- data/processed/production_eval_inventory_check.csv")
-    print("- data/processed/production_eval_monthly_compare.csv")
-    print("- data/processed/production_eval_forecast_vs_monthly.csv")
+    print(f"- {out_dir / 'production_eval_service_level.csv'}")
+    print(f"- {out_dir / 'production_eval_monthly_compare.csv'}")
+    print(f"- {out_dir / 'production_eval_forecast_vs_monthly.csv'}")
 
 
 if __name__ == "__main__":
