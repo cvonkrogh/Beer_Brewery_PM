@@ -21,6 +21,7 @@ BEER_NAME_MAP = {
 }
 
 RAW_DATA_PATH = "data/raw/sales_data.csv"
+EVENTS_DATA_PATH = "data/events.csv"
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
 
 WEATHER_LAT = 52.3676
@@ -183,6 +184,37 @@ def fetch_weather_data(start_date, end_date):
 
 
 # ==============================
+# EVENT DATA
+# ==============================
+
+def load_events():
+    """Load recurring events and expand them to concrete dates for every year in the data."""
+    print("Loading event data...")
+    events = pd.read_csv(EVENTS_DATA_PATH)
+    return events
+
+
+def add_event_flags(df, events):
+    """Flag each week that contains (or is close to) a recurring event."""
+    years = df["week"].dt.year.unique()
+
+    event_dates = []
+    for _, row in events.iterrows():
+        for year in years:
+            try:
+                event_dates.append(pd.Timestamp(year=year, month=int(row["month"]), day=int(row["day"])))
+            except ValueError:
+                continue
+
+    event_dates = pd.Series(event_dates).drop_duplicates()
+    event_weeks = event_dates.dt.to_period("W").apply(lambda r: r.start_time).unique()
+
+    df["event_week"] = df["week"].isin(event_weeks).astype(int)
+
+    return df
+
+
+# ==============================
 # FEATURE ENGINEERING
 # ==============================
 
@@ -239,6 +271,9 @@ def main():
         merged = weekly.merge(weather, on="week", how="left")
     else:
         merged = weekly
+
+    events = load_events()
+    merged = add_event_flags(merged, events)
 
     merged = add_time_features(merged)
     save_processed(merged)
