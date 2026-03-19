@@ -10,6 +10,14 @@ _eval_module = importlib.util.module_from_spec(_eval_spec)
 _eval_spec.loader.exec_module(_eval_module)
 evaluate_all_beers = _eval_module.evaluate_all_beers
 
+# Step 03 (filename starts with a digit → load by path)
+_prod_module_path = Path(__file__).with_name("03_production_planning.py")
+_prod_spec = importlib.util.spec_from_file_location("production_planning_03", _prod_module_path)
+_prod_module = importlib.util.module_from_spec(_prod_spec)
+_prod_spec.loader.exec_module(_prod_module)
+plan_production = _prod_module.plan_production
+summarize_monthly_production = _prod_module.summarize_monthly_production
+
 # ==============================
 # CONFIG
 # ==============================
@@ -179,13 +187,30 @@ def build_container_need_chart(forecast_df, selected_beer, target_months):
     return fig, container_need
 
 
+def build_production_schedule_from_forecast(forecast_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Same logic as `python 03_production_planning.py`, but uses the forecast already
+    loaded in the app (so the dashboard stays in sync with the CSV you view above).
+    """
+    parts = []
+    for beer in forecast_df["beer"].unique():
+        beer_df = forecast_df[forecast_df["beer"] == beer].copy()
+        parts.append(plan_production(beer_df, beer))
+    if not parts:
+        return pd.DataFrame()
+    return pd.concat(parts, ignore_index=True)
+
+
 # ==============================
 # APP
 # ==============================
 
 st.set_page_config(layout="wide")
 st.title("Sales Forecast Performance Dashboard")
-st.caption("Focus: prediction quality and monthly liters required. Tank constraints are intentionally ignored here.")
+st.caption(
+    "Sections 1–4: demand & forecast views (tank rules not applied). "
+    "Section 5: operational brew plan from Step 03 logic (tank sizes, lead time, safety buffer)."
+)
 
 forecast_df, processed_df = load_data()
 metrics_df, plots_by_beer, overall_df = load_shared_evaluation(processed_df)
@@ -299,3 +324,67 @@ if container_need.empty:
 else:
     st.caption("Shows liters needed per container for each displayed month.")
     st.plotly_chart(fig_container, width="stretch")
+
+st.header("5) Production plan (Step 03)")
+st.caption(
+    "**Why here, not in the model?** Step 02 only predicts *liters demanded*. Step 03 turns that into "
+    "*when to brew* and *how much per batch* using tank sizes (2k / 6k L), a 12-week lead time, and a "
+    "20% safety factor — that is operations logic, not machine learning. Showing it in the dashboard "
+    "links forecast → executable plan for the same beer selection."
+)
+schedule_df = build_production_schedule_from_forecast(forecast_df)
+if schedule_df.empty:
+    st.info("No production rows (check `forecast_results.csv` and focus beers).")
+else:
+    monthly_plan = summarize_monthly_production(schedule_df)
+    beers_sel = _selected_beers(selected_beer)
+    sched_view = schedule_df[schedule_df["beer"].isin(beers_sel)].copy()
+    monthly_view = monthly_plan[monthly_plan["beer"].isin(beers_sel)].copy()
+
+    st.subheader("Brew batches (weekly detail)")
+    st.dataframe(
+        sched_view.sort_values(["production_week", "beer"]),
+        width="stretch",
+        hide_index=True,
+    )
+
+    st.subheader("Planned brew volume by month")
+    if monthly_view.empty:
+        st.warning("No monthly rows for the current beer filter.")
+    else:
+        common_kwargs = dict(
+            x="month",
+            y="planned_volume_liters",
+            title=(
+                "Sum of batch volumes scheduled in each month — "
+                f"{selected_beer}"
+            ),
+            labels={
+                "month": "Month",
+                "planned_volume_liters": "Planned liters (sum of batches)",
+                "beer": "Beer",
+            },
+            text="planned_volume_liters",
+        )
+        if selected_beer == ALL_BEERS_OPTION:
+            fig_plan = px.bar(
+                monthly_view,
+                color="beer",
+                barmode="group",
+                **common_kwargs,
+            )
+            fig_plan.update_layout(showlegend=True)
+        else:
+            fig_plan = px.bar(monthly_view, **common_kwargs)
+            fig_plan.update_layout(showlegend=False)
+        fig_plan.update_traces(texttemplate="%{text:.0f}", textposition="outside")
+        fig_plan.update_layout(xaxis_tickformat="%b")
+        st.plotly_chart(fig_plan, width="stretch")
+
+        with st.expander("Monthly table (includes packaging strategy)"):
+            st.dataframe(monthly_view, width="stretch", hide_index=True)
+
+    st.caption(
+        "To persist these tables to disk, run `python 03_production_planning.py` "
+        "(writes `production_schedule.csv` and `production_schedule_monthly.csv` from the forecast file)."
+    )
