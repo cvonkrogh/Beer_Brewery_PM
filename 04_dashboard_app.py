@@ -325,13 +325,9 @@ else:
     st.caption("Shows liters needed per container for each displayed month.")
     st.plotly_chart(fig_container, width="stretch")
 
-st.header("5) Production plan (Step 03)")
-st.caption(
-    "**Why here, not in the model?** Step 02 only predicts *liters demanded*. Step 03 turns that into "
-    "*when to brew* and *how much per batch* using tank sizes (2k / 6k L), a 12-week lead time, and a "
-    "20% safety factor — that is operations logic, not machine learning. Showing it in the dashboard "
-    "links forecast → executable plan for the same beer selection."
-)
+st.header("5) Production plan")
+
+
 schedule_df = build_production_schedule_from_forecast(forecast_df)
 if schedule_df.empty:
     st.info("No production rows (check `forecast_results.csv` and focus beers).")
