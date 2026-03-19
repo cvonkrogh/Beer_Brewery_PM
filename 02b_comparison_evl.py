@@ -5,10 +5,23 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.ensemble import HistGradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+import importlib.util
+from pathlib import Path
+
+_eval_module_path = Path(__file__).with_name("02b_model_evaluation.py")
+_eval_spec = importlib.util.spec_from_file_location("eval_shared_02b", _eval_module_path)
+_eval_module = importlib.util.module_from_spec(_eval_spec)
+_eval_spec.loader.exec_module(_eval_module)
+evaluate_all_beers = _eval_module.evaluate_all_beers
 
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
 PLOT_OUTPUT_PATH = "data/processed/model_comparison_mae_rmse.png"
 RESULTS_OUTPUT_PATH = "data/processed/model_comparison_metrics.csv"
+STANDARD_EVAL_OUTPUT_PATH = "data/processed/model_standard_eval_metrics.csv"
+STANDARD_EVAL_BOTH_OUTPUT_PATH = "data/processed/model_standard_eval_metrics_both_models.csv"
+FORECAST_MAIN_PATH = "data/processed/forecast_results.csv"
+FORECAST_ALT_PATH = "data/processed/forecast_results_new_no_events.csv"
+FORECAST_DIFF_OUTPUT_PATH = "data/processed/forecast_outputs_difference_report.csv"
 
 FOCUS_BEERS = [
     "Hoop Bleke Nelis",
@@ -37,6 +50,66 @@ def load_data() -> pd.DataFrame:
     df = pd.read_csv(PROCESSED_DATA_PATH, parse_dates=["week"])
     df = df[df["beer"].isin(FOCUS_BEERS)].copy()
     return df
+
+
+def compare_forecast_output_files():
+    """
+    Compare forecast output from:
+    - main model (with events)
+    - alternate model (no events)
+    This compares predictions to each other (not to actual future sales).
+    """
+    try:
+        main_fc = pd.read_csv(FORECAST_MAIN_PATH, parse_dates=["week"])
+        alt_fc = pd.read_csv(FORECAST_ALT_PATH, parse_dates=["week"])
+    except FileNotFoundError:
+        print("\n=== Forecast file comparison ===")
+        print("Skipped: one of the forecast output files does not exist yet.")
+        print(f"Expected: {FORECAST_MAIN_PATH} and {FORECAST_ALT_PATH}\n")
+        return
+
+    key_cols = ["week", "beer", "container"]
+    merged = main_fc.merge(
+        alt_fc,
+        on=key_cols,
+        how="inner",
+        suffixes=("_main", "_alt"),
+    )
+
+    if merged.empty:
+        print("\n=== Forecast file comparison ===")
+        print("No overlapping rows found between main and alternate forecast files.\n")
+        return
+
+    merged["diff_liters"] = merged["forecast_liters_main"] - merged["forecast_liters_alt"]
+    merged["abs_diff_liters"] = merged["diff_liters"].abs()
+
+    overall = {
+        "rows_compared": int(len(merged)),
+        "mean_abs_diff_liters": float(merged["abs_diff_liters"].mean()),
+        "rmse_diff_liters": float(np.sqrt(np.mean(np.square(merged["diff_liters"])))),
+        "max_abs_diff_liters": float(merged["abs_diff_liters"].max()),
+    }
+
+    by_beer = (
+        merged.groupby("beer", as_index=False)
+        .agg(
+            rows_compared=("abs_diff_liters", "size"),
+            mean_abs_diff_liters=("abs_diff_liters", "mean"),
+            rmse_diff_liters=("diff_liters", lambda x: float(np.sqrt(np.mean(np.square(x))))),
+            max_abs_diff_liters=("abs_diff_liters", "max"),
+        )
+        .sort_values("mean_abs_diff_liters", ascending=False)
+    )
+
+    merged.to_csv(FORECAST_DIFF_OUTPUT_PATH, index=False)
+
+    print("=== Direct comparison: main vs no-events forecast outputs ===")
+    print("(This shows difference between model outputs; it is NOT future accuracy.)")
+    print(pd.DataFrame([overall]).to_string(index=False))
+    print("\nPer beer output difference:")
+    print(by_beer.to_string(index=False))
+    print(f"\nSaved row-level diff report to: {FORECAST_DIFF_OUTPUT_PATH}\n")
 
 
 def aggregate_by_frequency(df: pd.DataFrame, freq: str) -> pd.DataFrame:
@@ -258,6 +331,66 @@ def main():
     print("\nRMSE = Root Mean Squared Error")
     print("- Like MAE but penalizes large misses more")
     print("- Lower is better\n")
+
+    compare_forecast_output_files()
+
+    # ------------------------------------------------------
+    # Standard evaluation tables (same style as screenshot) for BOTH models
+    # ------------------------------------------------------
+    common_cols = [
+        "beer",
+        "folds",
+        "Model MAE",
+        "Naive MAE",
+        "Model RMSE",
+        "Naive RMSE",
+        "Model SMAPE (%)",
+        "Naive SMAPE (%)",
+    ]
+
+    std_events_df, _, _ = evaluate_all_beers(
+        processed_df=df,
+        focus_beers=FOCUS_BEERS,
+        test_ratio=0.20,
+        max_folds=5,
+        use_events=True,
+    )
+    std_no_events_df, _, _ = evaluate_all_beers(
+        processed_df=df,
+        focus_beers=FOCUS_BEERS,
+        test_ratio=0.20,
+        max_folds=5,
+        use_events=False,
+    )
+
+    output_tables = []
+
+    if not std_events_df.empty:
+        std_events_out = std_events_df.rename(columns={"Beer": "beer", "Folds": "folds"})[common_cols].copy()
+        std_events_out["model_variant"] = "Weekly + Weather + Events"
+        output_tables.append(std_events_out)
+
+        print("=== Standard weekly evaluation (rolling 80/20 CV) - WITH events ===")
+        print(std_events_out[common_cols].to_string(index=False))
+        print()
+
+    if not std_no_events_df.empty:
+        std_no_events_out = std_no_events_df.rename(columns={"Beer": "beer", "Folds": "folds"})[common_cols].copy()
+        std_no_events_out["model_variant"] = "Weekly + Weather (No Events)"
+        output_tables.append(std_no_events_out)
+
+        print("=== Standard weekly evaluation (rolling 80/20 CV) - WITHOUT events ===")
+        print(std_no_events_out[common_cols].to_string(index=False))
+        print()
+
+    if output_tables:
+        both_out = pd.concat(output_tables, ignore_index=True)
+        # keep backward-compatible single-path output (events first)
+        if "std_events_out" in locals():
+            std_events_out[common_cols].to_csv(STANDARD_EVAL_OUTPUT_PATH, index=False)
+            print(f"Saved standard metrics (with events) to: {STANDARD_EVAL_OUTPUT_PATH}")
+        both_out[["model_variant"] + common_cols].to_csv(STANDARD_EVAL_BOTH_OUTPUT_PATH, index=False)
+        print(f"Saved standard metrics (both models) to: {STANDARD_EVAL_BOTH_OUTPUT_PATH}\n")
 
     summary_rows = []
     detailed_rows = []

@@ -1,7 +1,14 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-from model_evaluation_shared import evaluate_all_beers
+import importlib.util
+from pathlib import Path
+
+_eval_module_path = Path(__file__).with_name("02b_model_evaluation.py")
+_eval_spec = importlib.util.spec_from_file_location("eval_shared_02b", _eval_module_path)
+_eval_module = importlib.util.module_from_spec(_eval_spec)
+_eval_spec.loader.exec_module(_eval_module)
+evaluate_all_beers = _eval_module.evaluate_all_beers
 
 # ==============================
 # CONFIG

@@ -8,7 +8,9 @@ import os
 # ==============================
 
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
-FORECAST_OUTPUT_PATH = "data/processed/forecast_results.csv"
+# Keep this file as an alternate/experimental model:
+# main production output should come from 02_forecasting_model.py.
+FORECAST_OUTPUT_PATH = "data/processed/forecast_results_new_no_events.csv"
 
 FORECAST_HORIZON = 52
 LAGS = [1, 2, 3, 4, 8, 12, 26, 52]
