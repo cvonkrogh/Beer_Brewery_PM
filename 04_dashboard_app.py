@@ -9,6 +9,7 @@ from datetime import datetime
 
 FORECAST_PATH = "data/processed/forecast_results.csv"
 PRODUCTION_PATH = "data/processed/production_schedule.csv"
+EVENTS_PATH = "data/events.csv"
 
 # ==============================
 # LOAD DATA
@@ -18,14 +19,15 @@ PRODUCTION_PATH = "data/processed/production_schedule.csv"
 def load_data():
     forecast = pd.read_csv(FORECAST_PATH)
     production = pd.read_csv(PRODUCTION_PATH)
+    events = pd.read_csv(EVENTS_PATH)
 
     forecast["week"] = pd.to_datetime(forecast["week"])
     production["production_week"] = pd.to_datetime(production["production_week"])
 
-    return forecast, production
+    return forecast, production, events
 
 
-forecast_df, production_df = load_data()
+forecast_df, production_df, events_df = load_data()
 
 st.set_page_config(layout="wide")
 st.title("🍺 Brewery Operational Planning Cockpit")
@@ -36,6 +38,23 @@ st.title("🍺 Brewery Operational Planning Cockpit")
 
 today = pd.Timestamp.today().normalize()
 end_date = today + pd.Timedelta(weeks=52)
+
+
+def expand_event_dates(events, start, end):
+    """Expand recurring month/day events to concrete dates within the date range."""
+    rows = []
+    for year in range(start.year, end.year + 1):
+        for _, row in events.iterrows():
+            try:
+                dt = pd.Timestamp(year=year, month=int(row["month"]), day=int(row["day"]))
+                if start <= dt <= end:
+                    rows.append({"date": dt, "event": row["Event_Name"]})
+            except ValueError:
+                continue
+    return pd.DataFrame(rows)
+
+
+event_dates_df = expand_event_dates(events_df, today, end_date)
 
 forecast_next_year = forecast_df[
     (forecast_df["week"] >= today) &
@@ -97,6 +116,18 @@ if not production_next_year.empty:
         hover_data=["volume"]
     )
 
+    if not event_dates_df.empty:
+        for _, evt in event_dates_df.drop_duplicates(subset=["date", "event"]).iterrows():
+            fig_calendar.add_vline(
+                x=evt["date"],
+                line_dash="dot",
+                line_color="rgba(255,165,0,0.5)",
+                annotation_text=evt["event"],
+                annotation_position="top",
+                annotation_font_size=9,
+                annotation_textangle=-45,
+            )
+
     fig_calendar.update_layout(
         yaxis_title="Beer",
         xaxis_title="Week",
@@ -127,6 +158,18 @@ fig_forecast = px.line(
     color="beer",
     title="Weekly Sales Forecast per Beer"
 )
+
+if not event_dates_df.empty:
+    for _, evt in event_dates_df.drop_duplicates(subset=["date", "event"]).iterrows():
+        fig_forecast.add_vline(
+            x=evt["date"],
+            line_dash="dot",
+            line_color="rgba(255,165,0,0.6)",
+            annotation_text=evt["event"],
+            annotation_position="top",
+            annotation_font_size=9,
+            annotation_textangle=-45,
+        )
 
 st.plotly_chart(fig_forecast, width="stretch")
 

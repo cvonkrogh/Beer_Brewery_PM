@@ -8,6 +8,7 @@ import os
 # ==============================
 
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
+EVENTS_DATA_PATH = "data/events.csv"
 FORECAST_OUTPUT_PATH = "data/processed/forecast_results.csv"
 
 FORECAST_HORIZON = 52
@@ -23,6 +24,27 @@ def load_data():
     print("Loading processed dataset...")
     df = pd.read_csv(PROCESSED_DATA_PATH, parse_dates=["week"])
     return df
+
+
+def load_events():
+    """Load recurring event dates to project event_week onto future weeks."""
+    events = pd.read_csv(EVENTS_DATA_PATH)
+    return events
+
+
+def is_event_week(date, events):
+    """Check whether any recurring event falls in the ISO week of `date`."""
+    year = date.year
+    week_start = date - pd.Timedelta(days=date.weekday())
+    week_end = week_start + pd.Timedelta(days=6)
+    for _, row in events.iterrows():
+        try:
+            evt = pd.Timestamp(year=year, month=int(row["month"]), day=int(row["day"]))
+            if week_start <= evt <= week_end:
+                return 1
+        except ValueError:
+            continue
+    return 0
 
 
 # ==============================
@@ -121,6 +143,9 @@ def create_features(df: pd.DataFrame, lags: list[int]) -> tuple[pd.DataFrame, li
         "rainy_week",
     ]
 
+    if "event_week" in df.columns:
+        feature_cols.append("event_week")
+
     if "temp_mean" in df.columns:
         feature_cols.append("temp_mean")
     if "rain_mm" in df.columns:
@@ -154,7 +179,7 @@ def train_model(train_df, feature_cols):
 # FORECAST FUNCTION
 # ==============================
 
-def forecast_series(df, beer, container):
+def forecast_series(df, beer, container, events=None):
 
     df = ensure_weekly_continuity(df)
 
@@ -225,6 +250,8 @@ def forecast_series(df, beer, container):
         hot_week = int(temp_thresh is not None and temp_mean is not None and float(temp_mean) >= temp_thresh)
         rainy_week = int(rain_thresh is not None and rain_mm is not None and float(rain_mm) >= rain_thresh)
 
+        evt_flag = is_event_week(next_week, events) if events is not None else 0
+
         row = {
             "sin_woy": sin_woy,
             "cos_woy": cos_woy,
@@ -236,6 +263,9 @@ def forecast_series(df, beer, container):
             "roll_mean_12": float(np.mean(history[-12:])) if history else 0.0,
             "roll_sum_4": float(np.sum(history[-4:])) if history else 0.0,
         }
+
+        if "event_week" in feature_cols:
+            row["event_week"] = evt_flag
 
         for lag in usable_lags:
             row[f"lag_{lag}"] = float(history[-lag]) if len(history) >= lag else 0.0
@@ -270,6 +300,7 @@ def forecast_series(df, beer, container):
 def main():
 
     df = load_data()
+    events = load_events()
 
     results = []
 
@@ -283,7 +314,7 @@ def main():
             print("Skipping (no sales)...")
             continue
 
-        forecast_df = forecast_series(group.copy(), beer, container)
+        forecast_df = forecast_series(group.copy(), beer, container, events=events)
         results.append(forecast_df)
 
     final_forecast = pd.concat(results)
