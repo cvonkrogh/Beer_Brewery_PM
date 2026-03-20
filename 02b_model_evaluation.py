@@ -1,3 +1,4 @@
+import os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -12,6 +13,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 # ==============================
 
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
+BEER_CONTAINER_METRICS_CSV = "data/processed/model_evaluation_beer_container.csv"
 TEST_RATIO = 0.20
 MAX_FOLDS = 5
 LAGS = [1, 2, 3, 4, 8, 12, 26, 52]
@@ -72,9 +74,10 @@ def create_features(df: pd.DataFrame, lags: list[int], use_events: bool = True) 
     return df, feature_cols
 
 
-def _prepare_weekly_beer_df(beer_df: pd.DataFrame) -> pd.DataFrame:
+def _prepare_weekly_series_df(series_df: pd.DataFrame) -> pd.DataFrame:
+    """One row per week; sums liters if multiple rows share a week (e.g. duplicate weeks)."""
     return (
-        beer_df.groupby("week")
+        series_df.groupby("week")
         .agg(
             liters=("liters", "sum"),
             temp_mean=("temp_mean", "mean"),
@@ -91,14 +94,16 @@ def _prepare_weekly_beer_df(beer_df: pd.DataFrame) -> pd.DataFrame:
     )
 
 
-def evaluate_beer_rolling_cv(
-    beer_df: pd.DataFrame,
-    beer_name: str,
-    test_ratio: float = 0.20,
-    max_folds: int = 5,
-    use_events: bool = True,
+def _rolling_cv_metrics_core(
+    series_df: pd.DataFrame,
+    test_ratio: float,
+    max_folds: int,
+    use_events: bool,
+    include_plot: bool,
+    plot_label: str | None = None,
 ) -> tuple[dict | None, pd.DataFrame | None]:
-    weekly = _prepare_weekly_beer_df(beer_df)
+    """Returns metric fields (no Beer/Container) and optional first-fold plot frame."""
+    weekly = _prepare_weekly_series_df(series_df)
     usable_lags = [lag for lag in LAGS if lag < len(weekly)]
     if not usable_lags:
         return None, None
@@ -158,14 +163,13 @@ def evaluate_beer_rolling_cv(
         naive_rmse_list.append(np.sqrt(mean_squared_error(y_test, naive_preds)))
         naive_smape_list.append(smape(y_test, naive_preds))
 
-        if i == 0:
+        if include_plot and i == 0 and plot_label is not None:
             plot_df = test[["week"]].copy()
             plot_df["actual"] = y_test
             plot_df["predicted"] = preds
-            plot_df["beer"] = beer_name
+            plot_df["beer"] = plot_label
 
     metrics = {
-        "Beer": beer_name,
         "Folds": len(model_mae_list),
         "Test Size (%)": int(round(test_ratio * 100)),
         "Model MAE": float(np.mean(model_mae_list)),
@@ -176,6 +180,48 @@ def evaluate_beer_rolling_cv(
         "Naive SMAPE (%)": float(np.mean(naive_smape_list)),
     }
     return metrics, plot_df
+
+
+def evaluate_beer_rolling_cv(
+    beer_df: pd.DataFrame,
+    beer_name: str,
+    test_ratio: float = 0.20,
+    max_folds: int = 5,
+    use_events: bool = True,
+) -> tuple[dict | None, pd.DataFrame | None]:
+    core, plot_df = _rolling_cv_metrics_core(
+        beer_df,
+        test_ratio=test_ratio,
+        max_folds=max_folds,
+        use_events=use_events,
+        include_plot=True,
+        plot_label=beer_name,
+    )
+    if core is None:
+        return None, None
+    metrics = {"Beer": beer_name, **core}
+    return metrics, plot_df
+
+
+def evaluate_beer_container_rolling_cv(
+    beer_container_df: pd.DataFrame,
+    beer_name: str,
+    container_name: str,
+    test_ratio: float = 0.20,
+    max_folds: int = 5,
+    use_events: bool = True,
+) -> dict | None:
+    core, _ = _rolling_cv_metrics_core(
+        beer_container_df,
+        test_ratio=test_ratio,
+        max_folds=max_folds,
+        use_events=use_events,
+        include_plot=False,
+        plot_label=None,
+    )
+    if core is None:
+        return None
+    return {"Beer": beer_name, "Container": container_name, **core}
 
 
 def evaluate_all_beers(
@@ -221,6 +267,68 @@ def evaluate_all_beers(
         ]
     )
     return metrics_df, plots, overall_df
+
+
+def evaluate_all_beer_containers(
+    processed_df: pd.DataFrame,
+    focus_beers: list[str],
+    test_ratio: float = 0.20,
+    max_folds: int = 5,
+    use_events: bool = True,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Rolling CV metrics per (beer, container), same method as per-beer table."""
+    rows = []
+    scope = processed_df[processed_df["beer"].isin(focus_beers)].copy()
+    for (beer, container), group in scope.groupby(["beer", "container"], sort=True):
+        if group["liters"].sum() == 0:
+            continue
+        m = evaluate_beer_container_rolling_cv(
+            group.copy(),
+            beer_name=beer,
+            container_name=container,
+            test_ratio=test_ratio,
+            max_folds=max_folds,
+            use_events=use_events,
+        )
+        if m is not None:
+            rows.append(m)
+
+    metrics_df = pd.DataFrame(rows)
+    if metrics_df.empty:
+        return metrics_df, pd.DataFrame()
+
+    col_order = [
+        "Beer",
+        "Container",
+        "Folds",
+        "Test Size (%)",
+        "Model MAE",
+        "Naive MAE",
+        "Model RMSE",
+        "Naive RMSE",
+        "Model SMAPE (%)",
+        "Naive SMAPE (%)",
+    ]
+    metrics_df = metrics_df[col_order].sort_values(["Beer", "Container"], ignore_index=True)
+
+    overall_df = pd.DataFrame(
+        [
+            {
+                "Beer": "Overall average",
+                "Container": "—",
+                "Folds": int(round(metrics_df["Folds"].mean())),
+                "Test Size (%)": int(round(metrics_df["Test Size (%)"].mean())),
+                "Model MAE": float(metrics_df["Model MAE"].mean()),
+                "Naive MAE": float(metrics_df["Naive MAE"].mean()),
+                "Model RMSE": float(metrics_df["Model RMSE"].mean()),
+                "Naive RMSE": float(metrics_df["Naive RMSE"].mean()),
+                "Model SMAPE (%)": float(metrics_df["Model SMAPE (%)"].mean()),
+                "Naive SMAPE (%)": float(metrics_df["Naive SMAPE (%)"].mean()),
+            }
+        ]
+    )
+    return metrics_df, overall_df
+
 
 # ==============================
 # COMBINED PLOT
@@ -292,6 +400,24 @@ def main():
         print("MODEL vs NAIVE BASELINE  (shared rolling 80/20 CV)")
         print("=" * 60 + "\n")
         print(results_df.to_string(index=False))
+
+    bc_metrics, bc_overall = evaluate_all_beer_containers(
+        processed_df=df,
+        focus_beers=FOCUS_BEERS,
+        test_ratio=TEST_RATIO,
+        max_folds=MAX_FOLDS,
+    )
+    if not bc_metrics.empty:
+        os.makedirs("data/processed", exist_ok=True)
+        bc_full = pd.concat([bc_metrics, bc_overall], ignore_index=True)
+        bc_full.to_csv(BEER_CONTAINER_METRICS_CSV, index=False)
+        print("\n" + "=" * 60)
+        print("PER BEER + CONTAINER (saved to CSV)")
+        print("=" * 60 + "\n")
+        print(bc_full.to_string(index=False))
+        print(f"\nCSV: {BEER_CONTAINER_METRICS_CSV}")
+    else:
+        print("\n(No per beer+container metrics — insufficient history per series.)")
 
 
 if __name__ == "__main__":

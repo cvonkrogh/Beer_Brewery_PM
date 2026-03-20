@@ -9,6 +9,9 @@ _eval_spec = importlib.util.spec_from_file_location("eval_shared_02b", _eval_mod
 _eval_module = importlib.util.module_from_spec(_eval_spec)
 _eval_spec.loader.exec_module(_eval_module)
 evaluate_all_beers = _eval_module.evaluate_all_beers
+BEER_CONTAINER_METRICS_CSV = getattr(
+    _eval_module, "BEER_CONTAINER_METRICS_CSV", "data/processed/model_evaluation_beer_container.csv"
+)
 
 # Step 03 (filename starts with a digit → load by path)
 _prod_module_path = Path(__file__).with_name("03_production_planning.py")
@@ -62,6 +65,15 @@ def load_shared_evaluation(processed_df):
         max_folds=5,
     )
     return metrics_df, plot_map, overall_df
+
+
+@st.cache_data
+def load_beer_container_metrics_csv(file_mtime: float):
+    """`file_mtime` invalidates cache when the CSV is regenerated."""
+    path = Path(__file__).resolve().parent / BEER_CONTAINER_METRICS_CSV
+    if not path.is_file():
+        return pd.DataFrame()
+    return pd.read_csv(path)
 
 
 def _selected_beers(selected_beer):
@@ -224,6 +236,9 @@ st.caption(
 
 forecast_df, processed_df, historical_weekly = load_data()
 metrics_df, plots_by_beer, overall_df = load_shared_evaluation(processed_df)
+_bc_path = Path(__file__).resolve().parent / BEER_CONTAINER_METRICS_CSV
+_bc_mtime = float(_bc_path.stat().st_mtime) if _bc_path.is_file() else -1.0
+beer_container_metrics_df = load_beer_container_metrics_csv(_bc_mtime)
 selected_beer = st.selectbox("Select beer", [ALL_BEERS_OPTION] + FOCUS_BEERS, index=0)
 horizon_months = st.slider(
     "Forecast horizon to display (months)",
@@ -335,22 +350,32 @@ else:
     st.caption("Shows liters needed per container for each displayed month.")
     st.plotly_chart(fig_container, width="stretch")
 
+st.subheader("Model test metrics by beer and container")
+st.caption(
+    "Same rolling time-series CV as section 1 (80% train / 20% test), evaluated on each beer–container series. "
+    f"Regenerate CSV: `python 02b_model_evaluation.py` → `{BEER_CONTAINER_METRICS_CSV}`."
+)
+if beer_container_metrics_df.empty:
+    st.info(
+        "No beer+container metrics file found. Run `python 02b_model_evaluation.py` to create "
+        f"`{BEER_CONTAINER_METRICS_CSV}`."
+    )
+else:
+    if selected_beer == ALL_BEERS_OPTION:
+        display_bc = beer_container_metrics_df.copy()
+    else:
+        display_bc = beer_container_metrics_df[
+            beer_container_metrics_df["Beer"] == selected_beer
+        ].copy()
+    if display_bc.empty:
+        st.warning("No rows for the selected beer in the beer+container metrics file.")
+    else:
+        st.dataframe(display_bc, width="stretch", hide_index=True)
+
 st.header("5) Production plan & stock cover")
 
-st.markdown(
-    """
-**What this shows**
 
-1. **Brew schedule** — tank batches (2k / 6k L) so beer is **ready** after the 12-week lead time.
-2. **Spike-aware planning** — if the forecast window looks volatile *or* this week is high vs the
-   same week-of-year in history, Step 03 asks for **extra cover** before peaks.
-3. **Inventory path** — simulated stock after sales + arrivals (no double-counting beer that is
-   still fermenting).
-4. **Weeks of cover** — `inventory ÷ next week’s forecast demand` (how long current stock lasts
-   at next week’s pace). **Naive run-out** = weeks until stock hits zero if you *never* brewed again
-   (uses the same forecast path).
-"""
-)
+
 
 schedule_df = build_production_schedule_from_forecast(forecast_df, historical_weekly)
 if schedule_df.empty:
