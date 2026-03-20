@@ -499,22 +499,21 @@ st.sidebar.write("Control how much historical data is used as the test sample fo
 # 0 means use fraction TEST_SIZE; otherwise use fixed number of weeks
 #test_horizon_weeks = st.sidebar.slider("Test horizon (weeks, 0 = use fraction)", min_value=0, max_value=220, value=52, step=1)
 # Forecast horizon (future weeks to predict beyond available data)
-#forecast_horizon_weeks = st.sidebar.slider("Forecast horizon (future weeks)", min_value=0, max_value=64, value=0, step=1)
+# Forecast horizon (future weeks to predict beyond available data) - discrete choices
+# Options: 12, 26, 52 weeks (removed 104)
+forecast_horizon_weeks = st.sidebar.select_slider(
+    "Forecast horizon (future weeks)",
+    options=[12, 26, 52],
+    value=12,
+    format_func=lambda x: f"{x} weeks"
+)
+
 # Historical test horizon: allow only specific discrete choices (weeks)
 # Options: 4 weeks, 16 weeks, 24 weeks
 test_horizon_weeks = st.sidebar.select_slider(
     "Test horizon (weeks)",
     options=[4, 16, 24],
     value=16,
-    format_func=lambda x: f"{x} weeks"
-)
-
-# Forecast horizon (future weeks to predict beyond available data) - discrete choices
-# Options: 12, 26, 52, 104 weeks
-forecast_horizon_weeks = st.sidebar.select_slider(
-    "Forecast horizon (future weeks)",
-    options=[12, 26, 52, 104],
-    value=12,
     format_func=lambda x: f"{x} weeks"
 )
 
