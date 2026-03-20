@@ -352,8 +352,8 @@ else:
 
 st.subheader("Model test metrics by beer and container")
 st.caption(
-    "Same rolling time-series CV as section 1 (80% train / 20% test), evaluated on each beer–container series. "
-    f"Regenerate CSV: `python 02b_model_evaluation.py` → `{BEER_CONTAINER_METRICS_CSV}`."
+    "Rolling CV error metrics (MAE, RMSE, SMAPE) per beer–container series — same method as section 1. "
+    f"Regenerate: `python 02b_model_evaluation.py` → `{BEER_CONTAINER_METRICS_CSV}`."
 )
 if beer_container_metrics_df.empty:
     st.info(
@@ -373,9 +373,6 @@ else:
         st.dataframe(display_bc, width="stretch", hide_index=True)
 
 st.header("5) Production plan & stock cover")
-
-
-
 
 schedule_df = build_production_schedule_from_forecast(forecast_df, historical_weekly)
 if schedule_df.empty:
