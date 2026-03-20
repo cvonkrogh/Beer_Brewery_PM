@@ -497,24 +497,29 @@ st.title("🎯 Prediction vs Actual Sales – Test Sample Analysis")
 st.sidebar.header("Options")
 st.sidebar.write("Control how much historical data is used as the test sample for comparison.")
 # 0 means use fraction TEST_SIZE; otherwise use fixed number of weeks
-test_horizon_weeks = st.sidebar.slider("Test horizon (weeks, 0 = use fraction)", min_value=0, max_value=220, value=52, step=1)
+#test_horizon_weeks = st.sidebar.slider("Test horizon (weeks, 0 = use fraction)", min_value=0, max_value=220, value=52, step=1)
 # Forecast horizon (future weeks to predict beyond available data)
-forecast_horizon_weeks = st.sidebar.slider("Forecast horizon (future weeks)", min_value=0, max_value=64, value=0, step=1)
+#forecast_horizon_weeks = st.sidebar.slider("Forecast horizon (future weeks)", min_value=0, max_value=64, value=0, step=1)
+# Historical test horizon: allow only specific discrete choices (weeks)
+# Options: 4 weeks, 16 weeks, 24 weeks
+test_horizon_weeks = st.sidebar.select_slider(
+    "Test horizon (weeks)",
+    options=[4, 16, 24],
+    value=16,
+    format_func=lambda x: f"{x} weeks"
+)
+
+# Forecast horizon (future weeks to predict beyond available data) - discrete choices
+# Options: 12, 26, 52, 104 weeks
+forecast_horizon_weeks = st.sidebar.select_slider(
+    "Forecast horizon (future weeks)",
+    options=[12, 26, 52, 104],
+    value=12,
+    format_func=lambda x: f"{x} weeks"
+)
 
 # Load data
 df = load_data_with_events()
-
-# Debugging expander to inspect loaded data & path
-with st.expander("Data load debug", expanded=False):
-    try:
-        st.write("Data file used:", DATA_PATH_USED)
-        st.write("Columns:", list(df.columns))
-        if "beer" in df.columns and "liters" in df.columns:
-            agg = df.groupby(["beer", "container"]) ["liters"].sum().reset_index().sort_values("liters", ascending=False)
-            st.dataframe(agg.head(200))
-        st.write(df.head(10))
-    except Exception as e:
-        st.write("Could not show debug info:", e)
 
 # Filter to focus beers
 df = df[df["beer"].isin(FOCUS_BEERS)].copy()
