@@ -224,22 +224,22 @@ def build_production_schedule_from_forecast(
     return pd.concat(parts, ignore_index=True)
 
 
-def annotate_batches_with_container_target(
+def build_batch_container_split(
     schedule_df: pd.DataFrame, forecast_df: pd.DataFrame
-) -> pd.DataFrame:
+) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
-    Add a best-fit container target per batch.
+    Split each brew batch over containers using forecast-driven shares.
 
-    Rule:
-    - Prefer the container with highest forecast liters for the same beer and available week.
-    - If no forecast row exists for that exact week, fall back to the beer's dominant container
-      across the full forecast horizon.
+    Primary basis: same beer + available_week container mix.
+    Fallback basis: beer-level container mix over full horizon.
     """
     if schedule_df.empty:
-        return schedule_df.copy()
+        return schedule_df.copy(), pd.DataFrame()
 
-    out = schedule_df.copy()
-    out["available_week"] = pd.to_datetime(out["available_week"])
+    batches = schedule_df.copy().reset_index(drop=True)
+    batches["production_week"] = pd.to_datetime(batches["production_week"])
+    batches["available_week"] = pd.to_datetime(batches["available_week"])
+    batches["batch_id"] = np.arange(1, len(batches) + 1)
 
     f = forecast_df.copy()
     f["week"] = pd.to_datetime(f["week"])
@@ -247,52 +247,106 @@ def annotate_batches_with_container_target(
     by_week = (
         f.groupby(["beer", "week", "container"], as_index=False)
         .agg(forecast_liters=("forecast_liters", "sum"))
-        .sort_values(["beer", "week", "forecast_liters"], ascending=[True, True, False])
     )
-    by_week_total = (
+    by_week_totals = (
         by_week.groupby(["beer", "week"], as_index=False)
         .agg(total_week_liters=("forecast_liters", "sum"))
     )
-    by_week = by_week.merge(by_week_total, on=["beer", "week"], how="left")
-    by_week["week_share_pct"] = (
-        100.0 * by_week["forecast_liters"] / by_week["total_week_liters"].replace(0, pd.NA)
-    )
+    week_mix = by_week.merge(by_week_totals, on=["beer", "week"], how="left")
+    week_mix["share"] = (
+        week_mix["forecast_liters"] / week_mix["total_week_liters"].replace(0, pd.NA)
+    ).fillna(0.0)
+    week_mix = week_mix.rename(columns={"week": "available_week"})
 
-    dominant = (
+    by_beer = (
         f.groupby(["beer", "container"], as_index=False)
         .agg(total_liters=("forecast_liters", "sum"))
-        .sort_values(["beer", "total_liters"], ascending=[True, False])
-        .drop_duplicates(subset=["beer"], keep="first")
-        .rename(columns={"container": "dominant_container"})
+    )
+    by_beer_totals = (
+        by_beer.groupby("beer", as_index=False)
+        .agg(beer_total_liters=("total_liters", "sum"))
+    )
+    fallback_mix = by_beer.merge(by_beer_totals, on="beer", how="left")
+    fallback_mix["share"] = (
+        fallback_mix["total_liters"] / fallback_mix["beer_total_liters"].replace(0, pd.NA)
+    ).fillna(0.0)
+
+    matched = batches.merge(
+        week_mix[["beer", "available_week", "container", "share"]],
+        on=["beer", "available_week"],
+        how="inner",
+    )
+    matched["split_basis"] = "available_week_forecast_mix"
+
+    matched_ids = set(matched["batch_id"].tolist())
+    unmatched = batches[~batches["batch_id"].isin(matched_ids)].copy()
+
+    fallback = unmatched.merge(
+        fallback_mix[["beer", "container", "share"]],
+        on="beer",
+        how="left",
+    )
+    fallback["container"] = fallback["container"].fillna("Unknown")
+    fallback["share"] = fallback["share"].fillna(1.0)
+    fallback["split_basis"] = np.where(
+        fallback["container"] == "Unknown",
+        "no_forecast_container_data",
+        "beer_horizon_container_mix",
     )
 
-    selected_rows = (
-        by_week.groupby(["beer", "week"], as_index=False)
-        .head(1)
-        .rename(columns={"week": "available_week", "container": "target_container"})
-        [["beer", "available_week", "target_container", "forecast_liters", "week_share_pct"]]
-        .rename(
-            columns={
-                "forecast_liters": "target_week_container_liters",
-                "week_share_pct": "target_week_container_share_pct",
-            }
-        )
+    alloc = pd.concat([matched, fallback], ignore_index=True)
+    alloc["allocated_liters"] = alloc["volume"] * alloc["share"]
+    alloc["share_pct"] = 100.0 * alloc["share"]
+
+    # Build one-line split summary for each batch row.
+    parts = alloc.sort_values(["batch_id", "allocated_liters"], ascending=[True, False]).copy()
+    parts["split_piece"] = (
+        parts["container"].astype(str)
+        + " "
+        + parts["share_pct"].round(1).map(lambda x: f"{x:.1f}%")
+        + " ("
+        + parts["allocated_liters"].round(0).astype(int).astype(str)
+        + " L)"
+    )
+    split_summary = (
+        parts.groupby("batch_id", as_index=False)
+        .agg(container_split=("split_piece", " | ".join))
     )
 
-    out = out.merge(selected_rows, on=["beer", "available_week"], how="left")
-    out = out.merge(dominant[["beer", "dominant_container"]], on="beer", how="left")
-
-    has_week_match = out["target_container"].notna()
-    out["target_container"] = out["target_container"].fillna(out["dominant_container"]).fillna("Unknown")
-    out["target_assignment_basis"] = np.where(
-        has_week_match,
-        "available_week_max_forecast",
-        "beer_dominant_container_fallback",
+    basis_summary = (
+        alloc.groupby("batch_id", as_index=False)
+        .agg(split_basis=("split_basis", "first"))
     )
-    out["target_week_container_liters"] = out["target_week_container_liters"].fillna(0.0)
-    out["target_week_container_share_pct"] = out["target_week_container_share_pct"].fillna(0.0)
-    out = out.drop(columns=["dominant_container"])
-    return out
+
+    batches = batches.merge(split_summary, on="batch_id", how="left")
+    batches = batches.merge(basis_summary, on="batch_id", how="left")
+
+    alloc_cols = [
+        "batch_id",
+        "beer",
+        "production_week",
+        "available_week",
+        "volume",
+        "packaging_strategy",
+        "container",
+        "share_pct",
+        "allocated_liters",
+        "split_basis",
+    ]
+    alloc = alloc[alloc_cols].sort_values(["production_week", "beer", "batch_id", "container"])
+
+    batch_cols = [
+        "batch_id",
+        "beer",
+        "production_week",
+        "available_week",
+        "volume",
+        "packaging_strategy",
+        "split_basis",
+        "container_split",
+    ]
+    batches = batches[batch_cols].sort_values(["production_week", "beer", "batch_id"])
+    return batches, alloc
 
 
 # ==============================
@@ -562,15 +616,52 @@ else:
         fig_plan.update_layout(xaxis_tickformat="%b")
         st.plotly_chart(fig_plan, width="stretch")
 
+    sched_view = schedule_df[schedule_df["beer"].isin(beers_sel)].copy()
+    batch_view, split_view = build_batch_container_split(sched_view, forecast_df)
+
+    st.subheader("Planner action list")
+    actions = batch_view.copy()
+    actions["is_small_batch"] = (actions["volume"] == 2000).astype(int)
+    actions["is_large_batch"] = (actions["volume"] == 6000).astype(int)
+    brew_actions = (
+        actions.groupby(["production_week", "beer"], as_index=False)
+        .agg(
+            total_brew_liters=("volume", "sum"),
+            total_batches=("batch_id", "count"),
+            batches_2000l=("is_small_batch", "sum"),
+            batches_6000l=("is_large_batch", "sum"),
+        )
+        .sort_values(["production_week", "beer"])
+    )
+    st.caption("Weekly brew starts by beer. This is the direct brew instruction view.")
+    st.dataframe(brew_actions, width="stretch", hide_index=True)
+
+    container_plan = (
+        split_view.groupby(["available_week", "beer", "container"], as_index=False)
+        .agg(planned_container_liters=("allocated_liters", "sum"))
+        .sort_values(["available_week", "beer", "container"])
+    )
+    st.caption(
+        "Container split plan on available weeks, allocated from forecast container mix."
+    )
+    st.dataframe(container_plan, width="stretch", hide_index=True)
+
     with st.expander("Raw brew batch list (production week → available week)"):
-        sched_view = schedule_df[schedule_df["beer"].isin(beers_sel)].copy()
-        sched_view = annotate_batches_with_container_target(sched_view, forecast_df)
         st.caption(
-            "Container target is inferred from the highest forecast container demand in the batch's "
-            "available week (fallback: dominant container for that beer)."
+            "Each batch now includes a forecast-based container split (share and liters)."
         )
         st.dataframe(
-            sched_view.sort_values(["production_week", "beer"]),
+            batch_view,
+            width="stretch",
+            hide_index=True,
+        )
+
+    with st.expander("Batch-to-container split detail"):
+        st.caption(
+            "One row per batch x container allocation. This is the exact split assumption used."
+        )
+        st.dataframe(
+            split_view,
             width="stretch",
             hide_index=True,
         )
