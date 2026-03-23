@@ -3,6 +3,7 @@ import plotly.express as px
 import streamlit as st
 import importlib.util
 from pathlib import Path
+import numpy as np
 
 _eval_module_path = Path(__file__).with_name("02b_model_evaluation.py")
 _eval_spec = importlib.util.spec_from_file_location("eval_shared_02b", _eval_module_path)
@@ -221,6 +222,77 @@ def build_production_schedule_from_forecast(
     if not parts:
         return pd.DataFrame()
     return pd.concat(parts, ignore_index=True)
+
+
+def annotate_batches_with_container_target(
+    schedule_df: pd.DataFrame, forecast_df: pd.DataFrame
+) -> pd.DataFrame:
+    """
+    Add a best-fit container target per batch.
+
+    Rule:
+    - Prefer the container with highest forecast liters for the same beer and available week.
+    - If no forecast row exists for that exact week, fall back to the beer's dominant container
+      across the full forecast horizon.
+    """
+    if schedule_df.empty:
+        return schedule_df.copy()
+
+    out = schedule_df.copy()
+    out["available_week"] = pd.to_datetime(out["available_week"])
+
+    f = forecast_df.copy()
+    f["week"] = pd.to_datetime(f["week"])
+
+    by_week = (
+        f.groupby(["beer", "week", "container"], as_index=False)
+        .agg(forecast_liters=("forecast_liters", "sum"))
+        .sort_values(["beer", "week", "forecast_liters"], ascending=[True, True, False])
+    )
+    by_week_total = (
+        by_week.groupby(["beer", "week"], as_index=False)
+        .agg(total_week_liters=("forecast_liters", "sum"))
+    )
+    by_week = by_week.merge(by_week_total, on=["beer", "week"], how="left")
+    by_week["week_share_pct"] = (
+        100.0 * by_week["forecast_liters"] / by_week["total_week_liters"].replace(0, pd.NA)
+    )
+
+    dominant = (
+        f.groupby(["beer", "container"], as_index=False)
+        .agg(total_liters=("forecast_liters", "sum"))
+        .sort_values(["beer", "total_liters"], ascending=[True, False])
+        .drop_duplicates(subset=["beer"], keep="first")
+        .rename(columns={"container": "dominant_container"})
+    )
+
+    selected_rows = (
+        by_week.groupby(["beer", "week"], as_index=False)
+        .head(1)
+        .rename(columns={"week": "available_week", "container": "target_container"})
+        [["beer", "available_week", "target_container", "forecast_liters", "week_share_pct"]]
+        .rename(
+            columns={
+                "forecast_liters": "target_week_container_liters",
+                "week_share_pct": "target_week_container_share_pct",
+            }
+        )
+    )
+
+    out = out.merge(selected_rows, on=["beer", "available_week"], how="left")
+    out = out.merge(dominant[["beer", "dominant_container"]], on="beer", how="left")
+
+    has_week_match = out["target_container"].notna()
+    out["target_container"] = out["target_container"].fillna(out["dominant_container"]).fillna("Unknown")
+    out["target_assignment_basis"] = np.where(
+        has_week_match,
+        "available_week_max_forecast",
+        "beer_dominant_container_fallback",
+    )
+    out["target_week_container_liters"] = out["target_week_container_liters"].fillna(0.0)
+    out["target_week_container_share_pct"] = out["target_week_container_share_pct"].fillna(0.0)
+    out = out.drop(columns=["dominant_container"])
+    return out
 
 
 # ==============================
@@ -492,6 +564,11 @@ else:
 
     with st.expander("Raw brew batch list (production week → available week)"):
         sched_view = schedule_df[schedule_df["beer"].isin(beers_sel)].copy()
+        sched_view = annotate_batches_with_container_target(sched_view, forecast_df)
+        st.caption(
+            "Container target is inferred from the highest forecast container demand in the batch's "
+            "available week (fallback: dominant container for that beer)."
+        )
         st.dataframe(
             sched_view.sort_values(["production_week", "beer"]),
             width="stretch",
