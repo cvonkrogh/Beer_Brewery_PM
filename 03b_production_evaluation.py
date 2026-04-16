@@ -10,7 +10,7 @@ What this is for
 Uses the **same** opening inventory and arrival logic as `03_production_planning.py`
 (via `simulate_inventory_with_shortages`), so results match the dashboard inventory path.
 
-Run after: `python 02_forecasting_model.py` then `python 03_production_planning.py`
+Run after: `python 02_small_orders_model.py` then `python 03_production_planning.py`
 """
 from __future__ import annotations
 
@@ -173,7 +173,7 @@ def overall_planning_score(service_df: pd.DataFrame) -> dict:
 
 def main():
     if not os.path.isfile(FORECAST_PATH):
-        raise FileNotFoundError(f"Missing {FORECAST_PATH} — run 02_forecasting_model.py first.")
+        raise FileNotFoundError(f"Missing {FORECAST_PATH} — run 02_small_orders_model.py first.")
     if not os.path.isfile(PRODUCTION_WEEKLY_PATH):
         raise FileNotFoundError(f"Missing {PRODUCTION_WEEKLY_PATH} — run 03_production_planning.py first.")
 

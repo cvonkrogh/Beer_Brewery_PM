@@ -9,7 +9,7 @@ import os
 
 PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
 # Keep this file as an alternate/experimental model:
-# main production output should come from 02_forecasting_model.py.
+# main production output should come from 02_small_orders_model.py.
 FORECAST_OUTPUT_PATH = "data/processed/forecast_results_new_no_events.csv"
 
 FORECAST_HORIZON = 52

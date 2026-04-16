@@ -20,6 +20,7 @@ EPS = 1e-9
 # LOAD DATA
 # ==============================
 
+
 def load_data():
     print("Loading processed dataset...")
     df = pd.read_csv(PROCESSED_DATA_PATH, parse_dates=["week"])
@@ -50,6 +51,7 @@ def is_event_week(date, events):
 # ==============================
 # HELPERS
 # ==============================
+
 
 def _seasonal_terms(week_of_year: int) -> tuple[float, float]:
     # 52.18 is closer to the average ISO weeks/year; keeps sin/cos continuous.
@@ -116,9 +118,11 @@ def ensure_weekly_continuity(group: pd.DataFrame) -> pd.DataFrame:
 
     return group
 
+
 # ==============================
 # CREATE LAGS
 # ==============================
+
 
 def create_features(df: pd.DataFrame, lags: list[int]) -> tuple[pd.DataFrame, list[str]]:
     df = df.sort_values("week").copy()
@@ -153,9 +157,11 @@ def create_features(df: pd.DataFrame, lags: list[int]) -> tuple[pd.DataFrame, li
 
     return df, feature_cols
 
+
 # ==============================
 # TRAIN MODEL
 # ==============================
+
 
 def train_model(train_df, feature_cols):
     X = train_df[feature_cols]
@@ -175,9 +181,11 @@ def train_model(train_df, feature_cols):
     model.fit(X, y)
     return model
 
+
 # ==============================
 # FORECAST FUNCTION
 # ==============================
+
 
 def forecast_series(df, beer, container, events=None):
 
@@ -293,9 +301,11 @@ def forecast_series(df, beer, container, events=None):
 
     return pd.DataFrame(future_predictions)
 
+
 # ==============================
 # MAIN
 # ==============================
+
 
 def main():
 
