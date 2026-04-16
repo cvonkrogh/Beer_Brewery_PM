@@ -1,89 +1,89 @@
-Number of rows and columns, respectively 
-(25575, 16)
+Number of rows and columns, respectively: 
+(77814, 16)
 
-Data types of each column 
+Data types of each column: 
 <class 'pandas.core.frame.DataFrame'>
-RangeIndex: 25575 entries, 0 to 25574
+RangeIndex: 77814 entries, 0 to 77813
 Data columns (total 16 columns):
- #   Column               Non-Null Count  Dtype  
----  ------               --------------  -----  
- 0   Factuurnummer        25575 non-null  int64  
- 1   Factuurdatum         25575 non-null  object 
- 2   Identificatienummer  25575 non-null  int64  
- 3   Naam                 25575 non-null  object 
- 4   Commerciële naam     25575 non-null  object 
- 5   Bedrijfscategorieën  25549 non-null  object 
- 6   Vertegenwoordiger    23649 non-null  object 
- 7   Land                 25575 non-null  object 
- 8   Stad                 25561 non-null  object 
- 9   Prijsklasse          25575 non-null  object 
- 10  Artikelnummer        25575 non-null  int64  
- 11  Naam product         25575 non-null  object 
- 12  Productcategorieën   25575 non-null  object 
- 13  Aantal               25575 non-null  int64  
- 14  Grondstof            25575 non-null  object 
- 15  Liter                25575 non-null  float64
-dtypes: float64(1), int64(4), object(11)
-memory usage: 3.1+ MB
+ #   Column                Non-Null Count  Dtype         
+---  ------                --------------  -----         
+ 0   S_Factuurnummer       77814 non-null  int64         
+ 1   Datum                 77814 non-null  datetime64[ns]
+ 2   S_Naam                77814 non-null  object        
+ 3   S_Land                77814 non-null  object        
+ 4   S_Vertegenwoordiger   71183 non-null  object        
+ 5   S_Stad                77761 non-null  object        
+ 6   S_Naam_product        77814 non-null  object        
+ 7   S_Productcategorieën  77814 non-null  object        
+ 8   S_Grondstof           77814 non-null  object        
+ 9   S_Liter               77814 non-null  float64       
+ 10  E_Event_Name          2318 non-null   object        
+ 11  V_Product             77406 non-null  object        
+ 12  V_Voorraadlocatie     77406 non-null  object        
+ 13  V_Bedrijf             77406 non-null  object        
+ 14  V_Type                77406 non-null  object        
+ 15  V_Aantal              77406 non-null  float64       
+dtypes: datetime64[ns](1), float64(2), int64(1), object(12)
+memory usage: 9.5+ MB
 
 
-Descriptive statistics 
-       Factuurnummer  Identificatienummer  Artikelnummer        Aantal  \
-count   2.557500e+04         2.557500e+04   25575.000000  25575.000000   
-mean    2.023362e+08         4.489041e+04     210.373842      4.008211   
-std     1.259146e+05         1.148925e+06     121.422142     45.304078   
-min     2.021000e+08         4.000000e+00      17.000000    -54.000000   
-25%     2.022009e+08         5.000000e+00     128.000000      1.000000   
-50%     2.023009e+08         1.600000e+02     197.000000      2.000000   
-75%     2.024009e+08         4.910000e+02     235.000000      3.000000   
-max     2.026001e+08         4.437038e+07     553.000000   3564.000000   
+Descriptive statistics: 
+       S_Factuurnummer                          Datum       S_Liter  \
+count     7.781400e+04                          77814  77814.000000   
+mean      2.023266e+08  2023-11-13 06:14:25.510062336     18.435995   
+min       2.021000e+08            2021-11-24 00:00:00   -820.000000   
+25%       2.022008e+08            2022-11-01 00:00:00      3.960000   
+50%       2.023009e+08            2023-11-17 00:00:00      6.600000   
+75%       2.024009e+08            2024-12-13 00:00:00     13.200000   
+max       2.026001e+08            2026-02-13 00:00:00  14113.440000   
+std       1.297502e+05                            NaN    177.076401   
 
-              Liter  
-count  25575.000000  
-mean      22.784969  
-std      185.422390  
-min     -820.000000  
-25%        3.960000  
-50%        7.920000  
-75%       17.820000  
-max    14113.440000  
+           V_Aantal  
+count  77406.000000  
+mean      -1.600470  
+min    -3456.000000  
+25%       -3.000000  
+50%       -2.000000  
+75%       -1.000000  
+max     5311.000000  
+std       60.062501  
 
-Null values per column 
-Factuurnummer             0
-Factuurdatum              0
-Identificatienummer       0
-Naam                      0
-Commerciële naam          0
-Bedrijfscategorieën      26
-Vertegenwoordiger      1926
-Land                      0
-Stad                     14
-Prijsklasse               0
-Artikelnummer             0
-Naam product              0
-Productcategorieën        0
-Aantal                    0
-Grondstof                 0
-Liter                     0
+Null values per column: 
+S_Factuurnummer             0
+Datum                       0
+S_Naam                      0
+S_Land                      0
+S_Vertegenwoordiger      6631
+S_Stad                     53
+S_Naam_product              0
+S_Productcategorieën        0
+S_Grondstof                 0
+S_Liter                     0
+E_Event_Name            75496
+V_Product                 408
+V_Voorraadlocatie         408
+V_Bedrijf                 408
+V_Type                    408
+V_Aantal                  408
 dtype: int64
 
-All features listed 
+All features listed: 
 <class 'list'>
-Duplicated per column 
-Factuurnummer          21432
-Factuurdatum           24655
-Identificatienummer    25281
-Naam                   25248
-Commerciële naam       25249
-Bedrijfscategorieën    25500
-Vertegenwoordiger      25571
-Land                   25574
-Stad                   25450
-Prijsklasse            25559
-Artikelnummer          25360
-Naam product           25361
-Productcategorieën     25550
-Aantal                 25460
-Grondstof              25518
-Liter                  25311
+Duplicated per column: 
+S_Factuurnummer         73671
+Datum                   76894
+S_Naam                  77487
+S_Land                  77813
+S_Vertegenwoordiger     77810
+S_Stad                  77689
+S_Naam_product          77600
+S_Productcategorieën    77789
+S_Grondstof             77757
+S_Liter                 77550
+E_Event_Name            77806
+V_Product               77601
+V_Voorraadlocatie       77804
+V_Bedrijf               77484
+V_Type                  77808
+V_Aantal                77563
 dtype: int64
