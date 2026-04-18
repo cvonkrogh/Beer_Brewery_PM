@@ -39,12 +39,12 @@ def extract_container(name):
         return "Keg 20L"
     elif "50l" in name:
         return "Keg 50L"
-    elif "0,75" in name:
+    elif "0,75" in name or "75cl"in name:
         return "Bottle 75cl"
-    elif "0,33" in name and "fles" in name:
-        return "Bottle 33cl"
-    elif "blik" in name or "can" in name:
-        return "Can 33cl"
+    elif "0,33" in name or "33cl" in name:
+          if "blik" in name or "can" in name:
+              return "Can 33cl"
+          return "Bottle 33cl"
     else:
         return "Other"
 
@@ -240,6 +240,19 @@ def add_time_features(df):
 
     return df
 
+#==============================
+# MISSING VALUE IMPUTATION
+#==============================
+
+def impute_missing_values(df):
+    print("Imputing missing values...")
+
+    vertegenwoordiger_mode = df["Vertegenwoordiger"].mode()
+    stad_mode = df["Stad"].mode()
+    df["Vertegenwoordiger"] = df["Vertegenwoordiger"].fillna(value = vertegenwoordiger_mode)
+    df["Stad"] = df["Stad"].fillna(value = stad_mode)
+
+    return df
 
 # ==============================
 # SAVE OUTPUT
@@ -259,6 +272,7 @@ def save_processed(df):
 def main():
     df = load_raw_data()
     df = filter_core_beers(df)
+    df = impute_missing_values(df)
     weekly = aggregate_weekly(df)
     weekly = create_full_timeline(weekly)
 

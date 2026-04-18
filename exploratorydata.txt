@@ -1,89 +1,115 @@
-Number of rows and columns, respectively: 
-(77814, 16)
+Number of rows and columns, respectively2: 
+(4631, 23)
 
 Data types of each column: 
 <class 'pandas.core.frame.DataFrame'>
-RangeIndex: 77814 entries, 0 to 77813
-Data columns (total 16 columns):
- #   Column                Non-Null Count  Dtype         
----  ------                --------------  -----         
- 0   S_Factuurnummer       77814 non-null  int64         
- 1   Datum                 77814 non-null  datetime64[ns]
- 2   S_Naam                77814 non-null  object        
- 3   S_Land                77814 non-null  object        
- 4   S_Vertegenwoordiger   71183 non-null  object        
- 5   S_Stad                77761 non-null  object        
- 6   S_Naam_product        77814 non-null  object        
- 7   S_Productcategorieën  77814 non-null  object        
- 8   S_Grondstof           77814 non-null  object        
- 9   S_Liter               77814 non-null  float64       
- 10  E_Event_Name          2318 non-null   object        
- 11  V_Product             77406 non-null  object        
- 12  V_Voorraadlocatie     77406 non-null  object        
- 13  V_Bedrijf             77406 non-null  object        
- 14  V_Type                77406 non-null  object        
- 15  V_Aantal              77406 non-null  float64       
-dtypes: datetime64[ns](1), float64(2), int64(1), object(12)
-memory usage: 9.5+ MB
+Index: 4631 entries, 0 to 4640
+Data columns (total 23 columns):
+ #   Column                     Non-Null Count  Dtype         
+---  ------                     --------------  -----         
+ 0   week                       4631 non-null   datetime64[ns]
+ 1   S_Grondstof                4631 non-null   object        
+ 2   S_Container                4631 non-null   object        
+ 3   S_Liter                    4631 non-null   float64       
+ 4   V_Aantal                   4631 non-null   float64       
+ 5   S_Factuurnummer            4631 non-null   int64         
+ 6   S_Naam                     4631 non-null   int64         
+ 7   S_Land                     4631 non-null   int64         
+ 8   S_Stad                     4631 non-null   int64         
+ 9   S_Vertegenwoordiger        4631 non-null   int64         
+ 10  S_Productcategorieen       4631 non-null   int64         
+ 11  V_Product                  4631 non-null   int64         
+ 12  V_Bedrijf                  4631 non-null   int64         
+ 13  S_Land_Naam                4631 non-null   object        
+ 14  S_Klant_Naam               4631 non-null   object        
+ 15  S_Vertegenwoordiger_Naam   4631 non-null   object        
+ 16  S_Stad_Naam                4631 non-null   object        
+ 17  S_Productcategorieen_Naam  4631 non-null   object        
+ 18  V_Product_Naam             4631 non-null   object        
+ 19  V_Bedrijf_Naam             4631 non-null   object        
+ 20  E_Event_Name               4631 non-null   object        
+ 21  V_Voorraadlocatie          4619 non-null   object        
+ 22  V_Type                     4619 non-null   object        
+dtypes: datetime64[ns](1), float64(2), int64(8), object(12)
+memory usage: 868.3+ KB
 
 
 Descriptive statistics: 
-       S_Factuurnummer                          Datum       S_Liter  \
-count     7.781400e+04                          77814  77814.000000   
-mean      2.023266e+08  2023-11-13 06:14:25.510062336     18.435995   
-min       2.021000e+08            2021-11-24 00:00:00   -820.000000   
-25%       2.022008e+08            2022-11-01 00:00:00      3.960000   
-50%       2.023009e+08            2023-11-17 00:00:00      6.600000   
-75%       2.024009e+08            2024-12-13 00:00:00     13.200000   
-max       2.026001e+08            2026-02-13 00:00:00  14113.440000   
-std       1.297502e+05                            NaN    177.076401   
-
-           V_Aantal  
-count  77406.000000  
-mean      -1.600470  
-min    -3456.000000  
-25%       -3.000000  
-50%       -2.000000  
-75%       -1.000000  
-max     5311.000000  
-std       60.062501  
+                                 week       S_Grondstof  S_Container      S_Liter     V_Aantal  S_Factuurnummer       S_Naam       S_Land       S_Stad  S_Vertegenwoordiger  S_Productcategorieen    V_Product    V_Bedrijf S_Land_Naam S_Klant_Naam S_Vertegenwoordiger_Naam S_Stad_Naam S_Productcategorieen_Naam V_Product_Naam V_Bedrijf_Naam E_Event_Name V_Voorraadlocatie V_Type
+count                            4631              4631         4631  4631.000000  4631.000000      4631.000000  4631.000000  4631.000000  4631.000000          4631.000000           4631.000000  4631.000000  4631.000000        4631         4631                     4631        4631                      4631           4631           4631         4631              4619   4619
+unique                            NaN                 3            7          NaN          NaN              NaN          NaN          NaN          NaN                  NaN                   NaN          NaN          NaN           2          122                        4          57                        16             42            129            8                 5      6
+top                               NaN  Hoop Bleke Nelis  Bottle 33cl          NaN          NaN              NaN          NaN          NaN          NaN                  NaN                   NaN          NaN          NaN        None         None                     None        None                      None           None           None         None              None   None
+freq                              NaN              1546          663          NaN          NaN              NaN          NaN          NaN          NaN                  NaN                   NaN          NaN          NaN        3121         3121                     3154        3121                      3121           3133           3133         4573              3121   3121
+mean    2023-12-31 19:03:58.652558848               NaN          NaN    36.107646    -5.171453         1.008206     0.876269     0.326063     0.761607             0.416109              0.342906     0.399482     0.612395         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
+min               2021-11-22 00:00:00               NaN          NaN     0.000000 -1355.000000         0.000000     0.000000     0.000000     0.000000             0.000000              0.000000     0.000000     0.000000         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
+25%               2022-12-12 00:00:00               NaN          NaN     0.000000    -3.000000         0.000000     0.000000     0.000000     0.000000             0.000000              0.000000     0.000000     0.000000         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
+50%               2024-01-01 00:00:00               NaN          NaN     0.000000     0.000000         0.000000     0.000000     0.000000     0.000000             0.000000              0.000000     0.000000     0.000000         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
+75%               2025-01-20 00:00:00               NaN          NaN    13.860000     0.000000         1.000000     1.000000     1.000000     1.000000             1.000000              1.000000     1.000000     1.000000         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
+max               2026-02-09 00:00:00               NaN          NaN  2040.000000  2947.000000        23.000000    13.000000     1.000000    11.000000             3.000000              2.000000     3.000000     8.000000         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
+std                               NaN               NaN          NaN   120.988709   105.488402         2.009464     1.642057     0.468821     1.401235             0.662014              0.508983     0.640424     1.067409         NaN          NaN                      NaN         NaN                       NaN            NaN            NaN          NaN               NaN    NaN
 
 Null values per column: 
-S_Factuurnummer             0
-Datum                       0
-S_Naam                      0
-S_Land                      0
-S_Vertegenwoordiger      6631
-S_Stad                     53
-S_Naam_product              0
-S_Productcategorieën        0
-S_Grondstof                 0
-S_Liter                     0
-E_Event_Name            75496
-V_Product                 408
-V_Voorraadlocatie         408
-V_Bedrijf                 408
-V_Type                    408
-V_Aantal                  408
+week                          0
+S_Grondstof                   0
+S_Container                   0
+S_Liter                       0
+V_Aantal                      0
+S_Factuurnummer               0
+S_Naam                        0
+S_Land                        0
+S_Stad                        0
+S_Vertegenwoordiger           0
+S_Productcategorieen          0
+V_Product                     0
+V_Bedrijf                     0
+S_Land_Naam                   0
+S_Klant_Naam                  0
+S_Vertegenwoordiger_Naam      0
+S_Stad_Naam                   0
+S_Productcategorieen_Naam     0
+V_Product_Naam                0
+V_Bedrijf_Naam                0
+E_Event_Name                  0
+V_Voorraadlocatie            12
+V_Type                       12
 dtype: int64
 
 All features listed: 
-<class 'list'>
+['week', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Factuurnummer', 'S_Naam', 'S_Land', 'S_Stad', 'S_Vertegenwoordiger', 'S_Productcategorieen', 'V_Product', 'V_Bedrijf', 'S_Land_Naam', 'S_Klant_Naam', 'S_Vertegenwoordiger_Naam', 'S_Stad_Naam', 'S_Productcategorieen_Naam', 'V_Product_Naam', 'V_Bedrijf_Naam', 'E_Event_Name', 'V_Voorraadlocatie', 'V_Type']
 Duplicated per column: 
-S_Factuurnummer         73671
-Datum                   76894
-S_Naam                  77487
-S_Land                  77813
-S_Vertegenwoordiger     77810
-S_Stad                  77689
-S_Naam_product          77600
-S_Productcategorieën    77789
-S_Grondstof             77757
-S_Liter                 77550
-E_Event_Name            77806
-V_Product               77601
-V_Voorraadlocatie       77804
-V_Bedrijf               77484
-V_Type                  77808
-V_Aantal                77563
-dtype: int64
+week                         4410
+S_Grondstof                  4628
+S_Container                  4624
+S_Liter                      4316
+V_Aantal                     4334
+S_Factuurnummer              4612
+S_Naam                       4617
+S_Land                       4629
+S_Stad                       4619
+S_Vertegenwoordiger          4627
+S_Productcategorieen         4628
+V_Product                    4627
+V_Bedrijf                    4622
+S_Land_Naam                  4629
+S_Klant_Naam                 4509
+S_Vertegenwoordiger_Naam     4627
+S_Stad_Naam                  4574
+S_Productcategorieen_Naam    4615
+V_Product_Naam               4589
+V_Bedrijf_Naam               4502
+E_Event_Name                 4623
+V_Voorraadlocatie            4625
+V_Type                       4624
+dtype: int64        week              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Factuurnummer  S_Naam  S_Land  S_Stad  S_Vertegenwoordiger  S_Productcategorieen  V_Product  V_Bedrijf S_Land_Naam              S_Klant_Naam S_Vertegenwoordiger_Naam S_Stad_Naam S_Productcategorieen_Naam                                 V_Product_Naam           V_Bedrijf_Naam E_Event_Name V_Voorraadlocatie      V_Type
+0 2021-11-22         Hoop Bleke Nelis  Bottle 33cl   130.68    -144.0                6       5       1       5                    2                     1          1          2   Nederland  Slijterij Drinks & Gifts          Dennis de Leeuw   KROMMENIE        Bier in fles, Kern             Hoop Bleke Nelis doos 12fles/0,33l            VVV Zaanstore         None          Lagedijk  Verzending
+1 2021-11-22         Hoop Bleke Nelis     Can 33cl     7.92      -1.0                1       1       1       1                    1                     1          1          1   Nederland                BierGro BV          Dennis de Leeuw  Middenmeer              Bier in blik  Hoop Bleke Nelis doos 24blikken/0,33l one way               BierGro BV         None          Lagedijk  Verzending
+2 2021-11-22         Hoop Bleke Nelis      Giftset    59.40     -78.0                5       4       1       4                    1                     1          3          4   Nederland    Van Bieren Retail B.V.          Dennis de Leeuw     Utrecht                 Cadeauset                  Hoop Cadeauset 5x 5 fles kern  Winkel | Hoop doet Eten         None          Lagedijk  Verzending
+3 2021-11-22         Hoop Bleke Nelis      Keg 20L     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+4 2021-11-22         Hoop Bleke Nelis  Bottle 75cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+5 2021-11-22         Hoop Bleke Nelis        Other     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+6 2021-11-22         Hoop Bleke Nelis      Keg 50L     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+7 2021-11-22  Hoop Kaper Tropical IPA  Bottle 33cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+8 2021-11-22  Hoop Kaper Tropical IPA     Can 33cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+9 2021-11-22  Hoop Kaper Tropical IPA      Giftset     9.90      -9.0                2       2       1       2                    1                     1          1          2   Nederland                BierGro BV          Dennis de Leeuw  Middenmeer                 Cadeauset       Hoop Cadeauset 6x 4 fles Seasonal Winter    Gall & Gall Castricum         None          Lagedijk  Verzending
+Total rows: 4631
+Number of return entries: 10
