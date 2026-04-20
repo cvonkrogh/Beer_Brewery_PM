@@ -1,14 +1,21 @@
 from altair.datasets import data
 import pandas as pd
 import io
+from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings as wr
+import requests
 
 wr.filterwarnings('ignore')
 
 pd.set_option('display.max_columns', None)
+
+SAVE_FILE = "exploratorydata.csv"
+
+WEATHER_LAT = 52.3676
+WEATHER_LON = 4.9041
 
 # Define the mapping of original column names to new column names
 NAME_MAP = {
@@ -71,6 +78,8 @@ CORE_BEERS = [
     "Hoop Lager",
     "Hoop Kaper Tropical IPA",
 ]
+
+save_path = Path(SAVE_FILE)
 
 #LOAD THE DATA
 sales_database = pd.read_csv('data/raw/sales_data.csv', sep=';', engine='python', decimal = ',')
@@ -142,6 +151,42 @@ df = filter_core_beers(df)
 df["week"] = df["Datum"] - pd.to_timedelta(df["Datum"].dt.weekday, unit='D')
 df["week"] = df["week"].dt.normalize()
 
+start_date = df['week'].min().strftime('%Y-%m-%d')
+end_date = df['week'].max().strftime('%Y-%m-%d')
+url = (
+        "https://archive-api.open-meteo.com/v1/archive"
+        f"?latitude={WEATHER_LAT}"
+        f"&longitude={WEATHER_LON}"
+        f"&start_date={start_date}"
+        f"&end_date={end_date}"
+        "&daily=temperature_2m_mean,precipitation_sum"
+        "&timezone=Europe%2FBerlin"
+    )
+
+response = requests.get(url)
+
+if response.status_code != 200:
+    print("⚠ Weather API failed. Continuing without weather.")
+
+data = response.json()
+
+weather_df = pd.DataFrame({
+    "date": pd.to_datetime(data["daily"]["time"]),
+    "temp_mean": data["daily"]["temperature_2m_mean"],
+    "rain_mm": data["daily"]["precipitation_sum"]
+    })
+
+weather_df["week"] = weather_df["date"].dt.to_period("W").apply(lambda r: r.start_time)
+
+weekly_weather = (
+    weather_df.groupby("week")
+    .agg({
+        "temp_mean": "mean",
+        "rain_mm": "sum"
+    })
+    .reset_index()
+)
+
 # 1. AGGREGATE (This is where the columns are BORN)
 weekly = (
   df.groupby(["week", "S_Grondstof", "S_Container"])
@@ -182,6 +227,8 @@ full_index = pd.MultiIndex.from_product([full_range, beers, containers], names=[
 # Overwrite df with the gap-filled weekly data
 df = weekly.set_index(["week", "S_Grondstof", "S_Container"]).reindex(full_index, fill_value=0).reset_index()
 
+df = pd.merge(df, weekly_weather, on="week", how="left")
+
 # 3. CLEANUP (Tell Python these are TEXT columns, not numbers)
 # We include the new '_Naam' columns here!
 text_cols = ['E_Event_Name', 'S_Land_Naam', 'S_Klant_Naam', 'S_Stad_Naam', 'S_Vertegenwoordiger_Naam', 'S_Productcategorieen_Naam', 'V_Product_Naam', 'V_Bedrijf_Naam', 'V_Voorraadlocatie', 'V_Type']
@@ -206,11 +253,18 @@ s = buffer.getvalue()
 #Get duplicated values per column
 duplicated_per_column =df.apply(lambda col: col.duplicated().sum())
 
+print("Saving processed dataset...")
+
+save_path.parent.mkdir(parents=True, exist_ok=True)
+df.to_csv(save_path, index=False)
+
 # Force display settings for the file writing
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_columns', None)
-pd.set_option('display.expand_frame_repr', False) 
 pd.set_option('display.max_colwidth', None)
+
+desc = df.describe(include='all')
+chunk_size = 3
 
 #Overwrite the exploratory data analysis results to a text file
 with open("exploratorydata.txt", "w") as f:
@@ -222,8 +276,13 @@ with open("exploratorydata.txt", "w") as f:
   f.write(str(s))
   f.write(str("\n"))
   f.write(str("\n"))
-  f.write(str("Descriptive statistics: \n"))
-  f.write(str(df.describe(include='all')))
+  for i in range(0, len(desc.columns), chunk_size):
+      # Slice the dataframe to get 3 columns at a time
+    chunk = desc.iloc[:, i : i + chunk_size]
+    f.write(chunk.to_string())
+      
+      # Add a visual separator and extra newlines between chunks
+    f.write("\n\n" + "-"*80 + "\n\n")
   f.write(str("\n"))
   f.write(str("\n"))
   f.write(str("Null values per column: \n"))
