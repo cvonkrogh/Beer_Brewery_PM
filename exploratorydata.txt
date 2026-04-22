@@ -1,10 +1,10 @@
 Number of rows and columns, respectively2: 
-(4631, 25)
+(4631, 23)
 
 Data types of each column: 
 <class 'pandas.core.frame.DataFrame'>
 Index: 4631 entries, 0 to 4640
-Data columns (total 25 columns):
+Data columns (total 23 columns):
  #   Column                     Non-Null Count  Dtype         
 ---  ------                     --------------  -----         
  0   week                       4631 non-null   datetime64[ns]
@@ -30,10 +30,8 @@ Data columns (total 25 columns):
  20  E_Event_Name               4631 non-null   object        
  21  V_Voorraadlocatie          4619 non-null   object        
  22  V_Type                     4619 non-null   object        
- 23  temp_mean                  4631 non-null   float64       
- 24  rain_mm                    4631 non-null   float64       
-dtypes: datetime64[ns](1), float64(4), int64(8), object(12)
-memory usage: 940.7+ KB
+dtypes: datetime64[ns](1), float64(2), int64(8), object(12)
+memory usage: 868.3+ KB
 
 
                                  week       S_Grondstof  S_Container
@@ -141,33 +139,18 @@ std               NaN            NaN          NaN
 
 --------------------------------------------------------------------------------
 
-       V_Voorraadlocatie V_Type    temp_mean
-count               4619   4619  4631.000000
-unique                 5      6          NaN
-top                 None   None          NaN
-freq                3121   3121          NaN
-mean                 NaN    NaN    10.993818
-min                  NaN    NaN    -2.314286
-25%                  NaN    NaN     6.900000
-50%                  NaN    NaN    10.771429
-75%                  NaN    NaN    15.857143
-max                  NaN    NaN    21.600000
-std                  NaN    NaN     5.560371
-
---------------------------------------------------------------------------------
-
-            rain_mm
-count   4631.000000
-unique          NaN
-top             NaN
-freq            NaN
-mean      18.816757
-min        0.000000
-25%        3.600000
-50%       14.200000
-75%       28.700000
-max       72.700000
-std       17.117849
+       V_Voorraadlocatie V_Type
+count               4619   4619
+unique                 5      6
+top                 None   None
+freq                3121   3121
+mean                 NaN    NaN
+min                  NaN    NaN
+25%                  NaN    NaN
+50%                  NaN    NaN
+75%                  NaN    NaN
+max                  NaN    NaN
+std                  NaN    NaN
 
 --------------------------------------------------------------------------------
 
@@ -197,12 +180,10 @@ V_Bedrijf_Naam                0
 E_Event_Name                  0
 V_Voorraadlocatie            12
 V_Type                       12
-temp_mean                     0
-rain_mm                       0
 dtype: int64
 
 All features listed: 
-['week', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Factuurnummer', 'S_Naam', 'S_Land', 'S_Stad', 'S_Vertegenwoordiger', 'S_Productcategorieen', 'V_Product', 'V_Bedrijf', 'S_Land_Naam', 'S_Klant_Naam', 'S_Vertegenwoordiger_Naam', 'S_Stad_Naam', 'S_Productcategorieen_Naam', 'V_Product_Naam', 'V_Bedrijf_Naam', 'E_Event_Name', 'V_Voorraadlocatie', 'V_Type', 'temp_mean', 'rain_mm']
+['week', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Factuurnummer', 'S_Naam', 'S_Land', 'S_Stad', 'S_Vertegenwoordiger', 'S_Productcategorieen', 'V_Product', 'V_Bedrijf', 'S_Land_Naam', 'S_Klant_Naam', 'S_Vertegenwoordiger_Naam', 'S_Stad_Naam', 'S_Productcategorieen_Naam', 'V_Product_Naam', 'V_Bedrijf_Naam', 'E_Event_Name', 'V_Voorraadlocatie', 'V_Type']
 Duplicated per column: 
 week                         4410
 S_Grondstof                  4628
@@ -227,18 +208,16 @@ V_Bedrijf_Naam               4502
 E_Event_Name                 4623
 V_Voorraadlocatie            4625
 V_Type                       4624
-temp_mean                    4424
-rain_mm                      4460
-dtype: int64        week              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Factuurnummer  S_Naam  S_Land  S_Stad  S_Vertegenwoordiger  S_Productcategorieen  V_Product  V_Bedrijf S_Land_Naam              S_Klant_Naam S_Vertegenwoordiger_Naam S_Stad_Naam S_Productcategorieen_Naam                                 V_Product_Naam           V_Bedrijf_Naam E_Event_Name V_Voorraadlocatie      V_Type  temp_mean  rain_mm
-0 2021-11-22         Hoop Bleke Nelis  Bottle 33cl   130.68    -144.0                6       5       1       5                    2                     1          1          2   Nederland  Slijterij Drinks & Gifts          Dennis de Leeuw   KROMMENIE        Bier in fles, Kern             Hoop Bleke Nelis doos 12fles/0,33l            VVV Zaanstore         None          Lagedijk  Verzending   5.042857     19.6
-1 2021-11-22         Hoop Bleke Nelis     Can 33cl     7.92      -1.0                1       1       1       1                    1                     1          1          1   Nederland                BierGro BV          Dennis de Leeuw  Middenmeer              Bier in blik  Hoop Bleke Nelis doos 24blikken/0,33l one way               BierGro BV         None          Lagedijk  Verzending   5.042857     19.6
-2 2021-11-22         Hoop Bleke Nelis      Giftset    59.40     -78.0                5       4       1       4                    1                     1          3          4   Nederland    Van Bieren Retail B.V.          Dennis de Leeuw     Utrecht                 Cadeauset                  Hoop Cadeauset 5x 5 fles kern  Winkel | Hoop doet Eten         None          Lagedijk  Verzending   5.042857     19.6
-3 2021-11-22         Hoop Bleke Nelis      Keg 20L     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None   5.042857     19.6
-4 2021-11-22         Hoop Bleke Nelis  Bottle 75cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None   5.042857     19.6
-5 2021-11-22         Hoop Bleke Nelis        Other     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None   5.042857     19.6
-6 2021-11-22         Hoop Bleke Nelis      Keg 50L     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None   5.042857     19.6
-7 2021-11-22  Hoop Kaper Tropical IPA  Bottle 33cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None   5.042857     19.6
-8 2021-11-22  Hoop Kaper Tropical IPA     Can 33cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None   5.042857     19.6
-9 2021-11-22  Hoop Kaper Tropical IPA      Giftset     9.90      -9.0                2       2       1       2                    1                     1          1          2   Nederland                BierGro BV          Dennis de Leeuw  Middenmeer                 Cadeauset       Hoop Cadeauset 6x 4 fles Seasonal Winter    Gall & Gall Castricum         None          Lagedijk  Verzending   5.042857     19.6
+dtype: int64        week              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Factuurnummer  S_Naam  S_Land  S_Stad  S_Vertegenwoordiger  S_Productcategorieen  V_Product  V_Bedrijf S_Land_Naam              S_Klant_Naam S_Vertegenwoordiger_Naam S_Stad_Naam S_Productcategorieen_Naam                                 V_Product_Naam           V_Bedrijf_Naam E_Event_Name V_Voorraadlocatie      V_Type
+0 2021-11-22         Hoop Bleke Nelis  Bottle 33cl   130.68    -144.0                6       5       1       5                    2                     1          1          2   Nederland  Slijterij Drinks & Gifts          Dennis de Leeuw   KROMMENIE        Bier in fles, Kern             Hoop Bleke Nelis doos 12fles/0,33l            VVV Zaanstore         None          Lagedijk  Verzending
+1 2021-11-22         Hoop Bleke Nelis     Can 33cl     7.92      -1.0                1       1       1       1                    1                     1          1          1   Nederland                BierGro BV          Dennis de Leeuw  Middenmeer              Bier in blik  Hoop Bleke Nelis doos 24blikken/0,33l one way               BierGro BV         None          Lagedijk  Verzending
+2 2021-11-22         Hoop Bleke Nelis      Giftset    59.40     -78.0                5       4       1       4                    1                     1          3          4   Nederland    Van Bieren Retail B.V.          Dennis de Leeuw     Utrecht                 Cadeauset                  Hoop Cadeauset 5x 5 fles kern  Winkel | Hoop doet Eten         None          Lagedijk  Verzending
+3 2021-11-22         Hoop Bleke Nelis      Keg 20L     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+4 2021-11-22         Hoop Bleke Nelis  Bottle 75cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+5 2021-11-22         Hoop Bleke Nelis        Other     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+6 2021-11-22         Hoop Bleke Nelis      Keg 50L     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+7 2021-11-22  Hoop Kaper Tropical IPA  Bottle 33cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+8 2021-11-22  Hoop Kaper Tropical IPA     Can 33cl     0.00       0.0                0       0       0       0                    0                     0          0          0        None                      None                     None        None                      None                                           None                     None         None              None        None
+9 2021-11-22  Hoop Kaper Tropical IPA      Giftset     9.90      -9.0                2       2       1       2                    1                     1          1          2   Nederland                BierGro BV          Dennis de Leeuw  Middenmeer                 Cadeauset       Hoop Cadeauset 6x 4 fles Seasonal Winter    Gall & Gall Castricum         None          Lagedijk  Verzending
 Total rows: 4631
 Number of return entries: 10

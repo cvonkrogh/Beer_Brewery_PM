@@ -13,6 +13,7 @@ wr.filterwarnings('ignore')
 pd.set_option('display.max_columns', None)
 
 SAVE_FILE = "exploratorydata.csv"
+WEATHER_SAVE_FILE= "weather_data.csv"
 
 WEATHER_LAT = 52.3676
 WEATHER_LON = 4.9041
@@ -80,6 +81,7 @@ CORE_BEERS = [
 ]
 
 save_path = Path(SAVE_FILE)
+save_weather_path = Path(WEATHER_SAVE_FILE)
 
 #LOAD THE DATA
 sales_database = pd.read_csv('data/raw/sales_data.csv', sep=';', engine='python', decimal = ',')
@@ -176,16 +178,16 @@ weather_df = pd.DataFrame({
     "rain_mm": data["daily"]["precipitation_sum"]
     })
 
-weather_df["week"] = weather_df["date"].dt.to_period("W").apply(lambda r: r.start_time)
+#weather_df["week"] = weather_df["date"].dt.to_period("W").apply(lambda r: r.start_time)
 
-weekly_weather = (
-    weather_df.groupby("week")
-    .agg({
-        "temp_mean": "mean",
-        "rain_mm": "sum"
-    })
-    .reset_index()
-)
+#weekly_weather = (
+    #weather_df.groupby("week")
+    #.agg({
+      # "temp_mean": "mean",
+       # "rain_mm": "sum"
+    #})
+   # .reset_index()
+#)
 
 # 1. AGGREGATE (This is where the columns are BORN)
 weekly = (
@@ -227,7 +229,7 @@ full_index = pd.MultiIndex.from_product([full_range, beers, containers], names=[
 # Overwrite df with the gap-filled weekly data
 df = weekly.set_index(["week", "S_Grondstof", "S_Container"]).reindex(full_index, fill_value=0).reset_index()
 
-df = pd.merge(df, weekly_weather, on="week", how="left")
+#df = pd.merge(df, weekly_weather, on="week", how="left")
 
 # 3. CLEANUP (Tell Python these are TEXT columns, not numbers)
 # We include the new '_Naam' columns here!
@@ -256,7 +258,7 @@ duplicated_per_column =df.apply(lambda col: col.duplicated().sum())
 print("Saving processed dataset...")
 
 save_path.parent.mkdir(parents=True, exist_ok=True)
-df.to_csv(save_path, index=False)
+weather_df.to_csv(save_weather_path, index=False)
 
 # Force display settings for the file writing
 pd.set_option('display.width', 1000)
