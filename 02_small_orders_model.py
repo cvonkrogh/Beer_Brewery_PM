@@ -15,6 +15,7 @@ FORECAST_HORIZON = 52
 LAGS = [1, 2, 3, 4, 8, 12, 26, 52]
 WEEK_FREQ = "W-MON"
 EPS = 1e-9
+EXCLUDED_CONTAINER_KEYWORDS = ("can",)
 
 # ==============================
 # LOAD DATA
@@ -317,6 +318,9 @@ def main():
     grouped = df.groupby(["beer", "container"])
 
     for (beer, container), group in grouped:
+        if any(keyword in str(container).lower() for keyword in EXCLUDED_CONTAINER_KEYWORDS):
+            print(f"Skipping {beer} - {container} (container excluded)...")
+            continue
 
         print(f"Training model for {beer} - {container}...")
 

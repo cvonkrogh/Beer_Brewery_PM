@@ -1,0 +1,2497 @@
+week,beer,container,model,actual_liters,pred_liters
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,15.84,19.8
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,59.4,19.8
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,35.64,19.8
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,122.76,19.8
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,55.44,19.8
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,102.96,19.8
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,23.76,19.8
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,91.08,19.8
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,55.44,19.8
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,7.920000000000002,19.8
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,51.48,19.8
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,43.56,19.8
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,55.44,19.8
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,35.64,19.8
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,75.24,19.8
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,201.96,19.8
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,51.48,19.8
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,95.04,19.8
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,23.76,19.8
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,35.64,19.8
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,237.6,19.8
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,47.52,19.8
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,15.84,19.8
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,11.88,19.8
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,95.04,19.8
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,Naive_Last_Week,31.68,19.8
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,9.0,0.0
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,238.5,0.0
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,40.5,0.0
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,Naive_Last_Week,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,140.0,300.0
+2025-08-25,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,160.0,300.0
+2025-09-01,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,160.0,300.0
+2025-09-08,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,360.0,300.0
+2025-09-15,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,140.0,300.0
+2025-09-22,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,320.0,300.0
+2025-09-29,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,340.0,300.0
+2025-10-06,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,400.0,300.0
+2025-10-13,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,140.0,300.0
+2025-10-20,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,200.0,300.0
+2025-10-27,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,40.0,300.0
+2025-11-03,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,180.0,300.0
+2025-11-10,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,120.0,300.0
+2025-11-17,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,80.0,300.0
+2025-11-24,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,60.0,300.0
+2025-12-01,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,120.0,300.0
+2025-12-08,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,180.0,300.0
+2025-12-15,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,200.0,300.0
+2025-12-22,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,40.0,300.0
+2025-12-29,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,100.0,300.0
+2026-01-05,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,40.0,300.0
+2026-01-12,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,40.0,300.0
+2026-01-19,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,80.0,300.0
+2026-01-26,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,120.0,300.0
+2026-02-02,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,100.0,300.0
+2026-02-09,Hoop Bleke Nelis,Keg 20L,Naive_Last_Week,60.0,300.0
+2025-08-18,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-08-25,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-09-01,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-09-08,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-09-15,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-09-29,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,300.0,0.0
+2025-10-13,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-10-20,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-10-27,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-11-03,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-11-10,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-11-17,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-11-24,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-12-01,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-12-08,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-12-15,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-12-22,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-12-29,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2026-01-05,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2026-01-26,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Keg 50L,Naive_Last_Week,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Other,Naive_Last_Week,0.0,16.17
+2025-08-25,Hoop Bleke Nelis,Other,Naive_Last_Week,7.26,16.17
+2025-09-01,Hoop Bleke Nelis,Other,Naive_Last_Week,15.84,16.17
+2025-09-08,Hoop Bleke Nelis,Other,Naive_Last_Week,13.86,16.17
+2025-09-15,Hoop Bleke Nelis,Other,Naive_Last_Week,11.55,16.17
+2025-09-22,Hoop Bleke Nelis,Other,Naive_Last_Week,4.95,16.17
+2025-09-29,Hoop Bleke Nelis,Other,Naive_Last_Week,36.3,16.17
+2025-10-06,Hoop Bleke Nelis,Other,Naive_Last_Week,35.31,16.17
+2025-10-13,Hoop Bleke Nelis,Other,Naive_Last_Week,20.46,16.17
+2025-10-20,Hoop Bleke Nelis,Other,Naive_Last_Week,89.42999999999999,16.17
+2025-10-27,Hoop Bleke Nelis,Other,Naive_Last_Week,3.3,16.17
+2025-11-03,Hoop Bleke Nelis,Other,Naive_Last_Week,27.39,16.17
+2025-11-10,Hoop Bleke Nelis,Other,Naive_Last_Week,37.95,16.17
+2025-11-17,Hoop Bleke Nelis,Other,Naive_Last_Week,18.15,16.17
+2025-11-24,Hoop Bleke Nelis,Other,Naive_Last_Week,31.35,16.17
+2025-12-01,Hoop Bleke Nelis,Other,Naive_Last_Week,69.96000000000001,16.17
+2025-12-08,Hoop Bleke Nelis,Other,Naive_Last_Week,20.130000000000003,16.17
+2025-12-15,Hoop Bleke Nelis,Other,Naive_Last_Week,68.64,16.17
+2025-12-22,Hoop Bleke Nelis,Other,Naive_Last_Week,34.65,16.17
+2025-12-29,Hoop Bleke Nelis,Other,Naive_Last_Week,16.83,16.17
+2026-01-05,Hoop Bleke Nelis,Other,Naive_Last_Week,3.63,16.17
+2026-01-12,Hoop Bleke Nelis,Other,Naive_Last_Week,0.0,16.17
+2026-01-19,Hoop Bleke Nelis,Other,Naive_Last_Week,17.16,16.17
+2026-01-26,Hoop Bleke Nelis,Other,Naive_Last_Week,16.17,16.17
+2026-02-02,Hoop Bleke Nelis,Other,Naive_Last_Week,22.11,16.17
+2026-02-09,Hoop Bleke Nelis,Other,Naive_Last_Week,5.609999999999999,16.17
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,67.32,67.32
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,87.12,67.32
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,63.36,67.32
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,71.28,67.32
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,39.6,67.32
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,59.4,67.32
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,23.76,67.32
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,122.76,67.32
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,27.72,67.32
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,27.72,67.32
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,19.8,67.32
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,39.6,67.32
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,15.84,67.32
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,47.52,67.32
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,79.2,67.32
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,55.44,67.32
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,27.72,67.32
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,55.44,67.32
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,35.64,67.32
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,43.56,67.32
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,11.88,67.32
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,27.72,67.32
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,0.0,67.32
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,11.88,67.32
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,110.88,67.32
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Last_Week,15.84,67.32
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,80.0,160.0
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,100.0,160.0
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,220.0,160.0
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,200.0,160.0
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,80.0,160.0
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,340.0,160.0
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,0.0,160.0
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,40.0,160.0
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,40.0,160.0
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,120.0,160.0
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,20.0,160.0
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,120.0,160.0
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,120.0,160.0
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,40.0,160.0
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,120.0,160.0
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,0.0,160.0
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,0.0,160.0
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,80.0,160.0
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,100.0,160.0
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,Naive_Last_Week,60.0,160.0
+2025-08-18,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-08-25,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-09-01,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,5.94,1.98
+2025-09-08,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-09-15,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,1.98,1.98
+2025-09-22,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,9.9,1.98
+2025-09-29,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,7.92,1.98
+2025-10-06,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,1.98,1.98
+2025-10-13,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-10-20,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-10-27,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-11-03,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,5.94,1.98
+2025-11-10,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,11.88,1.98
+2025-11-17,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-11-24,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,16.5,1.98
+2025-12-01,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,3.96,1.98
+2025-12-08,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-12-15,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,15.84,1.98
+2025-12-22,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-12-29,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,15.18,1.98
+2026-01-05,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2026-01-12,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2026-01-19,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,9.9,1.98
+2026-01-26,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2026-02-02,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2026-02-09,Hoop Kaper Tropical IPA,Other,Naive_Last_Week,0.0,1.98
+2025-08-18,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-08-25,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-09-01,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-09-08,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-09-15,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-09-22,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-09-29,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-10-06,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-10-13,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-10-20,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-10-27,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-11-03,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-11-10,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-11-17,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-11-24,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-12-01,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-12-08,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-12-15,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-12-22,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-12-29,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2026-01-05,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2026-01-12,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2026-01-19,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2026-01-26,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2026-02-02,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2026-02-09,Hoop Lager,Bottle 33cl,Naive_Last_Week,0.0,0.0
+2025-08-18,Hoop Lager,Keg 20L,Naive_Last_Week,500.0,420.0
+2025-08-25,Hoop Lager,Keg 20L,Naive_Last_Week,220.0,420.0
+2025-09-01,Hoop Lager,Keg 20L,Naive_Last_Week,320.0,420.0
+2025-09-08,Hoop Lager,Keg 20L,Naive_Last_Week,600.0,420.0
+2025-09-15,Hoop Lager,Keg 20L,Naive_Last_Week,360.0,420.0
+2025-09-22,Hoop Lager,Keg 20L,Naive_Last_Week,440.0,420.0
+2025-09-29,Hoop Lager,Keg 20L,Naive_Last_Week,400.0,420.0
+2025-10-06,Hoop Lager,Keg 20L,Naive_Last_Week,1660.0,420.0
+2025-10-13,Hoop Lager,Keg 20L,Naive_Last_Week,0.0,420.0
+2025-10-20,Hoop Lager,Keg 20L,Naive_Last_Week,340.0,420.0
+2025-10-27,Hoop Lager,Keg 20L,Naive_Last_Week,80.0,420.0
+2025-11-03,Hoop Lager,Keg 20L,Naive_Last_Week,100.0,420.0
+2025-11-10,Hoop Lager,Keg 20L,Naive_Last_Week,760.0,420.0
+2025-11-17,Hoop Lager,Keg 20L,Naive_Last_Week,200.0,420.0
+2025-11-24,Hoop Lager,Keg 20L,Naive_Last_Week,140.0,420.0
+2025-12-01,Hoop Lager,Keg 20L,Naive_Last_Week,380.0,420.0
+2025-12-08,Hoop Lager,Keg 20L,Naive_Last_Week,720.0,420.0
+2025-12-15,Hoop Lager,Keg 20L,Naive_Last_Week,460.0,420.0
+2025-12-22,Hoop Lager,Keg 20L,Naive_Last_Week,60.0,420.0
+2025-12-29,Hoop Lager,Keg 20L,Naive_Last_Week,500.0,420.0
+2026-01-05,Hoop Lager,Keg 20L,Naive_Last_Week,80.0,420.0
+2026-01-12,Hoop Lager,Keg 20L,Naive_Last_Week,520.0,420.0
+2026-01-19,Hoop Lager,Keg 20L,Naive_Last_Week,440.0,420.0
+2026-01-26,Hoop Lager,Keg 20L,Naive_Last_Week,160.0,420.0
+2026-02-02,Hoop Lager,Keg 20L,Naive_Last_Week,160.0,420.0
+2026-02-09,Hoop Lager,Keg 20L,Naive_Last_Week,240.0,420.0
+2025-08-18,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-08-25,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-09-01,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-09-08,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-09-15,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-09-22,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-09-29,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-10-06,Hoop Lager,Keg 50L,Naive_Last_Week,350.0,100.0
+2025-10-13,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-10-20,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-10-27,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-11-03,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-11-10,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-11-17,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-11-24,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-12-01,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-12-08,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-12-15,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-12-22,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-12-29,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2026-01-05,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2026-01-12,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2026-01-19,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2026-01-26,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2026-02-02,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2026-02-09,Hoop Lager,Keg 50L,Naive_Last_Week,0.0,100.0
+2025-08-18,Hoop Lager,Other,Naive_Last_Week,33.0,19.8
+2025-08-25,Hoop Lager,Other,Naive_Last_Week,24.75,19.8
+2025-09-01,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-09-08,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-09-15,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-09-22,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-09-29,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-10-06,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-10-13,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-10-20,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-10-27,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-11-03,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-11-10,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-11-17,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-11-24,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-12-01,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-12-08,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-12-15,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-12-22,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-12-29,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2026-01-05,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2026-01-12,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2026-01-19,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2026-01-26,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2026-02-02,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2026-02-09,Hoop Lager,Other,Naive_Last_Week,0.0,19.8
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,15.84,27.72
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,59.4,75.24
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,35.64,35.64
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,122.76,31.68
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,55.44,35.64
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,102.96,23.76
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,23.76,51.48
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,91.08,39.6
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,55.44,27.72
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,7.920000000000002,35.64
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,51.48,31.68
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,43.56,39.6
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,55.44,71.28
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,35.64,431.64
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,75.24,63.36
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,201.96,27.72
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,51.48,23.76
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,95.04,894.96
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,23.76,23.76
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,35.64,0.0
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,237.6,71.28
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,47.52,23.76
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,15.84,19.8
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,11.88,27.72
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,95.04,11.88
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,Naive_Seasonal_52,31.68,31.68
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,13.5
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,36.0
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,13.5
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,13.5
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,9.0,0.0
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,9.0
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,18.0
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,90.0
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,238.5,72.0
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,40.5,72.0
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,58.5
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,139.5
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,4.5
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,Naive_Seasonal_52,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,140.0,120.0
+2025-08-25,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,160.0,280.0
+2025-09-01,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,160.0,200.0
+2025-09-08,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,360.0,140.0
+2025-09-15,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,140.0,160.0
+2025-09-22,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,320.0,200.0
+2025-09-29,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,340.0,60.0
+2025-10-06,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,400.0,160.0
+2025-10-13,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,140.0,60.0
+2025-10-20,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,200.0,80.0
+2025-10-27,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,40.0,1520.0
+2025-11-03,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,180.0,180.0
+2025-11-10,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,120.0,20.0
+2025-11-17,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,80.0,120.0
+2025-11-24,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,60.0,0.0
+2025-12-01,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,120.0,240.0
+2025-12-08,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,180.0,240.0
+2025-12-15,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,200.0,140.0
+2025-12-22,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,40.0,100.0
+2025-12-29,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,100.0,40.0
+2026-01-05,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,40.0,100.0
+2026-01-12,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,40.0,120.0
+2026-01-19,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,80.0,220.0
+2026-01-26,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,120.0,40.0
+2026-02-02,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,100.0,120.0
+2026-02-09,Hoop Bleke Nelis,Keg 20L,Naive_Seasonal_52,60.0,360.0
+2025-08-18,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-08-25,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-01,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-08,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-15,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-29,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,300.0,0.0
+2025-10-13,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-10-20,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-10-27,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-03,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-10,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-17,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-24,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-01,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-08,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-15,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-22,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-29,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-05,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-26,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Other,Naive_Seasonal_52,0.0,160.62
+2025-08-25,Hoop Bleke Nelis,Other,Naive_Seasonal_52,7.26,12.21
+2025-09-01,Hoop Bleke Nelis,Other,Naive_Seasonal_52,15.84,27.72
+2025-09-08,Hoop Bleke Nelis,Other,Naive_Seasonal_52,13.86,21.45
+2025-09-15,Hoop Bleke Nelis,Other,Naive_Seasonal_52,11.55,12.54
+2025-09-22,Hoop Bleke Nelis,Other,Naive_Seasonal_52,4.95,25.74
+2025-09-29,Hoop Bleke Nelis,Other,Naive_Seasonal_52,36.3,3.63
+2025-10-06,Hoop Bleke Nelis,Other,Naive_Seasonal_52,35.31,3.3
+2025-10-13,Hoop Bleke Nelis,Other,Naive_Seasonal_52,20.46,17.49
+2025-10-20,Hoop Bleke Nelis,Other,Naive_Seasonal_52,89.42999999999999,23.43
+2025-10-27,Hoop Bleke Nelis,Other,Naive_Seasonal_52,3.3,3.3
+2025-11-03,Hoop Bleke Nelis,Other,Naive_Seasonal_52,27.39,13.2
+2025-11-10,Hoop Bleke Nelis,Other,Naive_Seasonal_52,37.95,74.25
+2025-11-17,Hoop Bleke Nelis,Other,Naive_Seasonal_52,18.15,4.949999999999999
+2025-11-24,Hoop Bleke Nelis,Other,Naive_Seasonal_52,31.35,46.2
+2025-12-01,Hoop Bleke Nelis,Other,Naive_Seasonal_52,69.96000000000001,23.1
+2025-12-08,Hoop Bleke Nelis,Other,Naive_Seasonal_52,20.130000000000003,37.95
+2025-12-15,Hoop Bleke Nelis,Other,Naive_Seasonal_52,68.64,13.2
+2025-12-22,Hoop Bleke Nelis,Other,Naive_Seasonal_52,34.65,3.3
+2025-12-29,Hoop Bleke Nelis,Other,Naive_Seasonal_52,16.83,0.0
+2026-01-05,Hoop Bleke Nelis,Other,Naive_Seasonal_52,3.63,0.0
+2026-01-12,Hoop Bleke Nelis,Other,Naive_Seasonal_52,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Other,Naive_Seasonal_52,17.16,0.0
+2026-01-26,Hoop Bleke Nelis,Other,Naive_Seasonal_52,16.17,75.89999999999999
+2026-02-02,Hoop Bleke Nelis,Other,Naive_Seasonal_52,22.11,18.15
+2026-02-09,Hoop Bleke Nelis,Other,Naive_Seasonal_52,5.609999999999999,5.279999999999999
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,67.32,43.56
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,87.12,15.84
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,63.36,19.8
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,71.28,15.84
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,39.6,7.92
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,59.4,7.92
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,23.76,7.92
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,122.76,15.84
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,27.72,0.0
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,27.72,0.0
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,19.8,15.84
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,39.6,0.0
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,15.84,23.76
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,47.52,0.0
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,79.2,11.88
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,55.44,7.92
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,27.72,11.88
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,55.44,7.92
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,35.64,15.84
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,43.56,0.0
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,11.88,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,27.72,15.84
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,11.88,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,110.88,7.92
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,Naive_Seasonal_52,15.84,7.92
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,80.0,140.0
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,100.0,240.0
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,100.0
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,220.0,100.0
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,140.0
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,200.0,0.0
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,80.0,0.0
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,340.0,0.0
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,0.0,0.0
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,40.0,0.0
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,40.0,0.0
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,120.0,0.0
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,0.0
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,0.0
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,20.0,0.0
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,120.0,0.0
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,0.0
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,120.0,0.0
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,40.0,0.0
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,120.0,0.0
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,0.0,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,0.0,0.0
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,80.0,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,100.0,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,Naive_Seasonal_52,60.0,0.0
+2025-08-18,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,3.96
+2025-08-25,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,3.96
+2025-09-01,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,5.94,3.96
+2025-09-08,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,0.0
+2025-09-15,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,1.98,21.78
+2025-09-22,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,9.9,3.96
+2025-09-29,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,7.92,0.0
+2025-10-06,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,1.98,3.96
+2025-10-13,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,1.98
+2025-10-20,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,19.8
+2025-10-27,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,19.8
+2025-11-03,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,5.94,0.0
+2025-11-10,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,11.88,0.0
+2025-11-17,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,9.9
+2025-11-24,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,16.5,3.96
+2025-12-01,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,3.96,3.96
+2025-12-08,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,25.74
+2025-12-15,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,15.84,19.8
+2025-12-22,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,0.0
+2025-12-29,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,15.18,0.0
+2026-01-05,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,31.680000000000003
+2026-01-12,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,5.94
+2026-01-19,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,9.9,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,7.92
+2026-02-09,Hoop Kaper Tropical IPA,Other,Naive_Seasonal_52,0.0,0.0
+2025-08-18,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,11.88
+2025-08-25,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-09-01,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-09-08,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-09-15,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,7.92
+2025-09-22,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-09-29,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,19.8
+2025-10-06,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-10-13,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-10-20,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,3.96
+2025-10-27,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-11-03,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-11-10,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-11-17,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,3.96
+2025-11-24,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-12-01,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,3.96
+2025-12-08,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,3.96
+2025-12-15,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-12-22,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-12-29,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2026-01-05,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2026-01-12,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,7.92
+2026-01-19,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2026-01-26,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2026-02-02,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2026-02-09,Hoop Lager,Bottle 33cl,Naive_Seasonal_52,0.0,0.0
+2025-08-18,Hoop Lager,Keg 20L,Naive_Seasonal_52,500.0,240.0
+2025-08-25,Hoop Lager,Keg 20L,Naive_Seasonal_52,220.0,380.0
+2025-09-01,Hoop Lager,Keg 20L,Naive_Seasonal_52,320.0,200.0
+2025-09-08,Hoop Lager,Keg 20L,Naive_Seasonal_52,600.0,640.0
+2025-09-15,Hoop Lager,Keg 20L,Naive_Seasonal_52,360.0,640.0
+2025-09-22,Hoop Lager,Keg 20L,Naive_Seasonal_52,440.0,300.0
+2025-09-29,Hoop Lager,Keg 20L,Naive_Seasonal_52,400.0,180.0
+2025-10-06,Hoop Lager,Keg 20L,Naive_Seasonal_52,1660.0,620.0
+2025-10-13,Hoop Lager,Keg 20L,Naive_Seasonal_52,0.0,300.0
+2025-10-20,Hoop Lager,Keg 20L,Naive_Seasonal_52,340.0,180.0
+2025-10-27,Hoop Lager,Keg 20L,Naive_Seasonal_52,80.0,920.0
+2025-11-03,Hoop Lager,Keg 20L,Naive_Seasonal_52,100.0,240.0
+2025-11-10,Hoop Lager,Keg 20L,Naive_Seasonal_52,760.0,60.0
+2025-11-17,Hoop Lager,Keg 20L,Naive_Seasonal_52,200.0,140.0
+2025-11-24,Hoop Lager,Keg 20L,Naive_Seasonal_52,140.0,260.0
+2025-12-01,Hoop Lager,Keg 20L,Naive_Seasonal_52,380.0,160.0
+2025-12-08,Hoop Lager,Keg 20L,Naive_Seasonal_52,720.0,660.0
+2025-12-15,Hoop Lager,Keg 20L,Naive_Seasonal_52,460.0,340.0
+2025-12-22,Hoop Lager,Keg 20L,Naive_Seasonal_52,60.0,140.0
+2025-12-29,Hoop Lager,Keg 20L,Naive_Seasonal_52,500.0,40.0
+2026-01-05,Hoop Lager,Keg 20L,Naive_Seasonal_52,80.0,140.0
+2026-01-12,Hoop Lager,Keg 20L,Naive_Seasonal_52,520.0,640.0
+2026-01-19,Hoop Lager,Keg 20L,Naive_Seasonal_52,440.0,0.0
+2026-01-26,Hoop Lager,Keg 20L,Naive_Seasonal_52,160.0,0.0
+2026-02-02,Hoop Lager,Keg 20L,Naive_Seasonal_52,160.0,200.0
+2026-02-09,Hoop Lager,Keg 20L,Naive_Seasonal_52,240.0,0.0
+2025-08-18,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-08-25,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,100.0
+2025-09-01,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,100.0
+2025-09-08,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-15,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-22,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-09-29,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-10-06,Hoop Lager,Keg 50L,Naive_Seasonal_52,350.0,1100.0
+2025-10-13,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-10-20,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-10-27,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-03,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-10,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-17,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-11-24,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-01,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-08,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-15,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-22,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-12-29,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-05,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-12,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-19,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-01-26,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-02-02,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2026-02-09,Hoop Lager,Keg 50L,Naive_Seasonal_52,0.0,0.0
+2025-08-18,Hoop Lager,Other,Naive_Seasonal_52,33.0,0.0
+2025-08-25,Hoop Lager,Other,Naive_Seasonal_52,24.75,0.0
+2025-09-01,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-09-08,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-09-15,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-09-22,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-09-29,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-10-06,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-10-13,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-10-20,Hoop Lager,Other,Naive_Seasonal_52,0.0,13.2
+2025-10-27,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2025-11-03,Hoop Lager,Other,Naive_Seasonal_52,0.0,19.8
+2025-11-10,Hoop Lager,Other,Naive_Seasonal_52,0.0,8.25
+2025-11-17,Hoop Lager,Other,Naive_Seasonal_52,0.0,1.65
+2025-11-24,Hoop Lager,Other,Naive_Seasonal_52,0.0,9.9
+2025-12-01,Hoop Lager,Other,Naive_Seasonal_52,0.0,6.6
+2025-12-08,Hoop Lager,Other,Naive_Seasonal_52,0.0,28.05
+2025-12-15,Hoop Lager,Other,Naive_Seasonal_52,0.0,13.2
+2025-12-22,Hoop Lager,Other,Naive_Seasonal_52,0.0,4.95
+2025-12-29,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2026-01-05,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2026-01-12,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2026-01-19,Hoop Lager,Other,Naive_Seasonal_52,0.0,8.25
+2026-01-26,Hoop Lager,Other,Naive_Seasonal_52,0.0,0.0
+2026-02-02,Hoop Lager,Other,Naive_Seasonal_52,0.0,1.65
+2026-02-09,Hoop Lager,Other,Naive_Seasonal_52,0.0,3.3
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,15.84,0.0
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,59.4,42.980938123262604
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,35.64,71.53333045662293
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,122.76,0.0
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,55.44,68.99862570735422
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,102.96,0.0
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,23.76,57.356587034453696
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,91.08,38.568613665542216
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,55.44,26.963503292150563
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,7.920000000000002,100.47293813081342
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,51.48,123.75674245897244
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,43.56,53.02067748970876
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,55.44,79.30488037736359
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,35.64,94.03896726339735
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,75.24,86.5676331379218
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,201.96,104.69471393467393
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,51.48,133.9438322380738
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,95.04,178.31745025209239
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,23.76,63.950760890569654
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,35.64,144.6483072062474
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,237.6,0.0
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,47.52,52.12210872054857
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,15.84,1.3857929230071022
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,11.88,37.70487705065898
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,95.04,14.715384758281289
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,LinearRegression,31.68,31.613569078406726
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,17.84726007568679
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,9.0,3.750786613636592
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,22.071095963314292
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,60.63394208566751
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,57.77623632802715
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,238.5,117.73379722212849
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,40.5,77.36184715836862
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,54.515599647318595
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,121.00555147611885
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,130.0593348126058
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,118.98868811339344
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,63.152562264302105
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,55.403434640968044
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,LinearRegression,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Keg 20L,LinearRegression,140.0,254.41224830275314
+2025-08-25,Hoop Bleke Nelis,Keg 20L,LinearRegression,160.0,325.2893283832891
+2025-09-01,Hoop Bleke Nelis,Keg 20L,LinearRegression,160.0,357.13552097290085
+2025-09-08,Hoop Bleke Nelis,Keg 20L,LinearRegression,360.0,270.25164119774854
+2025-09-15,Hoop Bleke Nelis,Keg 20L,LinearRegression,140.0,137.93433078893577
+2025-09-22,Hoop Bleke Nelis,Keg 20L,LinearRegression,320.0,264.7188533742665
+2025-09-29,Hoop Bleke Nelis,Keg 20L,LinearRegression,340.0,219.5956554380973
+2025-10-06,Hoop Bleke Nelis,Keg 20L,LinearRegression,400.0,373.8460760603557
+2025-10-13,Hoop Bleke Nelis,Keg 20L,LinearRegression,140.0,274.52297624832136
+2025-10-20,Hoop Bleke Nelis,Keg 20L,LinearRegression,200.0,169.54205603918672
+2025-10-27,Hoop Bleke Nelis,Keg 20L,LinearRegression,40.0,314.8668287584878
+2025-11-03,Hoop Bleke Nelis,Keg 20L,LinearRegression,180.0,215.1751401981819
+2025-11-10,Hoop Bleke Nelis,Keg 20L,LinearRegression,120.0,209.24795234446356
+2025-11-17,Hoop Bleke Nelis,Keg 20L,LinearRegression,80.0,208.3322909559065
+2025-11-24,Hoop Bleke Nelis,Keg 20L,LinearRegression,60.0,180.12662635409652
+2025-12-01,Hoop Bleke Nelis,Keg 20L,LinearRegression,120.0,224.24429092137143
+2025-12-08,Hoop Bleke Nelis,Keg 20L,LinearRegression,180.0,231.8612020859
+2025-12-15,Hoop Bleke Nelis,Keg 20L,LinearRegression,200.0,208.29442018771806
+2025-12-22,Hoop Bleke Nelis,Keg 20L,LinearRegression,40.0,158.0381011059435
+2025-12-29,Hoop Bleke Nelis,Keg 20L,LinearRegression,100.0,99.24429678194429
+2026-01-05,Hoop Bleke Nelis,Keg 20L,LinearRegression,40.0,133.29077239180333
+2026-01-12,Hoop Bleke Nelis,Keg 20L,LinearRegression,40.0,184.78702454675658
+2026-01-19,Hoop Bleke Nelis,Keg 20L,LinearRegression,80.0,148.2880575559102
+2026-01-26,Hoop Bleke Nelis,Keg 20L,LinearRegression,120.0,159.38049291344214
+2026-02-02,Hoop Bleke Nelis,Keg 20L,LinearRegression,100.0,175.92757833353244
+2026-02-09,Hoop Bleke Nelis,Keg 20L,LinearRegression,60.0,161.68197083647829
+2025-08-18,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,7.662311608663003
+2025-08-25,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.5802209907860743
+2025-09-01,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.6079304527147542
+2025-09-08,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,13.307680821657414
+2025-09-15,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,15.64237298900025
+2025-09-29,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,5.159254971101291
+2025-10-06,Hoop Bleke Nelis,Keg 50L,LinearRegression,300.0,10.74881006994383
+2025-10-13,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,12.954235413957576
+2025-10-20,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.13628160686948831
+2025-10-27,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.4784619647080035
+2025-11-03,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,12.533290400983788
+2025-11-10,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,3.9929611691295577
+2025-11-17,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.0
+2025-11-24,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,5.751023284899929
+2025-12-01,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,3.1619603522613033
+2025-12-08,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,9.308152170686299
+2025-12-15,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,6.960771813738575
+2025-12-22,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,3.7366575458991065
+2025-12-29,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,1.5144099281342278
+2026-01-05,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,4.344246123643643
+2026-01-19,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,5.029379104559666
+2026-01-26,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,2.6068784708832027
+2026-02-02,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,6.263368382326007
+2026-02-09,Hoop Bleke Nelis,Keg 50L,LinearRegression,0.0,7.485109845759325
+2025-08-18,Hoop Bleke Nelis,Other,LinearRegression,0.0,36.99472370417061
+2025-08-25,Hoop Bleke Nelis,Other,LinearRegression,7.26,20.16011517066363
+2025-09-01,Hoop Bleke Nelis,Other,LinearRegression,15.84,13.485521740185504
+2025-09-08,Hoop Bleke Nelis,Other,LinearRegression,13.86,35.23597789755877
+2025-09-15,Hoop Bleke Nelis,Other,LinearRegression,11.55,37.79806007845036
+2025-09-22,Hoop Bleke Nelis,Other,LinearRegression,4.95,18.77835338897421
+2025-09-29,Hoop Bleke Nelis,Other,LinearRegression,36.3,31.19744138391252
+2025-10-06,Hoop Bleke Nelis,Other,LinearRegression,35.31,0.0
+2025-10-13,Hoop Bleke Nelis,Other,LinearRegression,20.46,17.140130340856558
+2025-10-20,Hoop Bleke Nelis,Other,LinearRegression,89.42999999999999,38.43546358188178
+2025-10-27,Hoop Bleke Nelis,Other,LinearRegression,3.3,0.0
+2025-11-03,Hoop Bleke Nelis,Other,LinearRegression,27.39,10.563929324911442
+2025-11-10,Hoop Bleke Nelis,Other,LinearRegression,37.95,31.02721094192384
+2025-11-17,Hoop Bleke Nelis,Other,LinearRegression,18.15,56.494917519870796
+2025-11-24,Hoop Bleke Nelis,Other,LinearRegression,31.35,23.27302717038401
+2025-12-01,Hoop Bleke Nelis,Other,LinearRegression,69.96000000000001,29.053257962848875
+2025-12-08,Hoop Bleke Nelis,Other,LinearRegression,20.130000000000003,10.306938731759146
+2025-12-15,Hoop Bleke Nelis,Other,LinearRegression,68.64,17.595210501138354
+2025-12-22,Hoop Bleke Nelis,Other,LinearRegression,34.65,32.39573774088785
+2025-12-29,Hoop Bleke Nelis,Other,LinearRegression,16.83,22.703367381269345
+2026-01-05,Hoop Bleke Nelis,Other,LinearRegression,3.63,19.50760813451052
+2026-01-12,Hoop Bleke Nelis,Other,LinearRegression,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Other,LinearRegression,17.16,0.0
+2026-01-26,Hoop Bleke Nelis,Other,LinearRegression,16.17,1.6475902500314987
+2026-02-02,Hoop Bleke Nelis,Other,LinearRegression,22.11,0.0
+2026-02-09,Hoop Bleke Nelis,Other,LinearRegression,5.609999999999999,0.6565469541892526
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,67.32,24.573938349176387
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,87.12,47.41764935134961
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,63.36,41.540679387651835
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,71.28,24.15752916589281
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,39.6,37.705456984699595
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,59.4,1.858951062318738
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,23.76,20.18857912918338
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,122.76,26.445819757065692
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,27.72,13.38683141484853
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,27.72,28.39312807506576
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,19.8,29.048837926595297
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,39.6,27.261182999410266
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,15.84,34.199638516893174
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,47.52,14.608889896134315
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,79.2,25.66846816577072
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,55.44,44.317587709516374
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,27.72,50.159225357477226
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,55.44,45.72870998105827
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,35.64,30.946211971559933
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,43.56,53.253793817728365
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,11.88,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,27.72,9.184663169099622
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,0.0,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,11.88,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,110.88,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,LinearRegression,15.84,0.0
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,80.0,241.28791093582186
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,100.0,54.08909935884731
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,105.55656213216571
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,220.0,94.15891500545331
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,163.40580273979867
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,200.0,48.350048267337115
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,80.0,75.94697656585777
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,340.0,77.99176430892476
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,0.0,47.93449051038988
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,40.0,44.23808041498705
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,40.0,69.50257373795102
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,120.0,38.19991803618177
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,18.264806270217377
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,32.98643445703419
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,20.0,39.98612757360388
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,120.0,21.877956148691737
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,17.823867988026905
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,120.0,33.992292455797724
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,40.0,37.532437990998005
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,120.0,41.52415316902989
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,0.0,22.962879221060575
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,0.0,32.89357549554552
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,80.0,37.76354570588592
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,100.0,43.61840576806935
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,47.905257252314186
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,LinearRegression,60.0,53.321369722281815
+2025-08-18,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,8.349500670468842
+2025-08-25,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,14.003176708432875
+2025-09-01,Hoop Kaper Tropical IPA,Other,LinearRegression,5.94,12.349971638355782
+2025-09-08,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,15.149218764679972
+2025-09-15,Hoop Kaper Tropical IPA,Other,LinearRegression,1.98,0.0
+2025-09-22,Hoop Kaper Tropical IPA,Other,LinearRegression,9.9,20.484203854106454
+2025-09-29,Hoop Kaper Tropical IPA,Other,LinearRegression,7.92,9.285720547650271
+2025-10-06,Hoop Kaper Tropical IPA,Other,LinearRegression,1.98,26.911898754642607
+2025-10-13,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,15.297350825254398
+2025-10-20,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,2.6594270839013916
+2025-10-27,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,8.360584845013364
+2025-11-03,Hoop Kaper Tropical IPA,Other,LinearRegression,5.94,17.67206382594668
+2025-11-10,Hoop Kaper Tropical IPA,Other,LinearRegression,11.88,17.038696630192135
+2025-11-17,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,16.939649387477402
+2025-11-24,Hoop Kaper Tropical IPA,Other,LinearRegression,16.5,16.210442305604374
+2025-12-01,Hoop Kaper Tropical IPA,Other,LinearRegression,3.96,13.13124313213848
+2025-12-08,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,9.332938520597963
+2025-12-15,Hoop Kaper Tropical IPA,Other,LinearRegression,15.84,15.047870678903564
+2025-12-22,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,19.76944564778023
+2025-12-29,Hoop Kaper Tropical IPA,Other,LinearRegression,15.18,5.8776308688939025
+2026-01-05,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,0.0
+2026-01-19,Hoop Kaper Tropical IPA,Other,LinearRegression,9.9,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Other,LinearRegression,0.0,0.0
+2025-08-18,Hoop Lager,Bottle 33cl,LinearRegression,0.0,5.0884941215626895
+2025-08-25,Hoop Lager,Bottle 33cl,LinearRegression,0.0,5.632616332585712
+2025-09-01,Hoop Lager,Bottle 33cl,LinearRegression,0.0,6.758566857419282
+2025-09-08,Hoop Lager,Bottle 33cl,LinearRegression,0.0,4.840096811851254
+2025-09-15,Hoop Lager,Bottle 33cl,LinearRegression,0.0,7.733657375470102
+2025-09-22,Hoop Lager,Bottle 33cl,LinearRegression,0.0,7.5105213325041404
+2025-09-29,Hoop Lager,Bottle 33cl,LinearRegression,0.0,1.8891532516145162
+2025-10-06,Hoop Lager,Bottle 33cl,LinearRegression,0.0,0.7792519730164713
+2025-10-13,Hoop Lager,Bottle 33cl,LinearRegression,0.0,6.495002489605213
+2025-10-20,Hoop Lager,Bottle 33cl,LinearRegression,0.0,4.595092652450148
+2025-10-27,Hoop Lager,Bottle 33cl,LinearRegression,0.0,6.040463286411978
+2025-11-03,Hoop Lager,Bottle 33cl,LinearRegression,0.0,6.524310140700436
+2025-11-10,Hoop Lager,Bottle 33cl,LinearRegression,0.0,6.2197232427724884
+2025-11-17,Hoop Lager,Bottle 33cl,LinearRegression,0.0,8.98173616429176
+2025-11-24,Hoop Lager,Bottle 33cl,LinearRegression,0.0,9.34887623774921
+2025-12-01,Hoop Lager,Bottle 33cl,LinearRegression,0.0,7.837139521127938
+2025-12-08,Hoop Lager,Bottle 33cl,LinearRegression,0.0,6.846086108772397
+2025-12-15,Hoop Lager,Bottle 33cl,LinearRegression,0.0,8.770915617174069
+2025-12-22,Hoop Lager,Bottle 33cl,LinearRegression,0.0,13.260302688152478
+2025-12-29,Hoop Lager,Bottle 33cl,LinearRegression,0.0,13.824785344483644
+2026-01-05,Hoop Lager,Bottle 33cl,LinearRegression,0.0,11.099681175462138
+2026-01-12,Hoop Lager,Bottle 33cl,LinearRegression,0.0,5.719761403303892
+2026-01-19,Hoop Lager,Bottle 33cl,LinearRegression,0.0,11.144989340356915
+2026-01-26,Hoop Lager,Bottle 33cl,LinearRegression,0.0,10.10829556546014
+2026-02-02,Hoop Lager,Bottle 33cl,LinearRegression,0.0,11.459203689333663
+2026-02-09,Hoop Lager,Bottle 33cl,LinearRegression,0.0,11.023654919055843
+2025-08-18,Hoop Lager,Keg 20L,LinearRegression,500.0,467.84776005131425
+2025-08-25,Hoop Lager,Keg 20L,LinearRegression,220.0,436.2285560183809
+2025-09-01,Hoop Lager,Keg 20L,LinearRegression,320.0,519.43397962366
+2025-09-08,Hoop Lager,Keg 20L,LinearRegression,600.0,476.2933798409067
+2025-09-15,Hoop Lager,Keg 20L,LinearRegression,360.0,194.2624796880409
+2025-09-22,Hoop Lager,Keg 20L,LinearRegression,440.0,269.1781541801756
+2025-09-29,Hoop Lager,Keg 20L,LinearRegression,400.0,441.60693669330794
+2025-10-06,Hoop Lager,Keg 20L,LinearRegression,1660.0,584.9366440568701
+2025-10-13,Hoop Lager,Keg 20L,LinearRegression,0.0,594.6200001416146
+2025-10-20,Hoop Lager,Keg 20L,LinearRegression,340.0,442.9390512466198
+2025-10-27,Hoop Lager,Keg 20L,LinearRegression,80.0,419.31859778624494
+2025-11-03,Hoop Lager,Keg 20L,LinearRegression,100.0,490.3597411638475
+2025-11-10,Hoop Lager,Keg 20L,LinearRegression,760.0,472.30850546085276
+2025-11-17,Hoop Lager,Keg 20L,LinearRegression,200.0,351.55159512127284
+2025-11-24,Hoop Lager,Keg 20L,LinearRegression,140.0,399.89607647497905
+2025-12-01,Hoop Lager,Keg 20L,LinearRegression,380.0,419.21025456878124
+2025-12-08,Hoop Lager,Keg 20L,LinearRegression,720.0,455.4849357213243
+2025-12-15,Hoop Lager,Keg 20L,LinearRegression,460.0,482.1274336251081
+2025-12-22,Hoop Lager,Keg 20L,LinearRegression,60.0,398.98209894198226
+2025-12-29,Hoop Lager,Keg 20L,LinearRegression,500.0,361.620168628986
+2026-01-05,Hoop Lager,Keg 20L,LinearRegression,80.0,247.08122595981695
+2026-01-12,Hoop Lager,Keg 20L,LinearRegression,520.0,335.2056924717617
+2026-01-19,Hoop Lager,Keg 20L,LinearRegression,440.0,375.58949382219
+2026-01-26,Hoop Lager,Keg 20L,LinearRegression,160.0,331.3026951033971
+2026-02-02,Hoop Lager,Keg 20L,LinearRegression,160.0,359.0839288691641
+2026-02-09,Hoop Lager,Keg 20L,LinearRegression,240.0,411.5926633409108
+2025-08-18,Hoop Lager,Keg 50L,LinearRegression,0.0,28.935685683900374
+2025-08-25,Hoop Lager,Keg 50L,LinearRegression,0.0,146.4227194235864
+2025-09-01,Hoop Lager,Keg 50L,LinearRegression,0.0,317.3918185718794
+2025-09-08,Hoop Lager,Keg 50L,LinearRegression,0.0,244.5037956381857
+2025-09-15,Hoop Lager,Keg 50L,LinearRegression,0.0,32.328994431343745
+2025-09-22,Hoop Lager,Keg 50L,LinearRegression,0.0,106.35305857144704
+2025-09-29,Hoop Lager,Keg 50L,LinearRegression,0.0,221.78763336919656
+2025-10-06,Hoop Lager,Keg 50L,LinearRegression,350.0,467.1165260019188
+2025-10-13,Hoop Lager,Keg 50L,LinearRegression,0.0,69.08642251272977
+2025-10-20,Hoop Lager,Keg 50L,LinearRegression,0.0,195.79085973574547
+2025-10-27,Hoop Lager,Keg 50L,LinearRegression,0.0,47.31603917447501
+2025-11-03,Hoop Lager,Keg 50L,LinearRegression,0.0,12.051968644504086
+2025-11-10,Hoop Lager,Keg 50L,LinearRegression,0.0,123.05165716259216
+2025-11-17,Hoop Lager,Keg 50L,LinearRegression,0.0,125.70138845453039
+2025-11-24,Hoop Lager,Keg 50L,LinearRegression,0.0,49.59770863704034
+2025-12-01,Hoop Lager,Keg 50L,LinearRegression,0.0,44.463307902013185
+2025-12-08,Hoop Lager,Keg 50L,LinearRegression,0.0,47.189731442413176
+2025-12-15,Hoop Lager,Keg 50L,LinearRegression,0.0,26.999265471094986
+2025-12-22,Hoop Lager,Keg 50L,LinearRegression,0.0,33.33991483772115
+2025-12-29,Hoop Lager,Keg 50L,LinearRegression,0.0,19.779225859165308
+2026-01-05,Hoop Lager,Keg 50L,LinearRegression,0.0,110.97875102631224
+2026-01-12,Hoop Lager,Keg 50L,LinearRegression,0.0,62.99863022341742
+2026-01-19,Hoop Lager,Keg 50L,LinearRegression,0.0,0.0
+2026-01-26,Hoop Lager,Keg 50L,LinearRegression,0.0,60.90933107548335
+2026-02-02,Hoop Lager,Keg 50L,LinearRegression,0.0,30.766408576164395
+2026-02-09,Hoop Lager,Keg 50L,LinearRegression,0.0,37.54659939336125
+2025-08-18,Hoop Lager,Other,LinearRegression,33.0,44.44962612436575
+2025-08-25,Hoop Lager,Other,LinearRegression,24.75,41.816317988636
+2025-09-01,Hoop Lager,Other,LinearRegression,0.0,30.715947238582885
+2025-09-08,Hoop Lager,Other,LinearRegression,0.0,21.97247408435578
+2025-09-15,Hoop Lager,Other,LinearRegression,0.0,120.10222723658808
+2025-09-22,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-09-29,Hoop Lager,Other,LinearRegression,0.0,91.52990295868949
+2025-10-06,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-10-13,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-10-20,Hoop Lager,Other,LinearRegression,0.0,103.0926800546622
+2025-10-27,Hoop Lager,Other,LinearRegression,0.0,7.64544536939502
+2025-11-03,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-11-10,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-11-17,Hoop Lager,Other,LinearRegression,0.0,36.54019414295908
+2025-11-24,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-12-01,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-12-08,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-12-15,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-12-22,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-12-29,Hoop Lager,Other,LinearRegression,0.0,0.0
+2026-01-05,Hoop Lager,Other,LinearRegression,0.0,42.56179585310383
+2026-01-12,Hoop Lager,Other,LinearRegression,0.0,0.0
+2026-01-19,Hoop Lager,Other,LinearRegression,0.0,0.0
+2026-01-26,Hoop Lager,Other,LinearRegression,0.0,0.0
+2026-02-02,Hoop Lager,Other,LinearRegression,0.0,0.0
+2026-02-09,Hoop Lager,Other,LinearRegression,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,Ridge,15.84,0.0
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,Ridge,59.4,41.61037150786433
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,Ridge,35.64,69.1725385968457
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,Ridge,122.76,0.0
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,Ridge,55.44,67.83600664889673
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,Ridge,102.96,0.0
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,Ridge,23.76,64.2798863297503
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,Ridge,91.08,40.810383026779164
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,Ridge,55.44,31.62656933924154
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,Ridge,7.920000000000002,100.82785819997662
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,Ridge,51.48,123.11860466819053
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,Ridge,43.56,54.80329852223804
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,Ridge,55.44,79.93933066359023
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,Ridge,35.64,96.54430323535053
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,Ridge,75.24,85.07292782994773
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,Ridge,201.96,100.75556182139553
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,Ridge,51.48,127.60164591212379
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,Ridge,95.04,175.14279382405948
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,Ridge,23.76,62.61464729831641
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,Ridge,35.64,137.98105476915953
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,Ridge,237.6,0.0
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,Ridge,47.52,53.61629389628797
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,Ridge,15.84,4.120782649682951
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,Ridge,11.88,38.017917367738846
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,Ridge,95.04,15.54266015419853
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,Ridge,31.68,32.647835098643554
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,18.35333727678517
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,Ridge,9.0,7.0436007251701085
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,24.307729469590413
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,54.94903013176372
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,57.565705268520105
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,Ridge,238.5,109.63122140226187
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,Ridge,40.5,75.64363006449275
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,56.122107201277686
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,113.6332674521982
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,121.53143130278477
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,112.61678932757059
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,66.20190021265444
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,55.777089909453935
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,Ridge,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Keg 20L,Ridge,140.0,256.17164549964946
+2025-08-25,Hoop Bleke Nelis,Keg 20L,Ridge,160.0,320.5894701377765
+2025-09-01,Hoop Bleke Nelis,Keg 20L,Ridge,160.0,353.67417547323566
+2025-09-08,Hoop Bleke Nelis,Keg 20L,Ridge,360.0,263.00102064650855
+2025-09-15,Hoop Bleke Nelis,Keg 20L,Ridge,140.0,145.79084048618824
+2025-09-22,Hoop Bleke Nelis,Keg 20L,Ridge,320.0,260.33525099373946
+2025-09-29,Hoop Bleke Nelis,Keg 20L,Ridge,340.0,215.39859824509767
+2025-10-06,Hoop Bleke Nelis,Keg 20L,Ridge,400.0,367.18442826345563
+2025-10-13,Hoop Bleke Nelis,Keg 20L,Ridge,140.0,270.53417113699106
+2025-10-20,Hoop Bleke Nelis,Keg 20L,Ridge,200.0,168.945549751792
+2025-10-27,Hoop Bleke Nelis,Keg 20L,Ridge,40.0,313.4763963647056
+2025-11-03,Hoop Bleke Nelis,Keg 20L,Ridge,180.0,215.9091431917186
+2025-11-10,Hoop Bleke Nelis,Keg 20L,Ridge,120.0,206.55232202607294
+2025-11-17,Hoop Bleke Nelis,Keg 20L,Ridge,80.0,204.61396825159318
+2025-11-24,Hoop Bleke Nelis,Keg 20L,Ridge,60.0,181.31675479460682
+2025-12-01,Hoop Bleke Nelis,Keg 20L,Ridge,120.0,223.78875638434693
+2025-12-08,Hoop Bleke Nelis,Keg 20L,Ridge,180.0,234.03862038979423
+2025-12-15,Hoop Bleke Nelis,Keg 20L,Ridge,200.0,211.12863852371083
+2025-12-22,Hoop Bleke Nelis,Keg 20L,Ridge,40.0,160.0971397592366
+2025-12-29,Hoop Bleke Nelis,Keg 20L,Ridge,100.0,105.56817847589264
+2026-01-05,Hoop Bleke Nelis,Keg 20L,Ridge,40.0,128.2518427819814
+2026-01-12,Hoop Bleke Nelis,Keg 20L,Ridge,40.0,181.85096419085312
+2026-01-19,Hoop Bleke Nelis,Keg 20L,Ridge,80.0,149.4173078942622
+2026-01-26,Hoop Bleke Nelis,Keg 20L,Ridge,120.0,157.21057836146065
+2026-02-02,Hoop Bleke Nelis,Keg 20L,Ridge,100.0,177.26065838712384
+2026-02-09,Hoop Bleke Nelis,Keg 20L,Ridge,60.0,164.20925676200568
+2025-08-18,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,7.892952913031877
+2025-08-25,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,1.4217816330110509
+2025-09-01,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,1.4731113400293907
+2025-09-08,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,12.328473049385138
+2025-09-15,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,0.154984678186338
+2025-09-22,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,14.511091611138909
+2025-09-29,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,4.677105478831436
+2025-10-06,Hoop Bleke Nelis,Keg 50L,Ridge,300.0,10.261723178836291
+2025-10-13,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,12.189676487180805
+2025-10-20,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,0.1487505759459964
+2025-10-27,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,0.6126111290323024
+2025-11-03,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,11.90939010009788
+2025-11-10,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,4.034743433294352
+2025-11-17,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,0.0
+2025-11-24,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,5.820763705191894
+2025-12-01,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,3.5700191324558546
+2025-12-08,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,9.30422714040651
+2025-12-15,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,7.201140953991853
+2025-12-22,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,4.27474216700557
+2025-12-29,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,2.098557550627447
+2026-01-05,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,4.415809567026372
+2026-01-19,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,5.099672227804149
+2026-01-26,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,2.938322344250082
+2026-02-02,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,6.472503361435884
+2026-02-09,Hoop Bleke Nelis,Keg 50L,Ridge,0.0,7.623935468700438
+2025-08-18,Hoop Bleke Nelis,Other,Ridge,0.0,36.0235456266455
+2025-08-25,Hoop Bleke Nelis,Other,Ridge,7.26,20.842097936358186
+2025-09-01,Hoop Bleke Nelis,Other,Ridge,15.84,14.53766944209201
+2025-09-08,Hoop Bleke Nelis,Other,Ridge,13.86,34.51212242588372
+2025-09-15,Hoop Bleke Nelis,Other,Ridge,11.55,37.341217825887725
+2025-09-22,Hoop Bleke Nelis,Other,Ridge,4.95,19.178013551500044
+2025-09-29,Hoop Bleke Nelis,Other,Ridge,36.3,31.223354443463904
+2025-10-06,Hoop Bleke Nelis,Other,Ridge,35.31,0.0
+2025-10-13,Hoop Bleke Nelis,Other,Ridge,20.46,17.77529043357208
+2025-10-20,Hoop Bleke Nelis,Other,Ridge,89.42999999999999,37.98554972310376
+2025-10-27,Hoop Bleke Nelis,Other,Ridge,3.3,1.0827093666302972
+2025-11-03,Hoop Bleke Nelis,Other,Ridge,27.39,11.695566549715295
+2025-11-10,Hoop Bleke Nelis,Other,Ridge,37.95,30.40887725949142
+2025-11-17,Hoop Bleke Nelis,Other,Ridge,18.15,53.97930257468397
+2025-11-24,Hoop Bleke Nelis,Other,Ridge,31.35,23.457187903361046
+2025-12-01,Hoop Bleke Nelis,Other,Ridge,69.96000000000001,28.979243295376364
+2025-12-08,Hoop Bleke Nelis,Other,Ridge,20.130000000000003,11.659492461905756
+2025-12-15,Hoop Bleke Nelis,Other,Ridge,68.64,18.273098996396584
+2025-12-22,Hoop Bleke Nelis,Other,Ridge,34.65,31.965305821613583
+2025-12-29,Hoop Bleke Nelis,Other,Ridge,16.83,23.45145161463006
+2026-01-05,Hoop Bleke Nelis,Other,Ridge,3.63,17.789516179647762
+2026-01-12,Hoop Bleke Nelis,Other,Ridge,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Other,Ridge,17.16,0.0
+2026-01-26,Hoop Bleke Nelis,Other,Ridge,16.17,1.6812592764836154
+2026-02-02,Hoop Bleke Nelis,Other,Ridge,22.11,0.0
+2026-02-09,Hoop Bleke Nelis,Other,Ridge,5.609999999999999,0.9346644147008192
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,67.32,25.679387147697526
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,87.12,46.61186688565158
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,63.36,40.800613823435924
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,71.28,26.227214298971376
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,39.6,37.47365043640093
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,59.4,4.8258244351118265
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,23.76,21.742995141854408
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,122.76,27.517074644672903
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,27.72,15.502927107637333
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,27.72,29.28741536479538
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,19.8,29.49578098868733
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,39.6,27.999764770952424
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,15.84,33.90957187617005
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,47.52,14.851748729462997
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,79.2,25.333431161157932
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,55.44,42.4360048470262
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,27.72,48.053558173667625
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,55.44,43.47909897196678
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,35.64,29.00342762818036
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,43.56,49.87345472952984
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,11.88,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,27.72,8.436541109760583
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,0.0,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,11.88,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,110.88,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,Ridge,15.84,0.0
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,Ridge,80.0,239.1006298620814
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,Ridge,100.0,52.895119538356084
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,104.00317365948285
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,Ridge,220.0,98.98789703095099
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,158.98406387469367
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,Ridge,200.0,50.930353630014
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,Ridge,80.0,78.04026973473083
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,Ridge,340.0,81.14012209921566
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,Ridge,0.0,47.94389706937727
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,Ridge,40.0,47.58250698169286
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,Ridge,40.0,70.16872880199298
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,Ridge,120.0,41.63103163713822
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,20.430561267970916
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,33.46156691198121
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,Ridge,20.0,40.70094672891719
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,Ridge,120.0,23.29852749258862
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,20.2297839076964
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,Ridge,120.0,34.8227059441233
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,Ridge,40.0,34.84513394651367
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,Ridge,120.0,38.728105945541756
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,Ridge,0.0,22.52719210174473
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,Ridge,0.0,33.962192447608686
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,Ridge,80.0,34.92713235016345
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,Ridge,100.0,41.56996769979742
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,46.67342420142813
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,Ridge,60.0,51.76295496659077
+2025-08-18,Hoop Kaper Tropical IPA,Other,Ridge,0.0,8.496140590032155
+2025-08-25,Hoop Kaper Tropical IPA,Other,Ridge,0.0,14.094161709461332
+2025-09-01,Hoop Kaper Tropical IPA,Other,Ridge,5.94,12.622585754019383
+2025-09-08,Hoop Kaper Tropical IPA,Other,Ridge,0.0,13.718461453911004
+2025-09-15,Hoop Kaper Tropical IPA,Other,Ridge,1.98,0.0
+2025-09-22,Hoop Kaper Tropical IPA,Other,Ridge,9.9,19.429308722301357
+2025-09-29,Hoop Kaper Tropical IPA,Other,Ridge,7.92,8.615802111955418
+2025-10-06,Hoop Kaper Tropical IPA,Other,Ridge,1.98,26.042386992521642
+2025-10-13,Hoop Kaper Tropical IPA,Other,Ridge,0.0,14.685424601233535
+2025-10-20,Hoop Kaper Tropical IPA,Other,Ridge,0.0,2.3493707998386526
+2025-10-27,Hoop Kaper Tropical IPA,Other,Ridge,0.0,8.256971524147957
+2025-11-03,Hoop Kaper Tropical IPA,Other,Ridge,5.94,17.610811604976334
+2025-11-10,Hoop Kaper Tropical IPA,Other,Ridge,11.88,16.624139675139304
+2025-11-17,Hoop Kaper Tropical IPA,Other,Ridge,0.0,16.492216801361792
+2025-11-24,Hoop Kaper Tropical IPA,Other,Ridge,16.5,16.256048961044144
+2025-12-01,Hoop Kaper Tropical IPA,Other,Ridge,3.96,13.252445914371492
+2025-12-08,Hoop Kaper Tropical IPA,Other,Ridge,0.0,9.989228400700085
+2025-12-15,Hoop Kaper Tropical IPA,Other,Ridge,15.84,15.454434220751864
+2025-12-22,Hoop Kaper Tropical IPA,Other,Ridge,0.0,19.989302913163556
+2025-12-29,Hoop Kaper Tropical IPA,Other,Ridge,15.18,6.943352479174791
+2026-01-05,Hoop Kaper Tropical IPA,Other,Ridge,0.0,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Other,Ridge,0.0,0.0
+2026-01-19,Hoop Kaper Tropical IPA,Other,Ridge,9.9,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Other,Ridge,0.0,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Other,Ridge,0.0,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Other,Ridge,0.0,0.0
+2025-08-18,Hoop Lager,Bottle 33cl,Ridge,0.0,4.893925151780422
+2025-08-25,Hoop Lager,Bottle 33cl,Ridge,0.0,5.570081098200717
+2025-09-01,Hoop Lager,Bottle 33cl,Ridge,0.0,6.6486779346478215
+2025-09-08,Hoop Lager,Bottle 33cl,Ridge,0.0,5.125439860849838
+2025-09-15,Hoop Lager,Bottle 33cl,Ridge,0.0,7.448233878609244
+2025-09-22,Hoop Lager,Bottle 33cl,Ridge,0.0,7.638958157806883
+2025-09-29,Hoop Lager,Bottle 33cl,Ridge,0.0,1.9801797640020595
+2025-10-06,Hoop Lager,Bottle 33cl,Ridge,0.0,0.9700180436420851
+2025-10-13,Hoop Lager,Bottle 33cl,Ridge,0.0,6.628552758040314
+2025-10-20,Hoop Lager,Bottle 33cl,Ridge,0.0,4.7789491051689765
+2025-10-27,Hoop Lager,Bottle 33cl,Ridge,0.0,6.09237199002655
+2025-11-03,Hoop Lager,Bottle 33cl,Ridge,0.0,6.706924995333793
+2025-11-10,Hoop Lager,Bottle 33cl,Ridge,0.0,6.439751444734611
+2025-11-17,Hoop Lager,Bottle 33cl,Ridge,0.0,8.974975110746527
+2025-11-24,Hoop Lager,Bottle 33cl,Ridge,0.0,9.329754644986679
+2025-12-01,Hoop Lager,Bottle 33cl,Ridge,0.0,7.89540847504486
+2025-12-08,Hoop Lager,Bottle 33cl,Ridge,0.0,6.976074557594075
+2025-12-15,Hoop Lager,Bottle 33cl,Ridge,0.0,8.79644305079637
+2025-12-22,Hoop Lager,Bottle 33cl,Ridge,0.0,12.979544661094224
+2025-12-29,Hoop Lager,Bottle 33cl,Ridge,0.0,13.41195570484706
+2026-01-05,Hoop Lager,Bottle 33cl,Ridge,0.0,10.90262589073518
+2026-01-12,Hoop Lager,Bottle 33cl,Ridge,0.0,5.766509109976141
+2026-01-19,Hoop Lager,Bottle 33cl,Ridge,0.0,10.914741743741615
+2026-01-26,Hoop Lager,Bottle 33cl,Ridge,0.0,9.932213971147576
+2026-02-02,Hoop Lager,Bottle 33cl,Ridge,0.0,11.221371521938636
+2026-02-09,Hoop Lager,Bottle 33cl,Ridge,0.0,10.80439489071432
+2025-08-18,Hoop Lager,Keg 20L,Ridge,500.0,466.4711189743248
+2025-08-25,Hoop Lager,Keg 20L,Ridge,220.0,430.4559816272813
+2025-09-01,Hoop Lager,Keg 20L,Ridge,320.0,521.8875719241332
+2025-09-08,Hoop Lager,Keg 20L,Ridge,600.0,460.89608165354
+2025-09-15,Hoop Lager,Keg 20L,Ridge,360.0,200.99429075157968
+2025-09-22,Hoop Lager,Keg 20L,Ridge,440.0,247.59489662898704
+2025-09-29,Hoop Lager,Keg 20L,Ridge,400.0,422.45237738790456
+2025-10-06,Hoop Lager,Keg 20L,Ridge,1660.0,567.2060707574128
+2025-10-13,Hoop Lager,Keg 20L,Ridge,0.0,578.2366025886731
+2025-10-20,Hoop Lager,Keg 20L,Ridge,340.0,439.5540029074182
+2025-10-27,Hoop Lager,Keg 20L,Ridge,80.0,417.3370872011874
+2025-11-03,Hoop Lager,Keg 20L,Ridge,100.0,481.3262518606498
+2025-11-10,Hoop Lager,Keg 20L,Ridge,760.0,465.83524844475323
+2025-11-17,Hoop Lager,Keg 20L,Ridge,200.0,351.0528815505095
+2025-11-24,Hoop Lager,Keg 20L,Ridge,140.0,394.39164935279405
+2025-12-01,Hoop Lager,Keg 20L,Ridge,380.0,416.33246632892406
+2025-12-08,Hoop Lager,Keg 20L,Ridge,720.0,449.6213614899898
+2025-12-15,Hoop Lager,Keg 20L,Ridge,460.0,482.93141918833135
+2025-12-22,Hoop Lager,Keg 20L,Ridge,60.0,407.068221051828
+2025-12-29,Hoop Lager,Keg 20L,Ridge,500.0,372.94390374439536
+2026-01-05,Hoop Lager,Keg 20L,Ridge,80.0,249.92971413512714
+2026-01-12,Hoop Lager,Keg 20L,Ridge,520.0,329.8741018639412
+2026-01-19,Hoop Lager,Keg 20L,Ridge,440.0,372.5229709871346
+2026-01-26,Hoop Lager,Keg 20L,Ridge,160.0,330.8179254080169
+2026-02-02,Hoop Lager,Keg 20L,Ridge,160.0,358.7545130723738
+2026-02-09,Hoop Lager,Keg 20L,Ridge,240.0,411.72075505636167
+2025-08-18,Hoop Lager,Keg 50L,Ridge,0.0,27.920235324054374
+2025-08-25,Hoop Lager,Keg 50L,Ridge,0.0,146.34045040394994
+2025-09-01,Hoop Lager,Keg 50L,Ridge,0.0,318.2344289091998
+2025-09-08,Hoop Lager,Keg 50L,Ridge,0.0,242.66188956433325
+2025-09-15,Hoop Lager,Keg 50L,Ridge,0.0,33.55374790503993
+2025-09-22,Hoop Lager,Keg 50L,Ridge,0.0,103.71947204986645
+2025-09-29,Hoop Lager,Keg 50L,Ridge,0.0,219.93865888402797
+2025-10-06,Hoop Lager,Keg 50L,Ridge,350.0,474.68917901749955
+2025-10-13,Hoop Lager,Keg 50L,Ridge,0.0,66.81140449979284
+2025-10-20,Hoop Lager,Keg 50L,Ridge,0.0,192.6085582888627
+2025-10-27,Hoop Lager,Keg 50L,Ridge,0.0,50.45404971919197
+2025-11-03,Hoop Lager,Keg 50L,Ridge,0.0,13.679378542219638
+2025-11-10,Hoop Lager,Keg 50L,Ridge,0.0,122.2805266224168
+2025-11-17,Hoop Lager,Keg 50L,Ridge,0.0,117.37710532841447
+2025-11-24,Hoop Lager,Keg 50L,Ridge,0.0,48.129858867643634
+2025-12-01,Hoop Lager,Keg 50L,Ridge,0.0,41.53810340054042
+2025-12-08,Hoop Lager,Keg 50L,Ridge,0.0,53.20062297320692
+2025-12-15,Hoop Lager,Keg 50L,Ridge,0.0,31.410720987812965
+2025-12-22,Hoop Lager,Keg 50L,Ridge,0.0,29.26008672248281
+2025-12-29,Hoop Lager,Keg 50L,Ridge,0.0,20.59664964635158
+2026-01-05,Hoop Lager,Keg 50L,Ridge,0.0,98.62551521144633
+2026-01-12,Hoop Lager,Keg 50L,Ridge,0.0,64.24190733268915
+2026-01-19,Hoop Lager,Keg 50L,Ridge,0.0,0.0
+2026-01-26,Hoop Lager,Keg 50L,Ridge,0.0,57.514678290099255
+2026-02-02,Hoop Lager,Keg 50L,Ridge,0.0,29.677138147046207
+2026-02-09,Hoop Lager,Keg 50L,Ridge,0.0,35.232756177691044
+2025-08-18,Hoop Lager,Other,Ridge,33.0,41.76018680044581
+2025-08-25,Hoop Lager,Other,Ridge,24.75,40.94318169271355
+2025-09-01,Hoop Lager,Other,Ridge,0.0,29.99375038289145
+2025-09-08,Hoop Lager,Other,Ridge,0.0,24.84835678161471
+2025-09-15,Hoop Lager,Other,Ridge,0.0,118.0209569802173
+2025-09-22,Hoop Lager,Other,Ridge,0.0,0.0
+2025-09-29,Hoop Lager,Other,Ridge,0.0,92.8418393770371
+2025-10-06,Hoop Lager,Other,Ridge,0.0,0.0
+2025-10-13,Hoop Lager,Other,Ridge,0.0,0.0
+2025-10-20,Hoop Lager,Other,Ridge,0.0,103.90051876596772
+2025-10-27,Hoop Lager,Other,Ridge,0.0,11.587987532526313
+2025-11-03,Hoop Lager,Other,Ridge,0.0,0.0
+2025-11-10,Hoop Lager,Other,Ridge,0.0,0.0
+2025-11-17,Hoop Lager,Other,Ridge,0.0,31.03573691855854
+2025-11-24,Hoop Lager,Other,Ridge,0.0,0.0
+2025-12-01,Hoop Lager,Other,Ridge,0.0,0.0
+2025-12-08,Hoop Lager,Other,Ridge,0.0,0.0
+2025-12-15,Hoop Lager,Other,Ridge,0.0,0.0
+2025-12-22,Hoop Lager,Other,Ridge,0.0,0.0
+2025-12-29,Hoop Lager,Other,Ridge,0.0,0.0
+2026-01-05,Hoop Lager,Other,Ridge,0.0,36.429497953799
+2026-01-12,Hoop Lager,Other,Ridge,0.0,0.0
+2026-01-19,Hoop Lager,Other,Ridge,0.0,0.0
+2026-01-26,Hoop Lager,Other,Ridge,0.0,0.0
+2026-02-02,Hoop Lager,Other,Ridge,0.0,0.0
+2026-02-09,Hoop Lager,Other,Ridge,0.0,0.0
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,RandomForest,15.84,60.670595867295084
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,RandomForest,59.4,76.25707292404297
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,RandomForest,35.64,84.39958379631895
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,RandomForest,122.76,42.69483779822492
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,RandomForest,55.44,52.525653033932834
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,RandomForest,102.96,65.0704791876178
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,RandomForest,23.76,88.75679984834811
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,RandomForest,91.08,43.25906959184309
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,RandomForest,55.44,61.95575779669369
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,RandomForest,7.920000000000002,169.14000472261486
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,RandomForest,51.48,99.70516483459105
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,RandomForest,43.56,44.287773177933076
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,RandomForest,55.44,49.212134866238095
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,RandomForest,35.64,99.36887752559063
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,RandomForest,75.24,81.18090027080076
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,RandomForest,201.96,41.47987425394395
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,RandomForest,51.48,52.74183523834636
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,RandomForest,95.04,144.70927063256724
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,RandomForest,23.76,160.6121092233166
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,RandomForest,35.64,81.28429301140358
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,RandomForest,237.6,40.19144865905206
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,RandomForest,47.52,88.71962472608799
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,RandomForest,15.84,73.78042693484863
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,RandomForest,11.88,57.11968055805244
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,RandomForest,95.04,42.78665088542186
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,RandomForest,31.68,61.23300138967775
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,7.792663943439263
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,6.3748876809707395
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,6.632517198821486
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,6.770737991750423
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,6.979390681966962
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,5.241609984909164
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,6.343552954067629
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,RandomForest,9.0,6.1277738360953755
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,4.263980736845428
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,35.43625977942766
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,8.091777150355043
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,35.40918726744718
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,RandomForest,238.5,22.232613342107136
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,RandomForest,40.5,33.400794515472285
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,28.06357509339765
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,43.293679863207764
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,106.16765413591827
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,277.8908273809524
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,262.42913690476195
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,178.2619653679654
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,241.89203984392813
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,240.7833885281386
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,241.07116125541134
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,240.65616125541132
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,240.78553625541133
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,RandomForest,0.0,240.80553625541134
+2025-08-18,Hoop Bleke Nelis,Keg 20L,RandomForest,140.0,306.80420763849247
+2025-08-25,Hoop Bleke Nelis,Keg 20L,RandomForest,160.0,204.5303069671808
+2025-09-01,Hoop Bleke Nelis,Keg 20L,RandomForest,160.0,252.52707944223462
+2025-09-08,Hoop Bleke Nelis,Keg 20L,RandomForest,360.0,191.5509633880744
+2025-09-15,Hoop Bleke Nelis,Keg 20L,RandomForest,140.0,188.69264438289122
+2025-09-22,Hoop Bleke Nelis,Keg 20L,RandomForest,320.0,214.23446568332614
+2025-09-29,Hoop Bleke Nelis,Keg 20L,RandomForest,340.0,222.56236000701335
+2025-10-06,Hoop Bleke Nelis,Keg 20L,RandomForest,400.0,199.09577007414
+2025-10-13,Hoop Bleke Nelis,Keg 20L,RandomForest,140.0,162.063619107823
+2025-10-20,Hoop Bleke Nelis,Keg 20L,RandomForest,200.0,218.3247832439494
+2025-10-27,Hoop Bleke Nelis,Keg 20L,RandomForest,40.0,271.8442003117854
+2025-11-03,Hoop Bleke Nelis,Keg 20L,RandomForest,180.0,196.66804989096892
+2025-11-10,Hoop Bleke Nelis,Keg 20L,RandomForest,120.0,153.97449158529417
+2025-11-17,Hoop Bleke Nelis,Keg 20L,RandomForest,80.0,112.96373221515695
+2025-11-24,Hoop Bleke Nelis,Keg 20L,RandomForest,60.0,125.26036159104345
+2025-12-01,Hoop Bleke Nelis,Keg 20L,RandomForest,120.0,107.79406389461676
+2025-12-08,Hoop Bleke Nelis,Keg 20L,RandomForest,180.0,163.51456877456295
+2025-12-15,Hoop Bleke Nelis,Keg 20L,RandomForest,200.0,129.84073045893786
+2025-12-22,Hoop Bleke Nelis,Keg 20L,RandomForest,40.0,133.75506821268124
+2025-12-29,Hoop Bleke Nelis,Keg 20L,RandomForest,100.0,119.06053177875653
+2026-01-05,Hoop Bleke Nelis,Keg 20L,RandomForest,40.0,111.74256218501858
+2026-01-12,Hoop Bleke Nelis,Keg 20L,RandomForest,40.0,121.00897538563116
+2026-01-19,Hoop Bleke Nelis,Keg 20L,RandomForest,80.0,120.83555997277843
+2026-01-26,Hoop Bleke Nelis,Keg 20L,RandomForest,120.0,116.8233484184578
+2026-02-02,Hoop Bleke Nelis,Keg 20L,RandomForest,100.0,113.74963793466787
+2026-02-09,Hoop Bleke Nelis,Keg 20L,RandomForest,60.0,143.3416510865564
+2025-08-18,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-08-25,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-09-01,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-09-08,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-09-15,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-09-22,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,1.0
+2025-09-29,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-10-06,Hoop Bleke Nelis,Keg 50L,RandomForest,300.0,0.0
+2025-10-13,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-10-20,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-10-27,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-11-03,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-11-10,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-11-17,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-11-24,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-12-01,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-12-08,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-12-15,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2025-12-22,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,15.294047619047621
+2025-12-29,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2026-01-05,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2026-01-12,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2026-01-26,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2026-02-02,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,0.0
+2026-02-09,Hoop Bleke Nelis,Keg 50L,RandomForest,0.0,29.79404761904762
+2025-08-18,Hoop Bleke Nelis,Other,RandomForest,0.0,44.69645874340561
+2025-08-25,Hoop Bleke Nelis,Other,RandomForest,7.26,32.54807180919561
+2025-09-01,Hoop Bleke Nelis,Other,RandomForest,15.84,14.916625446491565
+2025-09-08,Hoop Bleke Nelis,Other,RandomForest,13.86,39.61616616384219
+2025-09-15,Hoop Bleke Nelis,Other,RandomForest,11.55,25.489660394049146
+2025-09-22,Hoop Bleke Nelis,Other,RandomForest,4.95,11.206069732966524
+2025-09-29,Hoop Bleke Nelis,Other,RandomForest,36.3,20.104618964913172
+2025-10-06,Hoop Bleke Nelis,Other,RandomForest,35.31,16.171330535807847
+2025-10-13,Hoop Bleke Nelis,Other,RandomForest,20.46,12.784898484001088
+2025-10-20,Hoop Bleke Nelis,Other,RandomForest,89.42999999999999,104.92754536152864
+2025-10-27,Hoop Bleke Nelis,Other,RandomForest,3.3,29.798346155388547
+2025-11-03,Hoop Bleke Nelis,Other,RandomForest,27.39,28.29789768189644
+2025-11-10,Hoop Bleke Nelis,Other,RandomForest,37.95,50.070024763653414
+2025-11-17,Hoop Bleke Nelis,Other,RandomForest,18.15,45.19768084812012
+2025-11-24,Hoop Bleke Nelis,Other,RandomForest,31.35,37.294974541967996
+2025-12-01,Hoop Bleke Nelis,Other,RandomForest,69.96000000000001,43.71525593291088
+2025-12-08,Hoop Bleke Nelis,Other,RandomForest,20.130000000000003,32.49866961772556
+2025-12-15,Hoop Bleke Nelis,Other,RandomForest,68.64,28.54502151449907
+2025-12-22,Hoop Bleke Nelis,Other,RandomForest,34.65,26.33708440609361
+2025-12-29,Hoop Bleke Nelis,Other,RandomForest,16.83,20.944558441034232
+2026-01-05,Hoop Bleke Nelis,Other,RandomForest,3.63,20.991043057893894
+2026-01-12,Hoop Bleke Nelis,Other,RandomForest,0.0,20.652673934477594
+2026-01-19,Hoop Bleke Nelis,Other,RandomForest,17.16,16.31224311490901
+2026-01-26,Hoop Bleke Nelis,Other,RandomForest,16.17,21.883383999331738
+2026-02-02,Hoop Bleke Nelis,Other,RandomForest,22.11,22.24923807796305
+2026-02-09,Hoop Bleke Nelis,Other,RandomForest,5.609999999999999,28.05787388559121
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,67.32,54.32468091575095
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,87.12,49.52792352087116
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,63.36,33.41568979178719
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,71.28,44.37067787912089
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,39.6,33.12789147151698
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,59.4,31.23524017439083
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,23.76,18.40546532091099
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,122.76,20.42824502248393
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,27.72,11.328042248177189
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,27.72,17.75007970454436
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,19.8,17.95146187848386
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,39.6,40.35520123546444
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,15.84,46.21826356217268
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,47.52,9.808103855903985
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,79.2,10.701526335349211
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,55.44,8.769145365186073
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,27.72,51.51665586627203
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,55.44,24.06030545200073
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,35.64,46.27835485714282
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,43.56,32.61187471401568
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,11.88,17.816563929280218
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,27.72,10.77300609578889
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,0.0,17.93725303300947
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,11.88,5.873078159366258
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,110.88,6.01548998601183
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,RandomForest,15.84,8.890252769330086
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,80.0,135.59941798941796
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,100.0,96.7480663780664
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,127.34584415584412
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,220.0,99.69937932437934
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,109.20907407407407
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,200.0,102.20925518925519
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,80.0,89.53787138787139
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,340.0,110.92203703703703
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,0.0,85.52555555555554
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,40.0,106.23604599104597
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,40.0,84.57645502645502
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,120.0,111.58812169312169
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,77.54151515151513
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,98.35045676545677
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,20.0,88.8229844229844
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,120.0,94.42140433640434
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,87.75402338402336
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,120.0,101.59634421134422
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,40.0,89.12400895400893
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,120.0,89.81828264328264
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,0.0,89.55115902615901
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,0.0,92.12893680393678
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,80.0,91.80385022385019
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,100.0,91.23219077219078
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,98.29908831908833
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,RandomForest,60.0,93.63363858363859
+2025-08-18,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,6.383155730954576
+2025-08-25,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,5.82747502059202
+2025-09-01,Hoop Kaper Tropical IPA,Other,RandomForest,5.94,5.643030715222902
+2025-09-08,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,5.2501702529124215
+2025-09-15,Hoop Kaper Tropical IPA,Other,RandomForest,1.98,9.606823653705879
+2025-09-22,Hoop Kaper Tropical IPA,Other,RandomForest,9.9,6.3538221674429085
+2025-09-29,Hoop Kaper Tropical IPA,Other,RandomForest,7.92,5.412738084702034
+2025-10-06,Hoop Kaper Tropical IPA,Other,RandomForest,1.98,6.222513266386192
+2025-10-13,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,6.208877192535982
+2025-10-20,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,21.674647942191513
+2025-10-27,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,9.406471674047335
+2025-11-03,Hoop Kaper Tropical IPA,Other,RandomForest,5.94,9.537093787558412
+2025-11-10,Hoop Kaper Tropical IPA,Other,RandomForest,11.88,29.388001219321577
+2025-11-17,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,24.602339809268162
+2025-11-24,Hoop Kaper Tropical IPA,Other,RandomForest,16.5,20.145010028281884
+2025-12-01,Hoop Kaper Tropical IPA,Other,RandomForest,3.96,18.854736685975162
+2025-12-08,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,32.467138225016264
+2025-12-15,Hoop Kaper Tropical IPA,Other,RandomForest,15.84,26.102166152730685
+2025-12-22,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,21.228979201587382
+2025-12-29,Hoop Kaper Tropical IPA,Other,RandomForest,15.18,23.00707115381762
+2026-01-05,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,10.348297555681878
+2026-01-12,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,7.711522020297581
+2026-01-19,Hoop Kaper Tropical IPA,Other,RandomForest,9.9,4.3541003968609004
+2026-01-26,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,4.342759553302438
+2026-02-02,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,6.459503621135664
+2026-02-09,Hoop Kaper Tropical IPA,Other,RandomForest,0.0,7.696847810725017
+2025-08-18,Hoop Lager,Bottle 33cl,RandomForest,0.0,2.359444882525925
+2025-08-25,Hoop Lager,Bottle 33cl,RandomForest,0.0,7.59214273418964
+2025-09-01,Hoop Lager,Bottle 33cl,RandomForest,0.0,10.359105383119653
+2025-09-08,Hoop Lager,Bottle 33cl,RandomForest,0.0,9.4565903432571
+2025-09-15,Hoop Lager,Bottle 33cl,RandomForest,0.0,10.596217309026956
+2025-09-22,Hoop Lager,Bottle 33cl,RandomForest,0.0,4.634822586838451
+2025-09-29,Hoop Lager,Bottle 33cl,RandomForest,0.0,6.632299049211664
+2025-10-06,Hoop Lager,Bottle 33cl,RandomForest,0.0,3.535848357429261
+2025-10-13,Hoop Lager,Bottle 33cl,RandomForest,0.0,2.5248796431382075
+2025-10-20,Hoop Lager,Bottle 33cl,RandomForest,0.0,4.443791348407929
+2025-10-27,Hoop Lager,Bottle 33cl,RandomForest,0.0,4.187053653544651
+2025-11-03,Hoop Lager,Bottle 33cl,RandomForest,0.0,1.7802380105275217
+2025-11-10,Hoop Lager,Bottle 33cl,RandomForest,0.0,2.742611019777279
+2025-11-17,Hoop Lager,Bottle 33cl,RandomForest,0.0,4.3367629414410835
+2025-11-24,Hoop Lager,Bottle 33cl,RandomForest,0.0,4.465604300993813
+2025-12-01,Hoop Lager,Bottle 33cl,RandomForest,0.0,5.47323399193613
+2025-12-08,Hoop Lager,Bottle 33cl,RandomForest,0.0,4.705259239931377
+2025-12-15,Hoop Lager,Bottle 33cl,RandomForest,0.0,1.947406375247039
+2025-12-22,Hoop Lager,Bottle 33cl,RandomForest,0.0,6.468060217417472
+2025-12-29,Hoop Lager,Bottle 33cl,RandomForest,0.0,3.5255945927789534
+2026-01-05,Hoop Lager,Bottle 33cl,RandomForest,0.0,5.433158616276565
+2026-01-12,Hoop Lager,Bottle 33cl,RandomForest,0.0,2.3997144527722942
+2026-01-19,Hoop Lager,Bottle 33cl,RandomForest,0.0,3.1941853828548146
+2026-01-26,Hoop Lager,Bottle 33cl,RandomForest,0.0,2.799501957946389
+2026-02-02,Hoop Lager,Bottle 33cl,RandomForest,0.0,1.7900871646688363
+2026-02-09,Hoop Lager,Bottle 33cl,RandomForest,0.0,2.0673183100999815
+2025-08-18,Hoop Lager,Keg 20L,RandomForest,500.0,309.79660909552547
+2025-08-25,Hoop Lager,Keg 20L,RandomForest,220.0,269.44524644945693
+2025-09-01,Hoop Lager,Keg 20L,RandomForest,320.0,418.92019628519637
+2025-09-08,Hoop Lager,Keg 20L,RandomForest,600.0,348.735119743804
+2025-09-15,Hoop Lager,Keg 20L,RandomForest,360.0,310.8021224146224
+2025-09-22,Hoop Lager,Keg 20L,RandomForest,440.0,394.64350233100225
+2025-09-29,Hoop Lager,Keg 20L,RandomForest,400.0,313.7446119436121
+2025-10-06,Hoop Lager,Keg 20L,RandomForest,1660.0,385.6271042846042
+2025-10-13,Hoop Lager,Keg 20L,RandomForest,0.0,385.4678184778184
+2025-10-20,Hoop Lager,Keg 20L,RandomForest,340.0,359.009884603414
+2025-10-27,Hoop Lager,Keg 20L,RandomForest,80.0,367.7192065940595
+2025-11-03,Hoop Lager,Keg 20L,RandomForest,100.0,411.47343236828505
+2025-11-10,Hoop Lager,Keg 20L,RandomForest,760.0,318.5631268112692
+2025-11-17,Hoop Lager,Keg 20L,RandomForest,200.0,290.48466867898753
+2025-11-24,Hoop Lager,Keg 20L,RandomForest,140.0,307.2516347847772
+2025-12-01,Hoop Lager,Keg 20L,RandomForest,380.0,280.13912562726813
+2025-12-08,Hoop Lager,Keg 20L,RandomForest,720.0,302.4369274550698
+2025-12-15,Hoop Lager,Keg 20L,RandomForest,460.0,290.41649164331824
+2025-12-22,Hoop Lager,Keg 20L,RandomForest,60.0,408.9250493460786
+2025-12-29,Hoop Lager,Keg 20L,RandomForest,500.0,320.1359603502793
+2026-01-05,Hoop Lager,Keg 20L,RandomForest,80.0,280.8770003288193
+2026-01-12,Hoop Lager,Keg 20L,RandomForest,520.0,306.64516801081055
+2026-01-19,Hoop Lager,Keg 20L,RandomForest,440.0,360.6676467194658
+2026-01-26,Hoop Lager,Keg 20L,RandomForest,160.0,299.9141017459206
+2026-02-02,Hoop Lager,Keg 20L,RandomForest,160.0,380.85044725226624
+2026-02-09,Hoop Lager,Keg 20L,RandomForest,240.0,425.6627051162346
+2025-08-18,Hoop Lager,Keg 50L,RandomForest,0.0,33.51523421769725
+2025-08-25,Hoop Lager,Keg 50L,RandomForest,0.0,128.99047619047624
+2025-09-01,Hoop Lager,Keg 50L,RandomForest,0.0,115.22063492063494
+2025-09-08,Hoop Lager,Keg 50L,RandomForest,0.0,47.34394064872325
+2025-09-15,Hoop Lager,Keg 50L,RandomForest,0.0,58.15028985507245
+2025-09-22,Hoop Lager,Keg 50L,RandomForest,0.0,167.33679779158038
+2025-09-29,Hoop Lager,Keg 50L,RandomForest,0.0,167.0352104899931
+2025-10-06,Hoop Lager,Keg 50L,RandomForest,350.0,519.5406084656083
+2025-10-13,Hoop Lager,Keg 50L,RandomForest,0.0,125.66973429951696
+2025-10-20,Hoop Lager,Keg 50L,RandomForest,0.0,103.95198412698413
+2025-10-27,Hoop Lager,Keg 50L,RandomForest,0.0,85.71891261659304
+2025-11-03,Hoop Lager,Keg 50L,RandomForest,0.0,17.35928183674486
+2025-11-10,Hoop Lager,Keg 50L,RandomForest,0.0,4.914837392300413
+2025-11-17,Hoop Lager,Keg 50L,RandomForest,0.0,37.77594850341153
+2025-11-24,Hoop Lager,Keg 50L,RandomForest,0.0,3.3731707256337464
+2025-12-01,Hoop Lager,Keg 50L,RandomForest,0.0,0.5676151700781912
+2025-12-08,Hoop Lager,Keg 50L,RandomForest,0.0,3.1370596145226357
+2025-12-15,Hoop Lager,Keg 50L,RandomForest,0.0,36.137059614522634
+2025-12-22,Hoop Lager,Keg 50L,RandomForest,0.0,58.42301587301588
+2025-12-29,Hoop Lager,Keg 50L,RandomForest,0.0,31.684281836744855
+2026-01-05,Hoop Lager,Keg 50L,RandomForest,0.0,56.73518245786286
+2026-01-12,Hoop Lager,Keg 50L,RandomForest,0.0,7.181504058967081
+2026-01-19,Hoop Lager,Keg 50L,RandomForest,0.0,13.473170725633747
+2026-01-26,Hoop Lager,Keg 50L,RandomForest,0.0,1.1509485034115245
+2026-02-02,Hoop Lager,Keg 50L,RandomForest,0.0,0.012059614522635589
+2026-02-09,Hoop Lager,Keg 50L,RandomForest,0.0,35.345238095238095
+2025-08-18,Hoop Lager,Other,RandomForest,33.0,13.724275435691679
+2025-08-25,Hoop Lager,Other,RandomForest,24.75,6.626884059331527
+2025-09-01,Hoop Lager,Other,RandomForest,0.0,6.554663713414001
+2025-09-08,Hoop Lager,Other,RandomForest,0.0,5.960128150306618
+2025-09-15,Hoop Lager,Other,RandomForest,0.0,7.18463365184834
+2025-09-22,Hoop Lager,Other,RandomForest,0.0,7.457167804259452
+2025-09-29,Hoop Lager,Other,RandomForest,0.0,33.709212032580446
+2025-10-06,Hoop Lager,Other,RandomForest,0.0,46.32728073205656
+2025-10-13,Hoop Lager,Other,RandomForest,0.0,75.1628663462345
+2025-10-20,Hoop Lager,Other,RandomForest,0.0,402.9209876221005
+2025-10-27,Hoop Lager,Other,RandomForest,0.0,56.7152451916243
+2025-11-03,Hoop Lager,Other,RandomForest,0.0,98.92658012216275
+2025-11-10,Hoop Lager,Other,RandomForest,0.0,69.27431817772317
+2025-11-17,Hoop Lager,Other,RandomForest,0.0,55.339862035442515
+2025-11-24,Hoop Lager,Other,RandomForest,0.0,51.390626861777484
+2025-12-01,Hoop Lager,Other,RandomForest,0.0,55.56656663417792
+2025-12-08,Hoop Lager,Other,RandomForest,0.0,57.4734965181828
+2025-12-15,Hoop Lager,Other,RandomForest,0.0,51.270642043634396
+2025-12-22,Hoop Lager,Other,RandomForest,0.0,68.58803442714692
+2025-12-29,Hoop Lager,Other,RandomForest,0.0,64.47515815635373
+2026-01-05,Hoop Lager,Other,RandomForest,0.0,64.15075866836695
+2026-01-12,Hoop Lager,Other,RandomForest,0.0,65.0026430441465
+2026-01-19,Hoop Lager,Other,RandomForest,0.0,77.12647334518154
+2026-01-26,Hoop Lager,Other,RandomForest,0.0,82.76713523619564
+2026-02-02,Hoop Lager,Other,RandomForest,0.0,90.19212979438367
+2026-02-09,Hoop Lager,Other,RandomForest,0.0,90.44943011036835
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,15.84,51.15045812489502
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,59.4,58.853758607798
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,35.64,74.81040378525448
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,122.76,22.7774202620131
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,55.44,80.52409542290803
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,102.96,40.66339872015919
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,23.76,56.93080681319718
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,91.08,37.200359776589636
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,55.44,57.24593496907309
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,7.920000000000002,66.36345344122839
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,51.48,52.71096957220637
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,43.56,38.657216858813975
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,55.44,81.2979951382885
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,35.64,147.39452714303283
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,75.24,88.24868966287933
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,201.96,42.870568581002765
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,51.48,108.4530152750387
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,95.04,200.5397106695935
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,23.76,39.60751561614331
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,35.64,37.763059742397395
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,237.6,62.9448389599451
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,47.52,79.19788235528101
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,15.84,12.662084593001008
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,11.88,21.784304374481056
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,95.04,60.60481214485484
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,HistGradientBoosting,31.68,31.234620364323032
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,2.7155199996076873
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,1.679536884362659
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,0.9902461815557896
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,0.5242173790783846
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,2.574195435700822
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,0.9419841302260765
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,1.8919477621672338
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,9.0,0.8968315617200309
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,0.9409725441552514
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,3.7011037449092425
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,3.6663136694299814
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,3.5006994839820567
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,238.5,3.0412189859123595
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,40.5,3.4972358352753092
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,3.3904047810783244
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,6.876121825900469
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,17.528429394019252
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,23.161635526359547
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,40.596900593109496
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,111.99808303414744
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,11.946617757899332
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,7.537940814824727
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,3.589791578738429
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,3.141959018474872
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,0.6462211771197257
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,HistGradientBoosting,0.0,0.3237510188861857
+2025-08-18,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,140.0,268.78689297300804
+2025-08-25,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,160.0,134.79733619661215
+2025-09-01,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,160.0,153.105450641624
+2025-09-08,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,360.0,231.79234884996134
+2025-09-15,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,140.0,141.70317999492573
+2025-09-22,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,320.0,237.15988760753254
+2025-09-29,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,340.0,149.0311711652527
+2025-10-06,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,400.0,301.42302113589295
+2025-10-13,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,140.0,336.02895893029927
+2025-10-20,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,200.0,179.16739045240263
+2025-10-27,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,40.0,161.592118296884
+2025-11-03,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,180.0,263.68483569658775
+2025-11-10,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,120.0,161.58258977006702
+2025-11-17,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,80.0,63.1941916209124
+2025-11-24,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,60.0,128.8768569920391
+2025-12-01,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,120.0,122.55192866526751
+2025-12-08,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,180.0,127.9527153850217
+2025-12-15,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,200.0,219.0635227624247
+2025-12-22,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,40.0,142.27433745363044
+2025-12-29,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,100.0,98.65947510895529
+2026-01-05,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,40.0,133.5348682628588
+2026-01-12,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,40.0,77.08983696006797
+2026-01-19,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,80.0,102.45667093426869
+2026-01-26,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,120.0,184.9012915906191
+2026-02-02,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,100.0,106.6943778935577
+2026-02-09,Hoop Bleke Nelis,Keg 20L,HistGradientBoosting,60.0,171.39059941933596
+2025-08-18,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0018775593228579333
+2025-08-25,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0003611797313002392
+2025-09-01,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0003611797313002392
+2025-09-08,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004941089651876748
+2025-09-15,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004941089651876748
+2025-09-22,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.007391491089823416
+2025-09-29,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0007876293591910203
+2025-10-06,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,300.0,0.0019440494239777696
+2025-10-13,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0019440494239777696
+2025-10-20,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2025-10-27,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2025-11-03,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0018301496760539746
+2025-11-10,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2025-11-17,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2025-11-24,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004813509723936933
+2025-12-01,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2025-12-08,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004813509723936933
+2025-12-15,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004813509723936933
+2025-12-22,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0018301496760539746
+2025-12-29,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2026-01-05,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2026-01-12,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0001950187856627011
+2026-01-19,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004813509723936933
+2026-01-26,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004813509723936933
+2026-02-02,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.0004813509723936933
+2026-02-09,Hoop Bleke Nelis,Keg 50L,HistGradientBoosting,0.0,0.002285345290837797
+2025-08-18,Hoop Bleke Nelis,Other,HistGradientBoosting,0.0,67.50248994636615
+2025-08-25,Hoop Bleke Nelis,Other,HistGradientBoosting,7.26,45.63928395564775
+2025-09-01,Hoop Bleke Nelis,Other,HistGradientBoosting,15.84,6.974757370943829
+2025-09-08,Hoop Bleke Nelis,Other,HistGradientBoosting,13.86,81.98166534624877
+2025-09-15,Hoop Bleke Nelis,Other,HistGradientBoosting,11.55,31.100612556571953
+2025-09-22,Hoop Bleke Nelis,Other,HistGradientBoosting,4.95,4.067965066364553
+2025-09-29,Hoop Bleke Nelis,Other,HistGradientBoosting,36.3,16.95797343205921
+2025-10-06,Hoop Bleke Nelis,Other,HistGradientBoosting,35.31,12.417828551030563
+2025-10-13,Hoop Bleke Nelis,Other,HistGradientBoosting,20.46,4.708559891043023
+2025-10-20,Hoop Bleke Nelis,Other,HistGradientBoosting,89.42999999999999,19.846003027205636
+2025-10-27,Hoop Bleke Nelis,Other,HistGradientBoosting,3.3,23.42435706548011
+2025-11-03,Hoop Bleke Nelis,Other,HistGradientBoosting,27.39,15.153793540432861
+2025-11-10,Hoop Bleke Nelis,Other,HistGradientBoosting,37.95,40.05117267481971
+2025-11-17,Hoop Bleke Nelis,Other,HistGradientBoosting,18.15,94.68064190934976
+2025-11-24,Hoop Bleke Nelis,Other,HistGradientBoosting,31.35,68.25518663371568
+2025-12-01,Hoop Bleke Nelis,Other,HistGradientBoosting,69.96000000000001,66.6087515541252
+2025-12-08,Hoop Bleke Nelis,Other,HistGradientBoosting,20.130000000000003,30.34955479380793
+2025-12-15,Hoop Bleke Nelis,Other,HistGradientBoosting,68.64,40.476704708901465
+2025-12-22,Hoop Bleke Nelis,Other,HistGradientBoosting,34.65,24.057801495460257
+2025-12-29,Hoop Bleke Nelis,Other,HistGradientBoosting,16.83,18.10746983820998
+2026-01-05,Hoop Bleke Nelis,Other,HistGradientBoosting,3.63,9.965340026175001
+2026-01-12,Hoop Bleke Nelis,Other,HistGradientBoosting,0.0,11.808357974076126
+2026-01-19,Hoop Bleke Nelis,Other,HistGradientBoosting,17.16,13.597875706474243
+2026-01-26,Hoop Bleke Nelis,Other,HistGradientBoosting,16.17,11.648822352559689
+2026-02-02,Hoop Bleke Nelis,Other,HistGradientBoosting,22.11,24.9054270826115
+2026-02-09,Hoop Bleke Nelis,Other,HistGradientBoosting,5.609999999999999,15.8799833964241
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,67.32,45.73804748494968
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,87.12,23.92837048633285
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,63.36,18.49224409495921
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,71.28,14.45509345472312
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,39.6,7.267216234037786
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,59.4,13.500866834519828
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,23.76,3.1321649402120784
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,122.76,13.872096074730104
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,27.72,5.701083559206704
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,27.72,5.760505800911723
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,19.8,3.5399613341842957
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,39.6,26.06299062675589
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,15.84,15.389786038503658
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,47.52,3.9131839348271726
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,79.2,4.048891621526711
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,55.44,7.729893952387933
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,27.72,91.46358392703577
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,55.44,5.7209889434126895
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,35.64,8.20591109155132
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,43.56,3.678266646685919
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,11.88,2.9129449243886185
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,27.72,5.69706986268916
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,0.0,3.2684226632456146
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,11.88,1.8528580090022027
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,110.88,2.3587571875886324
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,HistGradientBoosting,15.84,3.914756401121429
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,80.0,89.81537037584829
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,100.0,51.87199226668341
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,83.09148107096267
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,220.0,94.34301985012556
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,100.51289613863192
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,200.0,45.92331426349025
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,80.0,55.59656896447629
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,340.0,22.451905569562516
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,0.0,17.036669552653294
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,40.0,42.51632276866339
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,40.0,11.579385424840156
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,120.0,11.378236673647756
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,14.507808193389629
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,11.8307878180048
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,20.0,9.083289533654433
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,120.0,4.444715528295208
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,11.833893865253852
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,120.0,5.283137141639249
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,40.0,7.104620899851798
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,120.0,5.07217999010259
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,0.0,6.4134551824700345
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,0.0,13.039953066852219
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,80.0,11.493518056032029
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,100.0,11.018240587835788
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,17.944462619161516
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,HistGradientBoosting,60.0,13.38119955283521
+2025-08-18,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,6.05309525844206
+2025-08-25,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,1.8727903942448354
+2025-09-01,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,5.94,2.720610869855358
+2025-09-08,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,9.713979437230401
+2025-09-15,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,1.98,4.232704591265096
+2025-09-22,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,9.9,8.35357640877706
+2025-09-29,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,7.92,4.3621798889353265
+2025-10-06,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,1.98,6.036626223659388
+2025-10-13,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,3.913645615869449
+2025-10-20,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,10.480048175308562
+2025-10-27,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,9.309703307206583
+2025-11-03,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,5.94,4.393858077547933
+2025-11-10,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,11.88,6.156463299641167
+2025-11-17,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,7.815557013327747
+2025-11-24,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,16.5,8.431347291274577
+2025-12-01,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,3.96,5.41167047745074
+2025-12-08,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,8.348289034367419
+2025-12-15,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,15.84,13.620389430042719
+2025-12-22,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,3.991773377684629
+2025-12-29,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,15.18,4.448976187700071
+2026-01-05,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,5.558017369833043
+2026-01-12,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,4.793216838604552
+2026-01-19,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,9.9,4.465583814902101
+2026-01-26,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,3.0956166726245438
+2026-02-02,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,8.835908967905418
+2026-02-09,Hoop Kaper Tropical IPA,Other,HistGradientBoosting,0.0,3.713617144256828
+2025-08-18,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.05682100660313346
+2025-08-25,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.07273480825894181
+2025-09-01,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.08874168222094182
+2025-09-08,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.004099035659176538
+2025-09-15,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.026808763358963254
+2025-09-22,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.0474144424742228
+2025-09-29,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.033692853255964814
+2025-10-06,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.02345502432930508
+2025-10-13,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.051855657593846104
+2025-10-20,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.042959698410442795
+2025-10-27,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.11714789660103588
+2025-11-03,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.06744111219977794
+2025-11-10,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.054400762503939715
+2025-11-17,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.21749993695302983
+2025-11-24,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.6245822096709502
+2025-12-01,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.05076107987103162
+2025-12-08,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.12579494653113493
+2025-12-15,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.2722488605218124
+2025-12-22,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.11921469238615773
+2025-12-29,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.025709258114481666
+2026-01-05,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.013847752715933474
+2026-01-12,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.020754108809030718
+2026-01-19,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.15776179244465174
+2026-01-26,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.0935040113648649
+2026-02-02,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.1577519766384696
+2026-02-09,Hoop Lager,Bottle 33cl,HistGradientBoosting,0.0,0.1706687497366073
+2025-08-18,Hoop Lager,Keg 20L,HistGradientBoosting,500.0,545.4204985316841
+2025-08-25,Hoop Lager,Keg 20L,HistGradientBoosting,220.0,382.40859230546033
+2025-09-01,Hoop Lager,Keg 20L,HistGradientBoosting,320.0,269.5313890495802
+2025-09-08,Hoop Lager,Keg 20L,HistGradientBoosting,600.0,274.075754650069
+2025-09-15,Hoop Lager,Keg 20L,HistGradientBoosting,360.0,184.64869991428964
+2025-09-22,Hoop Lager,Keg 20L,HistGradientBoosting,440.0,605.8559260284311
+2025-09-29,Hoop Lager,Keg 20L,HistGradientBoosting,400.0,176.00463656553305
+2025-10-06,Hoop Lager,Keg 20L,HistGradientBoosting,1660.0,371.1691344424902
+2025-10-13,Hoop Lager,Keg 20L,HistGradientBoosting,0.0,271.37478332352003
+2025-10-20,Hoop Lager,Keg 20L,HistGradientBoosting,340.0,279.9689282959063
+2025-10-27,Hoop Lager,Keg 20L,HistGradientBoosting,80.0,349.15399033252373
+2025-11-03,Hoop Lager,Keg 20L,HistGradientBoosting,100.0,315.8980565645489
+2025-11-10,Hoop Lager,Keg 20L,HistGradientBoosting,760.0,170.0086670293909
+2025-11-17,Hoop Lager,Keg 20L,HistGradientBoosting,200.0,286.0538671914302
+2025-11-24,Hoop Lager,Keg 20L,HistGradientBoosting,140.0,222.25287465229974
+2025-12-01,Hoop Lager,Keg 20L,HistGradientBoosting,380.0,301.5613314804494
+2025-12-08,Hoop Lager,Keg 20L,HistGradientBoosting,720.0,332.60635237951544
+2025-12-15,Hoop Lager,Keg 20L,HistGradientBoosting,460.0,279.1430272193903
+2025-12-22,Hoop Lager,Keg 20L,HistGradientBoosting,60.0,521.59083398009
+2025-12-29,Hoop Lager,Keg 20L,HistGradientBoosting,500.0,230.35569630405072
+2026-01-05,Hoop Lager,Keg 20L,HistGradientBoosting,80.0,189.86752397027283
+2026-01-12,Hoop Lager,Keg 20L,HistGradientBoosting,520.0,256.21015929174007
+2026-01-19,Hoop Lager,Keg 20L,HistGradientBoosting,440.0,208.44169115182598
+2026-01-26,Hoop Lager,Keg 20L,HistGradientBoosting,160.0,156.42177108416843
+2026-02-02,Hoop Lager,Keg 20L,HistGradientBoosting,160.0,368.5428288438447
+2026-02-09,Hoop Lager,Keg 20L,HistGradientBoosting,240.0,211.4490419613254
+2025-08-18,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,39.897352994210166
+2025-08-25,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,36.08055067640995
+2025-09-01,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,96.41969952067171
+2025-09-08,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,53.0778719925021
+2025-09-15,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,19.373423858068293
+2025-09-22,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,6.993893512886839
+2025-09-29,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,28.247240606766685
+2025-10-06,Hoop Lager,Keg 50L,HistGradientBoosting,350.0,52.81110886325954
+2025-10-13,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,102.66237227599237
+2025-10-20,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,10.789525209903054
+2025-10-27,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,3.52672723858041
+2025-11-03,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,0.40363224316920315
+2025-11-10,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,0.38487782977096907
+2025-11-17,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,0.7572234216776188
+2025-11-24,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,2.8489323858403295
+2025-12-01,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,1.3546122594563725
+2025-12-08,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,1.1087809570762568
+2025-12-15,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,3.427597755892202
+2025-12-22,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,2.678915937633048
+2025-12-29,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,0.30162213569626906
+2026-01-05,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,16.35672922398971
+2026-01-12,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,8.77807515455724
+2026-01-19,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,2.465286169574292
+2026-01-26,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,2.608497001916033
+2026-02-02,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,3.1632802310754755
+2026-02-09,Hoop Lager,Keg 50L,HistGradientBoosting,0.0,0.8991159245953071
+2025-08-18,Hoop Lager,Other,HistGradientBoosting,33.0,18.343447140078837
+2025-08-25,Hoop Lager,Other,HistGradientBoosting,24.75,5.379719485977399
+2025-09-01,Hoop Lager,Other,HistGradientBoosting,0.0,5.923258418261607
+2025-09-08,Hoop Lager,Other,HistGradientBoosting,0.0,2.050648474752413
+2025-09-15,Hoop Lager,Other,HistGradientBoosting,0.0,16.003454073610683
+2025-09-22,Hoop Lager,Other,HistGradientBoosting,0.0,6.181591548249115
+2025-09-29,Hoop Lager,Other,HistGradientBoosting,0.0,9.039444374655709
+2025-10-06,Hoop Lager,Other,HistGradientBoosting,0.0,6.306268067287555
+2025-10-13,Hoop Lager,Other,HistGradientBoosting,0.0,0.9787576726995624
+2025-10-20,Hoop Lager,Other,HistGradientBoosting,0.0,4.1085930193395095
+2025-10-27,Hoop Lager,Other,HistGradientBoosting,0.0,7.96952374597435
+2025-11-03,Hoop Lager,Other,HistGradientBoosting,0.0,1.7284136504223042
+2025-11-10,Hoop Lager,Other,HistGradientBoosting,0.0,0.39218358974945094
+2025-11-17,Hoop Lager,Other,HistGradientBoosting,0.0,1.3044844296766727
+2025-11-24,Hoop Lager,Other,HistGradientBoosting,0.0,2.7699718024337097
+2025-12-01,Hoop Lager,Other,HistGradientBoosting,0.0,4.2621351604014155
+2025-12-08,Hoop Lager,Other,HistGradientBoosting,0.0,4.312819394560618
+2025-12-15,Hoop Lager,Other,HistGradientBoosting,0.0,2.4041078671864113
+2025-12-22,Hoop Lager,Other,HistGradientBoosting,0.0,2.686852390529361
+2025-12-29,Hoop Lager,Other,HistGradientBoosting,0.0,3.203479317832865
+2026-01-05,Hoop Lager,Other,HistGradientBoosting,0.0,3.07600422709502
+2026-01-12,Hoop Lager,Other,HistGradientBoosting,0.0,4.562827079926259
+2026-01-19,Hoop Lager,Other,HistGradientBoosting,0.0,2.519527039628026
+2026-01-26,Hoop Lager,Other,HistGradientBoosting,0.0,2.78408934763726
+2026-02-02,Hoop Lager,Other,HistGradientBoosting,0.0,1.8816176779015
+2026-02-09,Hoop Lager,Other,HistGradientBoosting,0.0,5.958684576157778
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",15.84,71.14650376371162
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",59.4,77.20968224171193
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",35.64,72.77398548273624
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",122.76,71.70314990758152
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",55.44,72.03507964188263
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",102.96,72.18133148661045
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",23.76,72.17055626155276
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",91.08,72.15956174903506
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",55.44,72.16386652580492
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",7.920000000000002,72.17015134213837
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",51.48,72.17498889675483
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",43.56,72.17863463099414
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",55.44,72.18341407504079
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",35.64,72.18814155588994
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",75.24,72.1942829041404
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",201.96,72.19403472221155
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",51.48,72.19858208355285
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",95.04,72.20207472130261
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",23.76,72.20319644495925
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",35.64,72.2077661030306
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",237.6,72.21073823832265
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",47.52,72.21486245316555
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",15.84,72.21661440701234
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",11.88,72.21875406470363
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",95.04,72.22715694584416
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,"ARIMA(2,1,2)",31.68,72.224463862713
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,11.69402966451362
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,23.041075233720182
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,14.948259084289838
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,23.18798127094368
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,15.230889354232065
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,22.968891066302074
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,15.457228396629988
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",9.0,22.738219386021946
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,15.66262346736424
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,22.542041881035356
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,15.875856006632993
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,22.34514154035593
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",238.5,16.05013142683498
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",40.5,22.1628202050859
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,16.227331653264635
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,21.994381036843624
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,16.39902242459852
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,21.830626516070694
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,16.571704270180465
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,21.680860974281565
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,16.700991643559316
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,21.531571289918578
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,16.85124724428087
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,21.395209238476525
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,16.97966814155197
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,"ARIMA(2,1,2)",0.0,21.26539204046284
+2025-08-18,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",140.0,241.14720064452737
+2025-08-25,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",160.0,215.35556518259023
+2025-09-01,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",160.0,238.19086091944467
+2025-09-08,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",360.0,222.86978034907264
+2025-09-15,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",140.0,232.49028107844575
+2025-09-22,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",320.0,226.245537146643
+2025-09-29,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",340.0,230.08929283741452
+2025-10-06,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",400.0,227.52608622581593
+2025-10-13,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",140.0,229.04066930490728
+2025-10-20,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",200.0,227.97096430608454
+2025-10-27,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",40.0,228.51893276543134
+2025-11-03,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",180.0,228.07997860224296
+2025-11-10,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",120.0,228.29857700967509
+2025-11-17,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",80.0,228.0789559632669
+2025-11-24,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",60.0,228.14467335724697
+2025-12-01,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",120.0,228.02713181941454
+2025-12-08,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",180.0,228.0340293050461
+2025-12-15,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",200.0,227.9625325746576
+2025-12-22,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",40.0,227.94268635100246
+2025-12-29,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",100.0,227.89483477383303
+2026-01-05,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",40.0,227.86504371571158
+2026-01-12,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",40.0,227.82467926014561
+2026-01-19,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",80.0,227.80558087475407
+2026-01-26,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",120.0,227.7714736561553
+2026-02-02,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",100.0,227.74434173488763
+2026-02-09,Hoop Bleke Nelis,Keg 20L,"ARIMA(2,1,2)",60.0,227.71348330644759
+2025-08-18,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.854479374367417
+2025-08-25,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.890176821236218
+2025-09-01,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.807179057169549
+2025-09-08,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.8636803833266637
+2025-09-15,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7928357797610284
+2025-09-22,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.839306580019729
+2025-09-29,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.784369971963358
+2025-10-06,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",300.0,3.818425943730921
+2025-10-13,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.772746975905564
+2025-10-20,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7990635103823682
+2025-10-27,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7618525365416606
+2025-11-03,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.781827062354403
+2025-11-10,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.748907790063505
+2025-11-17,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7665513528850862
+2025-11-24,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.740948859481863
+2025-12-01,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7529791728115285
+2025-12-08,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7320691141469706
+2025-12-15,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7390132249127555
+2025-12-22,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7212758367630014
+2025-12-29,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.727460135083266
+2026-01-05,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.712696203801258
+2026-01-12,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7125907573561467
+2026-01-19,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7028577500383695
+2026-01-26,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.7053630557742365
+2026-02-02,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.694890301362676
+2026-02-09,Hoop Bleke Nelis,Keg 50L,"ARIMA(2,1,2)",0.0,3.6961062413605936
+2025-08-18,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",0.0,29.41313832920904
+2025-08-25,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",7.26,30.54529837995333
+2025-09-01,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",15.84,30.9801053093641
+2025-09-08,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",13.86,30.81599773439648
+2025-09-15,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",11.55,31.0329001229536
+2025-09-22,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",4.95,30.834803852647216
+2025-09-29,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",36.3,30.86410249340359
+2025-10-06,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",35.31,30.861130371746917
+2025-10-13,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",20.46,30.8743035958473
+2025-10-20,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",89.42999999999999,30.879172993075752
+2025-10-27,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",3.3,30.88884550887935
+2025-11-03,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",27.39,30.904009884808726
+2025-11-10,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",37.95,30.898046413093084
+2025-11-17,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",18.15,30.910698271189577
+2025-11-24,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",31.35,30.915922227446924
+2025-12-01,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",69.96000000000001,30.920252147110915
+2025-12-08,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",20.130000000000003,30.930172665954867
+2025-12-15,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",68.64,30.936559074523363
+2025-12-22,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",34.65,30.970456817422043
+2025-12-29,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",16.83,30.95003871394857
+2026-01-05,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",3.63,30.955361707905656
+2026-01-12,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",0.0,30.958764046246497
+2026-01-19,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",17.16,30.965646616762665
+2026-01-26,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",16.17,30.970982184974478
+2026-02-02,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",22.11,30.97597677504885
+2026-02-09,Hoop Bleke Nelis,Other,"ARIMA(2,1,2)",5.609999999999999,30.980890841588757
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",67.32,52.55871667380567
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",87.12,48.139998747567894
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",63.36,46.02974090572532
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",71.28,44.57554000613129
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",39.6,43.364392873059685
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",59.4,42.32253620929815
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",23.76,41.430898571799716
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",122.76,40.651926761781375
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",27.72,39.973648612214994
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",27.72,39.384717989965765
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",19.8,38.87201019735374
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",39.6,38.42771910038466
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",15.84,38.03940711236229
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",47.52,37.70081726273479
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",79.2,37.40811663370036
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",55.44,37.15390097793876
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",27.72,36.93307342971296
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",55.44,36.741411344226826
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",35.64,36.574449531624666
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",43.56,36.42962968683001
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",11.88,36.304107562638094
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",27.72,36.19549491366617
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",0.0,36.10011049009843
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",11.88,36.01725185318786
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",110.88,35.9462051628368
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,"ARIMA(2,1,2)",15.84,35.88433063782173
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",80.0,119.24356215059346
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",100.0,116.48497070058505
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,122.71601922817284
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",220.0,117.18835892238518
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,121.75211299758074
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",200.0,118.01937139671865
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",80.0,121.06900999431069
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",340.0,118.57811044028874
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",0.0,120.6127672043016
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",40.0,118.9508702966285
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",40.0,120.30838843689287
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",120.0,119.19953224512456
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,120.10531913605294
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,119.36542456446348
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",20.0,119.9698318205226
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",120.0,119.4761063076811
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,119.8794296837938
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",120.0,119.54995755475613
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",40.0,119.81907677147836
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",120.0,119.59925572956259
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",0.0,119.77882727163367
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",0.0,119.6321351814061
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",80.0,119.75196794623831
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",100.0,119.65407789920661
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,119.73404304025236
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,"ARIMA(2,1,2)",60.0,119.6687205465642
+2025-08-18,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.125744757157518
+2025-08-25,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.144250650105411
+2025-09-01,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",5.94,8.520968804787955
+2025-09-08,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.264794549055486
+2025-09-15,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",1.98,8.464904199495948
+2025-09-22,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",9.9,7.336836628458923
+2025-09-29,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",7.92,8.403885991906899
+2025-10-06,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",1.98,7.39909990246223
+2025-10-13,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.344956749063197
+2025-10-20,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.452883557095179
+2025-10-27,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.307246974210846
+2025-11-03,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",5.94,7.507173976380077
+2025-11-10,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",11.88,8.26891595166417
+2025-11-17,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.550452678270518
+2025-11-24,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",16.5,8.229472983674306
+2025-12-01,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",3.96,7.589193998343985
+2025-12-08,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.196525042070782
+2025-12-15,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",15.84,7.6243926062863485
+2025-12-22,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.167334119618127
+2025-12-29,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",15.18,7.653940618056973
+2026-01-05,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.140833517097455
+2026-01-12,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.685919281881164
+2026-01-19,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",9.9,8.117736061644075
+2026-01-26,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.710167613111633
+2026-02-02,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,8.09812057532486
+2026-02-09,Hoop Kaper Tropical IPA,Other,"ARIMA(2,1,2)",0.0,7.7341225378143195
+2025-08-18,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,2.999311039656879
+2025-08-25,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,2.9380433370385455
+2025-09-01,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.2601832948339418
+2025-09-08,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.079209876409487
+2025-09-15,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.2105565948006642
+2025-09-22,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.124075979376988
+2025-09-29,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.184753068238092
+2025-10-06,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1444852093763718
+2025-10-13,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.173087997910356
+2025-10-20,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.154721593678227
+2025-10-27,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.168240354039826
+2025-11-03,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1600311939155032
+2025-11-10,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.166409871340444
+2025-11-17,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1633671884918177
+2025-11-24,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1664996141509087
+2025-12-01,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1650720338533564
+2025-12-08,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1667900380212037
+2025-12-15,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.166207489305347
+2025-12-22,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1671520043927632
+2025-12-29,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1671684329286394
+2026-01-05,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.1678255256085484
+2026-01-12,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.167965772205226
+2026-01-19,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.168429048103169
+2026-01-26,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.168602792521193
+2026-02-02,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.168779362440055
+2026-02-09,Hoop Lager,Bottle 33cl,"ARIMA(2,1,2)",0.0,3.169192450425948
+2025-08-18,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",500.0,367.17953602446096
+2025-08-25,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",220.0,326.0255286159825
+2025-09-01,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",320.0,354.9734582445386
+2025-09-08,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",600.0,307.70712882504756
+2025-09-15,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",360.0,330.78303220337256
+2025-09-22,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",440.0,323.9818483229702
+2025-09-29,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",400.0,342.63240032345084
+2025-10-06,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",1660.0,317.14250966054965
+2025-10-13,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",0.0,338.3013035638578
+2025-10-20,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",340.0,320.3691004005127
+2025-10-27,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",80.0,331.454486227108
+2025-11-03,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",100.0,322.0815817669985
+2025-11-10,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",760.0,333.42121302353297
+2025-11-17,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",200.0,323.9589901449821
+2025-11-24,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",140.0,332.02067025919257
+2025-12-01,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",380.0,325.18991715548
+2025-12-08,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",720.0,330.95001377866373
+2025-12-15,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",460.0,326.0531261381002
+2025-12-22,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",60.0,330.2014785156344
+2025-12-29,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",500.0,326.6813206416981
+2026-01-05,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",80.0,329.66183152665644
+2026-01-12,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",520.0,327.1291097650469
+2026-01-19,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",440.0,329.27673475840015
+2026-01-26,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",160.0,327.4541854465033
+2026-02-02,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",160.0,328.9997846465306
+2026-02-09,Hoop Lager,Keg 20L,"ARIMA(2,1,2)",240.0,327.6929269890678
+2025-08-18,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,53.11495863871622
+2025-08-25,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,204.96416103851863
+2025-09-01,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,63.914914948502854
+2025-09-08,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,194.38179762878383
+2025-09-15,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,73.39334005281886
+2025-09-22,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,185.23676149913314
+2025-09-29,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,81.54363443481942
+2025-10-06,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",350.0,177.517076000666
+2025-10-13,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,88.42797893123091
+2025-10-20,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,170.84262899002877
+2025-10-27,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,94.35519812920225
+2025-11-03,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,165.12286455908787
+2025-11-10,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,99.41786039089367
+2025-11-17,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,160.21396052907576
+2025-11-24,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,103.7442740654147
+2025-12-01,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,156.01789221313223
+2025-12-08,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,107.45442234731496
+2025-12-15,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,152.4262403938487
+2025-12-22,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,110.59914210751987
+2025-12-29,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,172.59694276780488
+2026-01-05,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,114.89253114825716
+2026-01-12,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,146.4996377628355
+2026-01-19,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,117.12538219193812
+2026-01-26,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,144.3313404688466
+2026-02-02,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,118.99544712952034
+2026-02-09,Hoop Lager,Keg 50L,"ARIMA(2,1,2)",0.0,166.61809712790267
+2025-08-18,Hoop Lager,Other,"ARIMA(2,1,2)",33.0,21.49505600853859
+2025-08-25,Hoop Lager,Other,"ARIMA(2,1,2)",24.75,20.822843457541232
+2025-09-01,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.51527388998109
+2025-09-08,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,20.727880114000374
+2025-09-15,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.57131229763846
+2025-09-22,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,20.71092088627394
+2025-09-29,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.608889738207434
+2025-10-06,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,20.652802782746583
+2025-10-13,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.67630541365252
+2025-10-20,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,20.604262440169723
+2025-10-27,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,20.946030523798907
+2025-11-03,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.313235281062894
+2025-11-10,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,20.97815804376083
+2025-11-17,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.263629012378473
+2025-11-24,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.00812598424603
+2025-12-01,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.237144401917394
+2025-12-08,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.025649546908642
+2025-12-15,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.21838761269127
+2025-12-22,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.067241305533233
+2025-12-29,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.199965776493034
+2026-01-05,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.083423004807084
+2026-01-12,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.18720274754121
+2026-01-19,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.096636078000486
+2026-01-26,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.17548214764437
+2026-02-02,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.10741709768853
+2026-02-09,Hoop Lager,Other,"ARIMA(2,1,2)",0.0,21.169057439575973
+2025-08-18,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,15.84,57.536387728602726
+2025-08-25,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,59.4,26.94520082565436
+2025-09-01,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,35.64,62.14736786983327
+2025-09-08,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,122.76,0.0
+2025-09-15,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,55.44,109.07290598996221
+2025-09-22,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,102.96,16.80058734159755
+2025-09-29,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,23.76,33.994387592391405
+2025-10-06,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,91.08,0.0
+2025-10-13,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,55.44,55.16071329256399
+2025-10-20,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,7.920000000000002,141.26877232131108
+2025-10-27,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,51.48,55.78696949993069
+2025-11-03,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,43.56,0.0
+2025-11-10,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,55.44,94.10496687001476
+2025-11-17,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,35.64,146.796808913564
+2025-11-24,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,75.24,55.718194975658385
+2025-12-01,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,201.96,90.00459724544594
+2025-12-08,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,51.48,36.65411446605067
+2025-12-15,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,95.04,207.8069396617574
+2025-12-22,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,23.76,183.05697265176983
+2025-12-29,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,35.64,0.8781780841981401
+2026-01-05,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,237.6,55.32461891453806
+2026-01-12,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,47.52,0.0
+2026-01-19,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,15.84,2.9339853389974095
+2026-01-26,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,11.88,107.86130523331413
+2026-02-02,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,95.04,0.0
+2026-02-09,Hoop Bleke Nelis,Bottle 33cl,HoltWinters_Additive,31.68,10.097094944569328
+2025-08-18,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,10.866372753502645
+2025-08-25,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,16.020072087809513
+2025-09-01,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,5.551261507214434
+2025-09-08,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,10.094859801279284
+2025-09-15,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,7.095183322929861
+2025-09-22,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,8.548143086893575
+2025-09-29,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,1.0624603218658422
+2025-10-06,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,9.0,0.3699174487616297
+2025-10-13,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,1.0102837562209395
+2025-10-20,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,4.013477607337759
+2025-10-27,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,6.9679468728286675
+2025-11-03,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,35.18590395349787
+2025-11-10,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,238.5,24.464794370872248
+2025-11-17,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,40.5,19.22713663944184
+2025-11-24,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,15.924502493491303
+2025-12-01,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,31.074878015794468
+2025-12-08,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,284.0183718378885
+2025-12-15,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,276.92640627172415
+2025-12-22,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,11.374517610589418
+2025-12-29,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,5.748265007559752
+2026-01-05,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,68.73087974481848
+2026-01-12,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,1.284363170972231
+2026-01-19,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,2.3873521346561155
+2026-01-26,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,8.014213290544976
+2026-02-02,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,1.3829171957264244
+2026-02-09,Hoop Bleke Nelis,Bottle 75cl,HoltWinters_Additive,0.0,1.411684571057716
+2025-08-18,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,140.0,169.70200586266094
+2025-08-25,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,160.0,236.43817488093865
+2025-09-01,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,160.0,136.38239619795436
+2025-09-08,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,360.0,150.07823608942232
+2025-09-15,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,140.0,249.50684365742327
+2025-09-22,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,320.0,263.1048163116473
+2025-09-29,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,340.0,662.5356280301279
+2025-10-06,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,400.0,197.092931083371
+2025-10-13,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,140.0,116.9002789040648
+2025-10-20,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,200.0,370.2699351089169
+2025-10-27,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,40.0,630.1153004841884
+2025-11-03,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,180.0,128.9070577283534
+2025-11-10,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,120.0,69.57794296140747
+2025-11-17,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,80.0,166.8247202184832
+2025-11-24,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,60.0,161.88123229035256
+2025-12-01,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,120.0,146.00470388207972
+2025-12-08,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,180.0,161.11612539001013
+2025-12-15,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,200.0,146.10950408370624
+2025-12-22,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,40.0,121.96437625309568
+2025-12-29,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,100.0,172.11968812607765
+2026-01-05,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,40.0,111.992421076592
+2026-01-12,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,40.0,131.10170981280376
+2026-01-19,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,80.0,191.09391906394387
+2026-01-26,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,120.0,156.25913606336167
+2026-02-02,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,100.0,116.12909079162219
+2026-02-09,Hoop Bleke Nelis,Keg 20L,HoltWinters_Additive,60.0,236.13055737367307
+2025-08-18,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.108895500432242
+2025-08-25,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.108274368701725
+2025-09-01,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.108853544738045
+2025-09-08,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.109750469429205
+2025-09-15,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.107192892623498
+2025-09-22,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.100921994875454
+2025-09-29,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.109760714213433
+2025-10-06,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,300.0,4.098257122548815
+2025-10-13,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.116056037267398
+2025-10-20,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.120773627427904
+2025-10-27,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.1350756538996025
+2025-11-03,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.109214131957271
+2025-11-10,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.129567533463683
+2025-11-17,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,5.097974364167179
+2025-11-24,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,5.077416471432361
+2025-12-01,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,5.077639734941843
+2025-12-08,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,5.096226516688731
+2025-12-15,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.953564184832561
+2025-12-22,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,5.0806336777165715
+2025-12-29,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.944063940841799
+2026-01-05,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.938959620632049
+2026-01-12,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.933993096915923
+2026-01-19,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.929017133060755
+2026-01-26,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,5.078264849509685
+2026-02-02,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.921800453073962
+2026-02-09,Hoop Bleke Nelis,Keg 50L,HoltWinters_Additive,0.0,4.917564772612357
+2025-08-18,Hoop Bleke Nelis,Other,HoltWinters_Additive,0.0,42.90791412187606
+2025-08-25,Hoop Bleke Nelis,Other,HoltWinters_Additive,7.26,0.0
+2025-09-01,Hoop Bleke Nelis,Other,HoltWinters_Additive,15.84,0.0
+2025-09-08,Hoop Bleke Nelis,Other,HoltWinters_Additive,13.86,3.4446579965086155
+2025-09-15,Hoop Bleke Nelis,Other,HoltWinters_Additive,11.55,0.0
+2025-09-22,Hoop Bleke Nelis,Other,HoltWinters_Additive,4.95,11.678471408836218
+2025-09-29,Hoop Bleke Nelis,Other,HoltWinters_Additive,36.3,0.0
+2025-10-06,Hoop Bleke Nelis,Other,HoltWinters_Additive,35.31,0.0
+2025-10-13,Hoop Bleke Nelis,Other,HoltWinters_Additive,20.46,43.92993699358877
+2025-10-20,Hoop Bleke Nelis,Other,HoltWinters_Additive,89.42999999999999,0.0
+2025-10-27,Hoop Bleke Nelis,Other,HoltWinters_Additive,3.3,0.0
+2025-11-03,Hoop Bleke Nelis,Other,HoltWinters_Additive,27.39,24.53913707475199
+2025-11-10,Hoop Bleke Nelis,Other,HoltWinters_Additive,37.95,38.95606985717448
+2025-11-17,Hoop Bleke Nelis,Other,HoltWinters_Additive,18.15,0.0
+2025-11-24,Hoop Bleke Nelis,Other,HoltWinters_Additive,31.35,52.65252770007237
+2025-12-01,Hoop Bleke Nelis,Other,HoltWinters_Additive,69.96000000000001,47.89293893442828
+2025-12-08,Hoop Bleke Nelis,Other,HoltWinters_Additive,20.130000000000003,23.830815432498845
+2025-12-15,Hoop Bleke Nelis,Other,HoltWinters_Additive,68.64,9.09778421511569
+2025-12-22,Hoop Bleke Nelis,Other,HoltWinters_Additive,34.65,0.0
+2025-12-29,Hoop Bleke Nelis,Other,HoltWinters_Additive,16.83,0.0
+2026-01-05,Hoop Bleke Nelis,Other,HoltWinters_Additive,3.63,0.0
+2026-01-12,Hoop Bleke Nelis,Other,HoltWinters_Additive,0.0,0.0
+2026-01-19,Hoop Bleke Nelis,Other,HoltWinters_Additive,17.16,0.0
+2026-01-26,Hoop Bleke Nelis,Other,HoltWinters_Additive,16.17,0.0
+2026-02-02,Hoop Bleke Nelis,Other,HoltWinters_Additive,22.11,0.0
+2026-02-09,Hoop Bleke Nelis,Other,HoltWinters_Additive,5.609999999999999,0.0
+2025-08-18,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,67.32,47.85824819365533
+2025-08-25,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,87.12,6.689574512597641
+2025-09-01,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,63.36,5.293776201480949
+2025-09-08,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,71.28,0.0
+2025-09-15,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,39.6,0.0
+2025-09-22,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,59.4,0.0
+2025-09-29,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,23.76,0.0
+2025-10-06,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,122.76,121.54618180904683
+2025-10-13,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,27.72,0.0
+2025-10-20,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,27.72,3.136893645433531
+2025-10-27,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,19.8,0.6575489204274021
+2025-11-03,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,39.6,0.0
+2025-11-10,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,15.84,1.5906938447361405
+2025-11-17,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,47.52,0.0
+2025-11-24,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,79.2,0.557317534162344
+2025-12-01,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,55.44,1.8763779842246961
+2025-12-08,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,27.72,1.8009732031666275
+2025-12-15,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,55.44,108.76743400316546
+2025-12-22,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,35.64,3.591046750915524
+2025-12-29,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,43.56,3.509613267023255
+2026-01-05,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,11.88,0.0
+2026-01-12,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,27.72,0.0
+2026-01-19,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,0.0,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,11.88,4.148218915332446
+2026-02-02,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,110.88,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Bottle 33cl,HoltWinters_Additive,15.84,0.0
+2025-08-18,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,80.0,177.79615478184112
+2025-08-25,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,100.0,99.02197134960147
+2025-09-01,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,118.02634875331677
+2025-09-08,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,220.0,91.71497020477506
+2025-09-15,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,85.48335787428616
+2025-09-22,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,200.0,104.55972859693485
+2025-09-29,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,80.0,25.12976522206676
+2025-10-06,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,340.0,11.876410863862937
+2025-10-13,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,0.0,4.866650672102324
+2025-10-20,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,40.0,51.904134495263754
+2025-10-27,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,40.0,5.4475160212223415
+2025-11-03,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,120.0,12.170219392056104
+2025-11-10,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,18.884014625059876
+2025-11-17,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,3.778913942191174
+2025-11-24,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,20.0,8.797607809681665
+2025-12-01,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,120.0,3.789991805789903
+2025-12-08,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,8.887277055693197
+2025-12-15,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,120.0,3.853294282431712
+2025-12-22,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,40.0,3.7718557765770626
+2025-12-29,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,120.0,8.750412309890166
+2026-01-05,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,0.0,3.7207194906668732
+2026-01-12,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,0.0,13.667574934618258
+2026-01-19,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,80.0,8.60249736124485
+2026-01-26,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,100.0,3.5526632060244125
+2026-02-02,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,3.6135097584792533
+2026-02-09,Hoop Kaper Tropical IPA,Keg 20L,HoltWinters_Additive,60.0,13.600096810230362
+2025-08-18,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.8132858043383928
+2025-08-25,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,77.54616195723787
+2025-09-01,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,5.94,0.0
+2025-09-08,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.0
+2025-09-15,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,1.98,8.897377759953326
+2025-09-22,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,9.9,8.407385193825359
+2025-09-29,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,7.92,0.0
+2025-10-06,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,1.98,7.810003567620785
+2025-10-13,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.0
+2025-10-20,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,8.386672928281
+2025-10-27,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,9.729814258227393
+2025-11-03,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,5.94,2.5706549010956
+2025-11-10,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,11.88,42.58344879305307
+2025-11-17,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,30.67853298145417
+2025-11-24,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,16.5,46.462216899402385
+2025-12-01,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,3.96,16.767193128115885
+2025-12-08,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,37.56423000164242
+2025-12-15,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,15.84,16.778001856605968
+2025-12-22,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,8.856440117028606
+2025-12-29,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,15.18,0.0
+2026-01-05,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.5843914121169673
+2026-01-12,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.0
+2026-01-19,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,9.9,0.0
+2026-01-26,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.0
+2026-02-02,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.0
+2026-02-09,Hoop Kaper Tropical IPA,Other,HoltWinters_Additive,0.0,0.0
+2025-08-18,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,3.992594533152756
+2025-08-25,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.03254406409260957
+2025-09-01,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.035045528554443095
+2025-09-08,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.026877939553934915
+2025-09-15,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,2.6762998319575524
+2025-09-22,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.03372380865890934
+2025-09-29,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,6.659447065856114
+2025-10-06,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.03766889853696842
+2025-10-13,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.03678941568095917
+2025-10-20,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,1.358390955574769
+2025-10-27,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.038920687997216596
+2025-11-03,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.05723122132207559
+2025-11-10,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.0701258376708842
+2025-11-17,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,2.88210145129884
+2025-11-24,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,5.854834139574231
+2025-12-01,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,8.8314705365242
+2025-12-08,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,2.890359059974277
+2025-12-15,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,3.8816510777073487
+2025-12-22,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.9109922248739784
+2025-12-29,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,2.8735407381476663
+2026-01-05,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.909938668943183
+2026-01-12,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,4.85327311245874
+2026-01-19,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,1.8857863670836286
+2026-01-26,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.9084373446732164
+2026-02-02,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,0.908590076373267
+2026-02-09,Hoop Lager,Bottle 33cl,HoltWinters_Additive,0.0,2.889093059931584
+2025-08-18,Hoop Lager,Keg 20L,HoltWinters_Additive,500.0,316.1418536226314
+2025-08-25,Hoop Lager,Keg 20L,HoltWinters_Additive,220.0,493.8105568864733
+2025-09-01,Hoop Lager,Keg 20L,HoltWinters_Additive,320.0,253.65258777654947
+2025-09-08,Hoop Lager,Keg 20L,HoltWinters_Additive,600.0,431.0049030162242
+2025-09-15,Hoop Lager,Keg 20L,HoltWinters_Additive,360.0,439.616493499764
+2025-09-22,Hoop Lager,Keg 20L,HoltWinters_Additive,440.0,413.6725013744957
+2025-09-29,Hoop Lager,Keg 20L,HoltWinters_Additive,400.0,713.6184191222585
+2025-10-06,Hoop Lager,Keg 20L,HoltWinters_Additive,1660.0,493.9532992961312
+2025-10-13,Hoop Lager,Keg 20L,HoltWinters_Additive,0.0,307.298323232539
+2025-10-20,Hoop Lager,Keg 20L,HoltWinters_Additive,340.0,645.6267285419067
+2025-10-27,Hoop Lager,Keg 20L,HoltWinters_Additive,80.0,522.7055992118144
+2025-11-03,Hoop Lager,Keg 20L,HoltWinters_Additive,100.0,294.9324780227376
+2025-11-10,Hoop Lager,Keg 20L,HoltWinters_Additive,760.0,205.7726979824029
+2025-11-17,Hoop Lager,Keg 20L,HoltWinters_Additive,200.0,263.74744861493326
+2025-11-24,Hoop Lager,Keg 20L,HoltWinters_Additive,140.0,348.93215319297616
+2025-12-01,Hoop Lager,Keg 20L,HoltWinters_Additive,380.0,268.97131745173664
+2025-12-08,Hoop Lager,Keg 20L,HoltWinters_Additive,720.0,468.8466081712766
+2025-12-15,Hoop Lager,Keg 20L,HoltWinters_Additive,460.0,343.35250693447574
+2025-12-22,Hoop Lager,Keg 20L,HoltWinters_Additive,60.0,298.26409826507523
+2025-12-29,Hoop Lager,Keg 20L,HoltWinters_Additive,500.0,248.1119528232993
+2026-01-05,Hoop Lager,Keg 20L,HoltWinters_Additive,80.0,284.2230356170081
+2026-01-12,Hoop Lager,Keg 20L,HoltWinters_Additive,520.0,384.29732223940266
+2026-01-19,Hoop Lager,Keg 20L,HoltWinters_Additive,440.0,232.26042513081484
+2026-01-26,Hoop Lager,Keg 20L,HoltWinters_Additive,160.0,256.62112637963503
+2026-02-02,Hoop Lager,Keg 20L,HoltWinters_Additive,160.0,314.7086191142945
+2026-02-09,Hoop Lager,Keg 20L,HoltWinters_Additive,240.0,231.1386471501469
+2025-08-18,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,56.08743367704403
+2025-08-25,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,78.01815715758855
+2025-09-01,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,90.85574530389329
+2025-09-08,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,55.67722354919843
+2025-09-15,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,55.56309146668491
+2025-09-22,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,217.9658285572198
+2025-09-29,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,688.1036441709444
+2025-10-06,Hoop Lager,Keg 50L,HoltWinters_Additive,350.0,426.90644901001735
+2025-10-13,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,55.45222298322702
+2025-10-20,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,90.68649409450697
+2025-10-27,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,55.31127114793307
+2025-11-03,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,55.23075279133451
+2025-11-10,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,55.19511338973281
+2025-11-17,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.26663455485614
+2025-11-24,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.73464508305337
+2025-12-01,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.28152102056985
+2025-12-08,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.27515383531758
+2025-12-15,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.29266623776954
+2025-12-22,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.29765341145858
+2025-12-29,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.29888561897043
+2026-01-05,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.31298812246312
+2026-01-12,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,96.29694416226747
+2026-01-19,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.31800590287614
+2026-01-26,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.7260759430275
+2026-02-02,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.25563369162616
+2026-02-09,Hoop Lager,Keg 50L,HoltWinters_Additive,0.0,71.18139256443179
+2025-08-18,Hoop Lager,Other,HoltWinters_Additive,33.0,0.5871592538127786
+2025-08-25,Hoop Lager,Other,HoltWinters_Additive,24.75,0.5862149623749495
+2025-09-01,Hoop Lager,Other,HoltWinters_Additive,0.0,81.90051734892556
+2025-09-08,Hoop Lager,Other,HoltWinters_Additive,0.0,0.7333016816989115
+2025-09-15,Hoop Lager,Other,HoltWinters_Additive,0.0,41.28642568660799
+2025-09-22,Hoop Lager,Other,HoltWinters_Additive,0.0,0.7743049775564863
+2025-09-29,Hoop Lager,Other,HoltWinters_Additive,0.0,0.7882235184711135
+2025-10-06,Hoop Lager,Other,HoltWinters_Additive,0.0,0.7876008135694157
+2025-10-13,Hoop Lager,Other,HoltWinters_Additive,0.0,0.874843942290557
+2025-10-20,Hoop Lager,Other,HoltWinters_Additive,0.0,5.050806767697889
+2025-10-27,Hoop Lager,Other,HoltWinters_Additive,0.0,0.7848324879473338
+2025-11-03,Hoop Lager,Other,HoltWinters_Additive,0.0,7.359246743775284
+2025-11-10,Hoop Lager,Other,HoltWinters_Additive,0.0,3.360626792144817
+2025-11-17,Hoop Lager,Other,HoltWinters_Additive,0.0,1.2236829622754115
+2025-11-24,Hoop Lager,Other,HoltWinters_Additive,0.0,3.2818790900255657
+2025-12-01,Hoop Lager,Other,HoltWinters_Additive,0.0,14.002214160632406
+2025-12-08,Hoop Lager,Other,HoltWinters_Additive,0.0,38.75679725887566
+2025-12-15,Hoop Lager,Other,HoltWinters_Additive,0.0,22.68189955100424
+2025-12-22,Hoop Lager,Other,HoltWinters_Additive,0.0,3.4238645054879875
+2025-12-29,Hoop Lager,Other,HoltWinters_Additive,0.0,2.1859818775893487
+2026-01-05,Hoop Lager,Other,HoltWinters_Additive,0.0,5.0799988865263455
+2026-01-12,Hoop Lager,Other,HoltWinters_Additive,0.0,1.62635822273878
+2026-01-19,Hoop Lager,Other,HoltWinters_Additive,0.0,3.021100285011727
+2026-01-26,Hoop Lager,Other,HoltWinters_Additive,0.0,1.7946709760898223
+2026-02-02,Hoop Lager,Other,HoltWinters_Additive,0.0,4.474661153492132
+2026-02-09,Hoop Lager,Other,HoltWinters_Additive,0.0,2.8084892466689055
