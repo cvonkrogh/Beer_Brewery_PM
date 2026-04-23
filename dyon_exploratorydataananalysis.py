@@ -13,7 +13,7 @@ wr.filterwarnings('ignore')
 pd.set_option('display.max_columns', None)
 
 SAVE_FILE = "exploratorydata.csv"
-WEATHER_SAVE_FILE= "weather_data.csv"
+WEATHER_SAVE_FILE= "data\raw\weather_data.csv"
 
 WEATHER_LAT = 52.3676
 WEATHER_LON = 4.9041
@@ -44,6 +44,8 @@ NAME_MAP = {
     'Transactienummer': 'V_Transactienummer',
     'Type': 'V_Type'
     }
+
+#Note
 
 # Define the list of features to keep in the final dataframe
 FEATURE_MAP = [
