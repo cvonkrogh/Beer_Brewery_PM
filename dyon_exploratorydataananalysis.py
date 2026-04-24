@@ -192,8 +192,8 @@ weather_df = pd.DataFrame({
 #)
 
 # 1. AGGREGATE (This is where the columns are BORN)
-weekly = (
-  df.groupby(["week", "S_Grondstof", "S_Container"])
+daily = (
+  df.groupby(["Datum", "S_Grondstof", "S_Container"])
   .agg(
         S_Liter=("S_Liter", "sum"),
         V_Aantal=("V_Aantal", "sum"),
@@ -223,15 +223,15 @@ weekly = (
 )
 
 # 2. GAP FILLING
-full_range = pd.date_range(weekly["week"].min(), weekly["week"].max(), freq="W-MON")
-beers = weekly["S_Grondstof"].unique()
-containers = weekly["S_Container"].unique()
-full_index = pd.MultiIndex.from_product([full_range, beers, containers], names=["week", "S_Grondstof", "S_Container"])
-
+full_range = pd.date_range(daily["Datum"].min(), daily["Datum"].max(), freq="D")
+beers = daily["S_Grondstof"].unique()
+containers = daily["S_Container"].unique()
+full_index = pd.MultiIndex.from_product([full_range, beers, containers], names=["Datum", "S_Grondstof", "S_Container"])
+database.drop(columns=['date'], inplace=True, errors='ignore')
 # Overwrite df with the gap-filled weekly data
-df = weekly.set_index(["week", "S_Grondstof", "S_Container"]).reindex(full_index, fill_value=0).reset_index()
+df = daily.set_index(["Datum", "S_Grondstof", "S_Container"]).reindex(full_index, fill_value=0).reset_index()
 
-#df = pd.merge(df, weekly_weather, on="week", how="left")
+df = pd.merge(df, weather_df, left_on="Datum", right_on="date", how="left")
 
 # 3. CLEANUP (Tell Python these are TEXT columns, not numbers)
 # We include the new '_Naam' columns here!
@@ -260,7 +260,7 @@ duplicated_per_column =df.apply(lambda col: col.duplicated().sum())
 print("Saving processed dataset...")
 
 save_path.parent.mkdir(parents=True, exist_ok=True)
-weather_df.to_csv(save_weather_path, index=False)
+df.to_csv(save_path, index=False)
 
 # Force display settings for the file writing
 pd.set_option('display.width', 1000)
