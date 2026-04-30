@@ -1,10 +1,10 @@
 Number of rows and columns, respectively2: 
-(32377, 19)
+(32377, 22)
 
 Data types of each column: 
 <class 'pandas.core.frame.DataFrame'>
 Index: 32377 entries, 0 to 32402
-Data columns (total 19 columns):
+Data columns (total 22 columns):
  #   Column              Non-Null Count  Dtype         
 ---  ------              --------------  -----         
  0   Datum               32377 non-null  datetime64[ns]
@@ -22,12 +22,15 @@ Data columns (total 19 columns):
  12  V_Product_Name      2837 non-null   object        
  13  V_Business_Name     2837 non-null   object        
  14  V_Storage_Location  2837 non-null   object        
- 15  E_Event_Name        101 non-null    object        
- 16  V_Type              2837 non-null   object        
- 17  temp_mean           32293 non-null  float64       
- 18  rain_mm             32293 non-null  float64       
-dtypes: datetime64[ns](1), float64(4), int64(4), object(10)
-memory usage: 4.9+ MB
+ 15  E_Event_Name        2891 non-null   object        
+ 16  V_Voorraadlocatie   32323 non-null  object        
+ 17  V_Type              2837 non-null   object        
+ 18  temp_mean           32293 non-null  float64       
+ 19  rain_mm             32293 non-null  float64       
+ 20  Month               32377 non-null  object        
+ 21  Weekday             32377 non-null  object        
+dtypes: datetime64[ns](1), float64(4), int64(4), object(13)
+memory usage: 5.7+ MB
 
 
                                 Datum              S_Grondstof S_Container
@@ -65,21 +68,21 @@ count       32377.000000     32377.000000  32377.000000
 unique               NaN              NaN           NaN
 top                  NaN              NaN           NaN
 freq                 NaN              NaN           NaN
-mean            0.134138         0.089292      0.124008
+mean            0.134633         0.089292      0.128455
 min             0.000000         0.000000      0.000000
 25%             0.000000         0.000000      0.000000
 50%             0.000000         0.000000      0.000000
 75%             0.000000         0.000000      0.000000
-max             8.000000         1.000000      7.000000
-std             0.497661         0.285169      0.447487
+max             8.000000         1.000000      8.000000
+std             0.500066         0.285169      0.471014
 
 --------------------------------------------------------------------------------
 
        S_Main_City          S_Main_Customer S_Main_Country
 count         2889                     2891           2891
-unique          56                      168              1
-top       Zaandijk  Winkel | Hoop Doet Eten      Nederland
-freq          1043                      433           2891
+unique          77                      171              1
+top       Zaandijk  Winkel | Hoop doet Eten      Nederland
+freq           977                      447           2891
 mean           NaN                      NaN            NaN
 min            NaN                      NaN            NaN
 25%            NaN                      NaN            NaN
@@ -105,33 +108,48 @@ std                                    NaN                      NaN             
 
 --------------------------------------------------------------------------------
 
-       E_Event_Name      V_Type     temp_mean
-count           101        2837  32293.000000
-unique            7           5           NaN
-top         Haltopp  Verzending           NaN
-freq             26        2711           NaN
-mean            NaN         NaN     11.031815
-min             NaN         NaN     -3.900000
-25%             NaN         NaN      6.700000
-50%             NaN         NaN     10.700000
-75%             NaN         NaN     15.800000
-max             NaN         NaN     26.900000
-std             NaN         NaN      5.887455
+       E_Event_Name  V_Voorraadlocatie      V_Type
+count          2891            32323.0        2837
+unique            8                5.0           5
+top            None                0.0  Verzending
+freq           2790            29486.0        2711
+mean            NaN                NaN         NaN
+min             NaN                NaN         NaN
+25%             NaN                NaN         NaN
+50%             NaN                NaN         NaN
+75%             NaN                NaN         NaN
+max             NaN                NaN         NaN
+std             NaN                NaN         NaN
 
 --------------------------------------------------------------------------------
 
-             rain_mm
-count   32293.000000
-unique           NaN
-top              NaN
-freq             NaN
-mean        2.700752
-min         0.000000
-25%         0.000000
-50%         0.500000
-75%         3.500000
-max        41.100000
-std         4.660831
+           temp_mean       rain_mm    Month
+count   32293.000000  32293.000000    32377
+unique           NaN           NaN       12
+top              NaN           NaN  January
+freq             NaN           NaN     3254
+mean       11.031815      2.700752      NaN
+min        -3.900000      0.000000      NaN
+25%         6.700000      0.000000      NaN
+50%        10.700000      0.500000      NaN
+75%        15.800000      3.500000      NaN
+max        26.900000     41.100000      NaN
+std         5.887455      4.660831      NaN
+
+--------------------------------------------------------------------------------
+
+         Weekday
+count      32377
+unique         7
+top     Thursday
+freq        4638
+mean         NaN
+min          NaN
+25%          NaN
+50%          NaN
+75%          NaN
+max          NaN
+std          NaN
 
 --------------------------------------------------------------------------------
 
@@ -153,14 +171,17 @@ S_Main_Country        29486
 V_Product_Name        29540
 V_Business_Name       29540
 V_Storage_Location    29540
-E_Event_Name          32276
+E_Event_Name          29486
+V_Voorraadlocatie        54
 V_Type                29540
 temp_mean                84
 rain_mm                  84
+Month                     0
+Weekday                   0
 dtype: int64
 
 All features listed: 
-['Datum', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Order_Count', 'S_Customer_Count', 'S_Country_Reach', 'S_City_Reach', 'S_Main_City', 'S_Main_Customer', 'S_Main_Country', 'V_Product_Name', 'V_Business_Name', 'V_Storage_Location', 'E_Event_Name', 'V_Type', 'temp_mean', 'rain_mm']
+['Datum', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Order_Count', 'S_Customer_Count', 'S_Country_Reach', 'S_City_Reach', 'S_Main_City', 'S_Main_Customer', 'S_Main_Country', 'V_Product_Name', 'V_Business_Name', 'V_Storage_Location', 'E_Event_Name', 'V_Voorraadlocatie', 'V_Type', 'temp_mean', 'rain_mm', 'Month', 'Weekday']
 Duplicated per column: 
 Datum                 30834
 S_Grondstof           32374
@@ -170,27 +191,30 @@ V_Aantal              32095
 S_Order_Count         32364
 S_Customer_Count      32368
 S_Country_Reach       32375
-S_City_Reach          32369
-S_Main_City           32320
-S_Main_Customer       32208
+S_City_Reach          32368
+S_Main_City           32299
+S_Main_Customer       32205
 S_Main_Country        32375
 V_Product_Name        32333
 V_Business_Name       32215
 V_Storage_Location    32372
-E_Event_Name          32369
+E_Event_Name          32368
+V_Voorraadlocatie     32371
 V_Type                32370
 temp_mean             32122
 rain_mm               32201
-dtype: int64          Datum              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Order_Count  S_Customer_Count  S_Country_Reach  S_City_Reach S_Main_City           S_Main_Customer S_Main_Country                                      V_Product_Name           V_Business_Name V_Storage_Location            E_Event_Name      V_Type  temp_mean  rain_mm
-3486 2022-05-09         Hoop Bleke Nelis      Giftset    11.22      -9.0              2                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                       Hoop Cadeauset 5x 5 fles kern            Hoop Bier B.V.           Lagedijk  SPRING BOKKESTOP EVENT  Toevoeging       13.1      0.0
-3494 2022-05-09  Hoop Kaper Tropical IPA  Bottle 33cl     3.96      -1.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland  Hoop Seasonal Summer Session IPA doos 12fles/0,33l    Van Bieren Retail B.V.           Lagedijk  SPRING BOKKESTOP EVENT  Verzending       13.1      0.0
-4956 2022-07-18         Hoop Bleke Nelis      Giftset    28.05     -77.0              3                 3                1             2     Zaandam  Gall & Gall Zaandam 7012      Nederland                       Hoop Cadeauset 5x 5 fles kern  Gall & Gall Zaandam 7012           Lagedijk                 Haltopp  Verzending       21.9      0.0
-4957 2022-07-18         Hoop Bleke Nelis  Bottle 33cl    47.52    2064.0              3                 3                1             1     Zaandam           D'Swarte Walvis      Nederland                  Hoop Bleke Nelis doos 12fles/0,33l           d'Swarte Walvis           Lagedijk                 Haltopp  Verzending       21.9      0.0
-4959 2022-07-18         Hoop Bleke Nelis      Keg 20L   260.00     205.0              5                 4                1             3     Zaandam                    Lab-44      Nederland                            Hoop Bleke Nelis rvs 20L                    Lab-44           Lagedijk                 Haltopp  Verzending       21.9      0.0
-4963 2022-07-18  Hoop Kaper Tropical IPA      Giftset    25.74     -21.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland            Hoop Cadeauset 6x 4 fles Seasonal Summer           De Bierbroeders           Lagedijk                 Haltopp  Verzending       21.9      0.0
-4964 2022-07-18  Hoop Kaper Tropical IPA  Bottle 33cl    27.72     -33.0              3                 3                1             1     Zaandam  Gall & Gall Zaandam 7012      Nederland  Hoop Seasonal Summer Session IPA doos 12fles/0,33l  Gall & Gall Zaandam 7012           Lagedijk                 Haltopp  Verzending       21.9      0.0
-4966 2022-07-18  Hoop Kaper Tropical IPA      Keg 20L   120.00     -27.0              3                 3                1             2     Zaandam           Caf� Swart B.V.      Nederland            Hoop Seasonal Summer Session IPA rvs 20L                    Lab-44           Lagedijk                 Haltopp  Verzending       21.9      0.0
-5839 2022-08-29         Hoop Bleke Nelis  Bottle 33cl    11.88      -7.0              1                 1                1             1      Wormer               De Stoomhal      Nederland                  Hoop Bleke Nelis doos 12fles/0,33l               De Stoomhal           Lagedijk        Zaandijker feest  Verzending       16.3      0.4
-5846 2022-08-29  Hoop Kaper Tropical IPA  Bottle 33cl    11.88      -7.0              1                 1                1             1      Wormer               De Stoomhal      Nederland  Hoop Seasonal Summer Session IPA doos 12fles/0,33l               De Stoomhal           Lagedijk        Zaandijker feest  Verzending       16.3      0.4
+Month                 32365
+Weekday               32370
+dtype: int64         Datum              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Order_Count  S_Customer_Count  S_Country_Reach  S_City_Reach S_Main_City           S_Main_Customer S_Main_Country                                 V_Product_Name                      V_Business_Name V_Storage_Location E_Event_Name V_Voorraadlocatie      V_Type  temp_mean  rain_mm     Month    Weekday
+0   2021-11-24         Hoop Bleke Nelis      Giftset    13.20     -11.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                  Hoop Cadeauset 5x 5 fles kern  Gall&Gall Oudorperplein Alkmaar5112           Lagedijk         None          Lagedijk  Verzending        6.5      0.0  November  Wednesday
+21  2021-11-25         Hoop Bleke Nelis      Giftset    32.01     -58.0              3                 3                1             3  Middenmeer                BierGro BV      Nederland        Hoop Cadeauset 5x 5 fles Holiday Cheers              Winkel | Hoop doet Eten           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
+22  2021-11-25         Hoop Bleke Nelis  Bottle 33cl   106.92    -108.0              4                 3                1             3   KROMMENIE  Slijterij Drinks & Gifts      Nederland             Hoop Bleke Nelis doos 12fles/0,33l                        VVV Zaanstore           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
+23  2021-11-25         Hoop Bleke Nelis     Can 33cl     7.92      -1.0              1                 1                1             1  Middenmeer                BierGro BV      Nederland  Hoop Bleke Nelis doos 24blikken/0,33l one way                           BierGro BV           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
+28  2021-11-25  Hoop Kaper Tropical IPA      Giftset     1.98      -3.0              1                 1                1             1  Middenmeer                BierGro BV      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter              Winkel | Hoop doet Eten           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
+42  2021-11-26         Hoop Bleke Nelis      Giftset    14.19      -9.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                  Hoop Cadeauset 5x 5 fles kern               Van Bieren Retail B.V.           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday
+43  2021-11-26         Hoop Bleke Nelis  Bottle 33cl    23.76     -36.0              2                 2                1             2  ASSENDELFT              De Keuken in      Nederland             Hoop Bleke Nelis doos 12fles/0,33l          De Koffiezaak Verskade B.V.           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday
+49  2021-11-26  Hoop Kaper Tropical IPA      Giftset     7.92      -6.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter                Gall & Gall Castricum           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday
+105 2021-11-29         Hoop Bleke Nelis      Giftset    46.53     -47.0              6                 6                1             5    Zaandijk   Winkel | Hoop doet Eten      Nederland        Hoop Cadeauset 5x 5 fles Holiday Cheers                      SPAR linnenbank           Lagedijk         None          Lagedijk  Verzending        3.6      0.5  November     Monday
+112 2021-11-29  Hoop Kaper Tropical IPA      Giftset    19.80    -335.0              5                 5                1             5     ALKMAAR     Gall & Gall Castricum      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter                      SPAR linnenbank           Lagedijk         None          Lagedijk  Verzending        3.6      0.5  November     Monday
 Total rows: 32377
 Number of return entries: 26

@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings as wr
 import requests
+from datetime import datetime
 import difflib
 
 wr.filterwarnings('ignore')
@@ -30,6 +31,7 @@ NAME_MAP = {
     'Commerciële naam': 'S_Commerciële_naam',
     'Bedrijfscategorieën': 'S_Bedrijfscategorieen',
     'Land': 'S_Land',
+    'Vertegenwoordiger': 'S_Vertegenwoordiger',
     'Stad': 'S_Stad',
     'Prijsklasse': 'S_Prijsklasse',
     'Naam product': 'S_Naam_product', 
@@ -53,6 +55,7 @@ FEATURE_MAP = [
   'Datum',
   'S_Naam',
   'S_Land',
+  'S_Vertegenwoordiger',
   'S_Stad', 
   'S_Naam_product',
   'S_Productcategorieen',
@@ -65,6 +68,7 @@ FEATURE_MAP = [
   'V_Type',
   'V_Aantal',
   'S_Container',
+  'month'
 ]
 
 # Define a mapping for beer names to standardize them
@@ -81,29 +85,6 @@ CORE_BEERS = [
     "Hoop Kaper Tropical IPA",
 ]
 
-def standardize_names(series, threshold=0.8):
-    """
-    Cleans strings and groups similar names (e.g., Zaamdam -> Zaandam).
-    """
-    # basic cleanup
-    clean_series = series.astype(str).str.strip().str.title().replace('Nan', np.nan)
-    
-    # Get unique non-null names
-    unique_names = clean_series.dropna().unique().tolist()
-    
-    mapping = {}
-    processed = set()
-
-    for name in unique_names:
-        if name in processed: continue
-        # Find similar names in the list
-        matches = difflib.get_close_matches(name, unique_names, n=10, cutoff=threshold)
-        for match in matches:
-            mapping[match] = name  # Map the typo to the first-seen version
-            processed.add(match)
-            
-    return clean_series.map(mapping)
-
 save_path = Path(SAVE_FILE)
 save_weather_path = Path(WEATHER_SAVE_FILE)
 
@@ -114,19 +95,15 @@ voorraad1_database = pd.read_csv('data/Voorraad-2026-02-16-01.23.46.007.csv', se
 
 #PREPARE THE DATA BY EXTRACTING DAY AND MONTH FROM THE DATE COLUMNS
 sales_database['Factuurdatum'] = pd.to_datetime(sales_database['Factuurdatum'], dayfirst=True)
-sales_database['day_temp'] = sales_database['Factuurdatum'].dt.day
-sales_database['month_temp'] = sales_database['Factuurdatum'].dt.month
+sales_database['day'] = sales_database['Factuurdatum'].dt.day
+sales_database['month'] = sales_database['Factuurdatum'].dt.month
 
 voorraad1_database['Datum'] = pd.to_datetime(voorraad1_database['Datum'], dayfirst=True)
-voorraad1_database['day_temp'] = voorraad1_database['Datum'].dt.day
+voorraad1_database['week_temp'] = voorraad1_database['Datum'].dt.day
 voorraad1_database['month_temp'] = voorraad1_database['Datum'].dt.month 
 
-# Standardize the 'Stad' and 'Naam' columns BEFORE grouping
-sales_database['Stad'] = standardize_names(sales_database['Stad'])
-sales_database['Naam'] = standardize_names(sales_database['Naam'])
-
 #MERGE THE DATAFRAMES ON THE EXTRACTED DAY AND MONTH COLUMNS BY AGGREGATING THE VOORRAAD DATA TO MATCH THE SALES DATA
-voorraad_grouped = voorraad1_database.groupby(['day_temp', 'month_temp', 'Product']).agg({
+voorraad_grouped = voorraad1_database.groupby(['week_temp', 'month_temp', 'Product']).agg({
     'Aantal': 'sum',           
     'Voorraadlocatie': 'first', 
     'Bedrijf': 'first',
@@ -137,16 +114,15 @@ voorraad_grouped = voorraad1_database.groupby(['day_temp', 'month_temp', 'Produc
 database = pd.merge(
   sales_database,
   events_database,
-  left_on=['day_temp', 'month_temp'],
+  left_on=['day', 'month'],
   right_on=['day', 'month'],
   how='left'
-).merge(voorraad_grouped, left_on=['day_temp', 'month_temp', 'Naam product'], right_on=['day_temp', 'month_temp', 'Product'], how='left')
+).merge(voorraad_grouped, left_on=['day', 'month', 'Naam product'], right_on=['week_temp', 'month_temp', 'Product'], how='left')
 
 #CLEAN THE DATA BY DROPPING UNNECESSARY COLUMNS, RENAMING COLUMNS, STANDARDIZING BEER NAMES, AND FILLING MISSING VALUES IN THE EVENT NAME COLUMN
-database.drop(columns=['day_temp', 'month_temp', 'day', 'month'], inplace=True, errors='ignore')
+database.drop(columns=['day', 'week_temp', 'month_temp'], inplace=True, errors='ignore')
 database.rename(columns= NAME_MAP, inplace=True)
 database["S_Grondstof"] = database["S_Grondstof"].replace(BEER_NAME_MAP)
-database["S_Stad"] = database["S_Stad"].replace("Koog Ad Zaan", "Koog Aan De Zaan")
 database['E_Event_Name'] = database['E_Event_Name'].fillna('None')
 
 #EXTRACT THE CONTAINER TYPE FROM THE PRODUCT NAME AND CREATE A NEW COLUMN FOR IT
@@ -220,8 +196,8 @@ weather_df = pd.DataFrame({
 
 # 1. AGGREGATE (This is where the columns are BORN)
 daily = (
-    df.groupby(["Datum", "S_Grondstof", "S_Container"])
-    .agg(
+  df.groupby(["Datum", "S_Grondstof", "S_Container"])
+  .agg(
         S_Liter=("S_Liter", "sum"),
         V_Aantal=("V_Aantal", "sum"),
         # Reach Metrics (Unique counts renamed for clarity)
@@ -237,9 +213,10 @@ daily = (
         V_Business_Name=("V_Bedrijf", lambda x: x.mode().iloc[0] if not x.mode().empty else np.nan),
         V_Storage_Location=("V_Voorraadlocatie", lambda x: x.mode().iloc[0] if not x.mode().empty else np.nan),
         E_Event_Name=("E_Event_Name", "first"),
+        V_Voorraadlocatie=("V_Voorraadlocatie", "first"),
         V_Type=("V_Type", "first")
     )
-    .reset_index()
+  .reset_index()
 )
 
 # 2. GAP FILLING
@@ -247,15 +224,19 @@ full_range = pd.date_range(daily["Datum"].min(), daily["Datum"].max(), freq="D")
 beers = daily["S_Grondstof"].unique()
 containers = daily["S_Container"].unique()
 full_index = pd.MultiIndex.from_product([full_range, beers, containers], names=["Datum", "S_Grondstof", "S_Container"])
-
 # Overwrite df with the gap-filled weekly data
 df = daily.set_index(["Datum", "S_Grondstof", "S_Container"]).reindex(full_index, fill_value=0).reset_index()
 df = pd.merge(df, weather_df, left_on="Datum", right_on="date", how="left")
+df.drop(columns=['date'], inplace=True, errors='ignore')
 
-text_cols = ['E_Event_Name', 'S_Main_City', 'S_Main_Customer', 'S_Main_Country', 'V_Type', 'V_Product_Name', 'V_Business_Name', 'V_Storage_Location']
+df['Month'] = df['Datum'].dt.month_name()
+df['Weekday'] = df['Datum'].dt.day_name()
+
+# 3. CLEANUP (Tell Python these are TEXT columns, not numbers)
+# We include the new '_Naam' columns here!
+text_cols = ['E_Event_Name', 'S_Main_Country', 'S_Main_Customer', 'S_Main_City', 'V_Product_Name', 'V_Business_Name', 'V_Storage_Location', 'V_Type']
 for col in text_cols:
-    # Replace the '0' from reindexing with real empty values (NaN)
-    df[col] = df[col].replace(0, np.nan).replace('None', np.nan)
+    df[col] = df[col].replace(0, np.nan)
 
 
 # Create a separate dataframe for returns just to see what they are
@@ -263,7 +244,6 @@ returns = df[df['S_Liter'] < 0]
 
 # For the rest of the EDA, focus on positive sales
 df = df[df['S_Liter'] >= 0]
-df = df.drop(columns=['date'], errors='ignore')
 
 # Perform exploratory data analysis (EDA) on the cleaned and filtered dataframe
 print(df.head())
