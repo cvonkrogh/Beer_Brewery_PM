@@ -1,18 +1,33 @@
 import pandas as pd
 
+# Map historical / old labels to the current canonical names above
+BEER_NAME_MAP = {
+    "Hoop US Lager": "Hoop Lager",
+    "Hoop Lager": "Hoop Lager",
+    "Hoop Kaper Tropical - Summer Session IPA": "Hoop Kaper Tropical IPA",
+}
+
+CORE_BEERS = [
+    "Hoop Bleke Nelis",
+    "Hoop Lager",
+    "Hoop Kaper Tropical IPA"
+    ]
+
 # Load the raw sales data
 df = pd.read_csv('data/raw/sales_data.csv', sep=';')
 print(f"Original data shape: {df.shape}")
 
+# Normalize beer names so historical variants are combined
+df["Grondstof"] = df["Grondstof"].replace(BEER_NAME_MAP)
+
 # Filter the data to only include the specified beer types in column 'Grondstof' (column O)
-filtered_beers = ["Hoop Bleke Nelis", "Hoop US Lager", "Hoop Kaper Tropical - Summer Session IPA"]
-filtered_df = df[df['Grondstof'].isin(filtered_beers)]
+filtered_df = df[df['Grondstof'].isin(CORE_BEERS)].copy()
 
 # Remove rows with negative litres
 filtered_df = filtered_df[filtered_df['Liter'] >= 0]
 print(f"Filtered data shape (after removing negatives): {filtered_df.shape}")
 
-# Calculate total litres per factuurnummer using a loop
+# Calculate total litres per factuurnummer using a for while loop
 order_totals = filtered_df.groupby('Factuurnummer')['Liter'].sum().to_dict()
 filtered_df['order_total_litres'] = 0.0
 for factuurnummer, total in order_totals.items():

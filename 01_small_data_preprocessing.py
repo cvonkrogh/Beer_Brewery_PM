@@ -7,20 +7,7 @@ import os
 # CONFIG
 # ==============================
 
-CORE_BEERS = [
-    "Hoop Bleke Nelis",
-    "Hoop Lager",
-    "Hoop Kaper Tropical IPA",
-]
-
-# Map historical / old labels to the current canonical names above
-BEER_NAME_MAP = {
-    "Hoop US Lager": "Hoop Lager",
-    "Hoop Lager": "Hoop Lager",
-    "Hoop Kaper Tropical - Summer Session IPA": "Hoop Kaper Tropical IPA",
-}
-
-RAW_DATA_PATH = "data/raw/sales_data.csv" #Needs to be renamed to the new small data subset.
+RAW_DATA_PATH = "data/processed/regular_orders.csv"
 EVENTS_DATA_PATH = "data/events.csv"
 PROCESSED_DATA_PATH = "data/processed/small_weekly_beer_data.csv"
 
@@ -59,7 +46,7 @@ def load_raw_data():
     df = pd.read_csv(
         RAW_DATA_PATH,
         sep=";",
-        encoding="latin1"
+        encoding="utf-8-sig"
     )
 
     df["Factuurdatum"] = pd.to_datetime(
@@ -67,23 +54,9 @@ def load_raw_data():
         dayfirst=True
     )
 
-    # ADD CONTAINER COLUMN HERE (correct place)
     df["container"] = df["Naam product"].apply(extract_container)
 
-    # Normalize beer names so historical variants are combined
-    df["Grondstof"] = df["Grondstof"].replace(BEER_NAME_MAP)
-
     return df
-
-
-# ==============================
-# FILTER CORE BEERS
-# ==============================
-
-def filter_core_beers(df):
-    print("Filtering core beers...")
-    return df[df["Grondstof"].isin(CORE_BEERS)].copy()
-
 
 # ==============================
 # WEEKLY AGGREGATION (NOW WITH CONTAINER)
@@ -239,21 +212,6 @@ def add_time_features(df):
         df["rainy_week"] = 0
 
     return df
-
-#==============================
-# MISSING VALUE IMPUTATION
-#==============================
-
-def impute_missing_values(df):
-    print("Imputing missing values...")
-
-    vertegenwoordiger_mode = df["Vertegenwoordiger"].mode()
-    stad_mode = df["Stad"].mode()
-    df["Vertegenwoordiger"] = df["Vertegenwoordiger"].fillna(value = vertegenwoordiger_mode)
-    df["Stad"] = df["Stad"].fillna(value = stad_mode)
-
-    return df
-
 # ==============================
 # SAVE OUTPUT
 # ==============================
@@ -264,15 +222,12 @@ def save_processed(df):
     os.makedirs(os.path.dirname(PROCESSED_DATA_PATH), exist_ok=True)
     df.to_csv(PROCESSED_DATA_PATH, index=False)
 
-
 # ==============================
 # MAIN PIPELINE
 # ==============================
 
 def main():
     df = load_raw_data()
-    df = filter_core_beers(df)
-    df = impute_missing_values(df)
     weekly = aggregate_weekly(df)
     weekly = create_full_timeline(weekly)
 

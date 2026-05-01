@@ -7,20 +7,7 @@ import os
 # CONFIG
 # ==============================
 
-CORE_BEERS = [
-    "Hoop Bleke Nelis",
-    "Hoop Lager",
-    "Hoop Kaper Tropical IPA",
-]
-
-# Map historical / old labels to the current canonical names above
-BEER_NAME_MAP = {
-    "Hoop US Lager": "Hoop Lager",
-    "Hoop Lager": "Hoop Lager",
-    "Hoop Kaper Tropical - Summer Session IPA": "Hoop Kaper Tropical IPA",
-}
-
-RAW_DATA_PATH = "data/raw/sales_data.csv" #Update this path to point to the new large data subset.
+RAW_DATA_PATH = "data/processed/large_orders.csv"
 EVENTS_DATA_PATH = "data/events.csv"
 PROCESSED_DATA_PATH = "data/processed/large_weekly_beer_data.csv"
 
@@ -61,32 +48,14 @@ def load_raw_data():
         sep=";",
         encoding="utf-8-sig"
     )
-    print("\n--- EXACT COLUMN NAMES ---")
-    print(df.columns.tolist())
-    print("--------------------------\n")
 
     df["Factuurdatum"] = pd.to_datetime(
         df["Factuurdatum"],
         dayfirst=True
     )
-
-    # ADD CONTAINER COLUMN HERE (correct place)
     df["container"] = df["Naam product"].apply(extract_container)
 
-    # Normalize beer names so historical variants are combined
-    df["Grondstof"] = df["Grondstof"].replace(BEER_NAME_MAP)
-
     return df
-
-
-# ==============================
-# FILTER CORE BEERS
-# ==============================
-
-def filter_core_beers(df):
-    print("Filtering core beers...")
-    return df[df["Grondstof"].isin(CORE_BEERS)].copy()
-
 
 # ==============================
 # WEEKLY AGGREGATION (NOW WITH CONTAINER)
@@ -139,6 +108,9 @@ def create_full_timeline(weekly):
         .reindex(full_index, fill_value=0)
         .reset_index()
     )
+    text_cols = ['Factuurnummer', 'Customer_Name']
+    for col in text_cols:
+        full_df[col] = full_df[col].replace(0, np.nan)
 
     return full_df
 
@@ -262,7 +234,6 @@ def save_processed(df):
 
 def main():
     df = load_raw_data()
-    df = filter_core_beers(df)
     weekly = aggregate_weekly(df)
     weekly = create_full_timeline(weekly)
 
