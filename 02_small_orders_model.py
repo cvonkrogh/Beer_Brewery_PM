@@ -7,7 +7,7 @@ import os
 # CONFIG
 # ==============================
 
-PROCESSED_DATA_PATH = "data/processed/weekly_beer_data.csv"
+PROCESSED_DATA_PATH = "data/processed/small_weekly_beer_data.csv"
 EVENTS_DATA_PATH = "data/events.csv"
 FORECAST_OUTPUT_PATH = "data/processed/forecast_results.csv"
 

@@ -1,10 +1,10 @@
 Number of rows and columns, respectively2: 
-(32377, 22)
+(32377, 23)
 
 Data types of each column: 
 <class 'pandas.core.frame.DataFrame'>
 Index: 32377 entries, 0 to 32402
-Data columns (total 22 columns):
+Data columns (total 23 columns):
  #   Column              Non-Null Count  Dtype         
 ---  ------              --------------  -----         
  0   Datum               32377 non-null  datetime64[ns]
@@ -29,8 +29,9 @@ Data columns (total 22 columns):
  19  rain_mm             32293 non-null  float64       
  20  Month               32377 non-null  object        
  21  Weekday             32377 non-null  object        
-dtypes: datetime64[ns](1), float64(4), int64(4), object(13)
-memory usage: 5.7+ MB
+ 22  Sale_Occurred       32377 non-null  object        
+dtypes: datetime64[ns](1), float64(4), int64(4), object(14)
+memory usage: 5.9+ MB
 
 
                                 Datum              S_Grondstof S_Container
@@ -138,18 +139,18 @@ std         5.887455      4.660831      NaN
 
 --------------------------------------------------------------------------------
 
-         Weekday
-count      32377
-unique         7
-top     Thursday
-freq        4638
-mean         NaN
-min          NaN
-25%          NaN
-50%          NaN
-75%          NaN
-max          NaN
-std          NaN
+         Weekday Sale_Occurred
+count      32377         32377
+unique         7             2
+top     Thursday            No
+freq        4638         29504
+mean         NaN           NaN
+min          NaN           NaN
+25%          NaN           NaN
+50%          NaN           NaN
+75%          NaN           NaN
+max          NaN           NaN
+std          NaN           NaN
 
 --------------------------------------------------------------------------------
 
@@ -178,10 +179,11 @@ temp_mean                84
 rain_mm                  84
 Month                     0
 Weekday                   0
+Sale_Occurred             0
 dtype: int64
 
 All features listed: 
-['Datum', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Order_Count', 'S_Customer_Count', 'S_Country_Reach', 'S_City_Reach', 'S_Main_City', 'S_Main_Customer', 'S_Main_Country', 'V_Product_Name', 'V_Business_Name', 'V_Storage_Location', 'E_Event_Name', 'V_Voorraadlocatie', 'V_Type', 'temp_mean', 'rain_mm', 'Month', 'Weekday']
+['Datum', 'S_Grondstof', 'S_Container', 'S_Liter', 'V_Aantal', 'S_Order_Count', 'S_Customer_Count', 'S_Country_Reach', 'S_City_Reach', 'S_Main_City', 'S_Main_Customer', 'S_Main_Country', 'V_Product_Name', 'V_Business_Name', 'V_Storage_Location', 'E_Event_Name', 'V_Voorraadlocatie', 'V_Type', 'temp_mean', 'rain_mm', 'Month', 'Weekday', 'Sale_Occurred']
 Duplicated per column: 
 Datum                 30834
 S_Grondstof           32374
@@ -205,16 +207,17 @@ temp_mean             32122
 rain_mm               32201
 Month                 32365
 Weekday               32370
-dtype: int64         Datum              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Order_Count  S_Customer_Count  S_Country_Reach  S_City_Reach S_Main_City           S_Main_Customer S_Main_Country                                 V_Product_Name                      V_Business_Name V_Storage_Location E_Event_Name V_Voorraadlocatie      V_Type  temp_mean  rain_mm     Month    Weekday
-0   2021-11-24         Hoop Bleke Nelis      Giftset    13.20     -11.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                  Hoop Cadeauset 5x 5 fles kern  Gall&Gall Oudorperplein Alkmaar5112           Lagedijk         None          Lagedijk  Verzending        6.5      0.0  November  Wednesday
-21  2021-11-25         Hoop Bleke Nelis      Giftset    32.01     -58.0              3                 3                1             3  Middenmeer                BierGro BV      Nederland        Hoop Cadeauset 5x 5 fles Holiday Cheers              Winkel | Hoop doet Eten           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
-22  2021-11-25         Hoop Bleke Nelis  Bottle 33cl   106.92    -108.0              4                 3                1             3   KROMMENIE  Slijterij Drinks & Gifts      Nederland             Hoop Bleke Nelis doos 12fles/0,33l                        VVV Zaanstore           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
-23  2021-11-25         Hoop Bleke Nelis     Can 33cl     7.92      -1.0              1                 1                1             1  Middenmeer                BierGro BV      Nederland  Hoop Bleke Nelis doos 24blikken/0,33l one way                           BierGro BV           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
-28  2021-11-25  Hoop Kaper Tropical IPA      Giftset     1.98      -3.0              1                 1                1             1  Middenmeer                BierGro BV      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter              Winkel | Hoop doet Eten           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday
-42  2021-11-26         Hoop Bleke Nelis      Giftset    14.19      -9.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                  Hoop Cadeauset 5x 5 fles kern               Van Bieren Retail B.V.           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday
-43  2021-11-26         Hoop Bleke Nelis  Bottle 33cl    23.76     -36.0              2                 2                1             2  ASSENDELFT              De Keuken in      Nederland             Hoop Bleke Nelis doos 12fles/0,33l          De Koffiezaak Verskade B.V.           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday
-49  2021-11-26  Hoop Kaper Tropical IPA      Giftset     7.92      -6.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter                Gall & Gall Castricum           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday
-105 2021-11-29         Hoop Bleke Nelis      Giftset    46.53     -47.0              6                 6                1             5    Zaandijk   Winkel | Hoop doet Eten      Nederland        Hoop Cadeauset 5x 5 fles Holiday Cheers                      SPAR linnenbank           Lagedijk         None          Lagedijk  Verzending        3.6      0.5  November     Monday
-112 2021-11-29  Hoop Kaper Tropical IPA      Giftset    19.80    -335.0              5                 5                1             5     ALKMAAR     Gall & Gall Castricum      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter                      SPAR linnenbank           Lagedijk         None          Lagedijk  Verzending        3.6      0.5  November     Monday
+Sale_Occurred         32375
+dtype: int64         Datum              S_Grondstof  S_Container  S_Liter  V_Aantal  S_Order_Count  S_Customer_Count  S_Country_Reach  S_City_Reach S_Main_City           S_Main_Customer S_Main_Country                                 V_Product_Name                      V_Business_Name V_Storage_Location E_Event_Name V_Voorraadlocatie      V_Type  temp_mean  rain_mm     Month    Weekday Sale_Occurred
+0   2021-11-24         Hoop Bleke Nelis      Giftset    13.20     -11.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                  Hoop Cadeauset 5x 5 fles kern  Gall&Gall Oudorperplein Alkmaar5112           Lagedijk         None          Lagedijk  Verzending        6.5      0.0  November  Wednesday           Yes
+21  2021-11-25         Hoop Bleke Nelis      Giftset    32.01     -58.0              3                 3                1             3  Middenmeer                BierGro BV      Nederland        Hoop Cadeauset 5x 5 fles Holiday Cheers              Winkel | Hoop doet Eten           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday           Yes
+22  2021-11-25         Hoop Bleke Nelis  Bottle 33cl   106.92    -108.0              4                 3                1             3   KROMMENIE  Slijterij Drinks & Gifts      Nederland             Hoop Bleke Nelis doos 12fles/0,33l                        VVV Zaanstore           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday           Yes
+23  2021-11-25         Hoop Bleke Nelis     Can 33cl     7.92      -1.0              1                 1                1             1  Middenmeer                BierGro BV      Nederland  Hoop Bleke Nelis doos 24blikken/0,33l one way                           BierGro BV           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday           Yes
+28  2021-11-25  Hoop Kaper Tropical IPA      Giftset     1.98      -3.0              1                 1                1             1  Middenmeer                BierGro BV      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter              Winkel | Hoop doet Eten           Lagedijk         None          Lagedijk  Verzending        6.3      1.3  November   Thursday           Yes
+42  2021-11-26         Hoop Bleke Nelis      Giftset    14.19      -9.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland                  Hoop Cadeauset 5x 5 fles kern               Van Bieren Retail B.V.           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday           Yes
+43  2021-11-26         Hoop Bleke Nelis  Bottle 33cl    23.76     -36.0              2                 2                1             2  ASSENDELFT              De Keuken in      Nederland             Hoop Bleke Nelis doos 12fles/0,33l          De Koffiezaak Verskade B.V.           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday           Yes
+49  2021-11-26  Hoop Kaper Tropical IPA      Giftset     7.92      -6.0              1                 1                1             1     Utrecht    Van Bieren Retail B.V.      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter                Gall & Gall Castricum           Lagedijk         None          Lagedijk  Verzending        4.4      8.6  November     Friday           Yes
+105 2021-11-29         Hoop Bleke Nelis      Giftset    46.53     -47.0              6                 6                1             5    Zaandijk   Winkel | Hoop doet Eten      Nederland        Hoop Cadeauset 5x 5 fles Holiday Cheers                      SPAR linnenbank           Lagedijk         None          Lagedijk  Verzending        3.6      0.5  November     Monday           Yes
+112 2021-11-29  Hoop Kaper Tropical IPA      Giftset    19.80    -335.0              5                 5                1             5     ALKMAAR     Gall & Gall Castricum      Nederland       Hoop Cadeauset 6x 4 fles Seasonal Winter                      SPAR linnenbank           Lagedijk         None          Lagedijk  Verzending        3.6      0.5  November     Monday           Yes
 Total rows: 32377
 Number of return entries: 26

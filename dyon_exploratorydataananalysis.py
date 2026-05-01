@@ -238,12 +238,12 @@ text_cols = ['E_Event_Name', 'S_Main_Country', 'S_Main_Customer', 'S_Main_City',
 for col in text_cols:
     df[col] = df[col].replace(0, np.nan)
 
-
 # Create a separate dataframe for returns just to see what they are
 returns = df[df['S_Liter'] < 0]
 
 # For the rest of the EDA, focus on positive sales
 df = df[df['S_Liter'] >= 0]
+df["Sale_Occurred"] = np.where(df["S_Liter"] > 0, "Yes", "No")
 
 # Perform exploratory data analysis (EDA) on the cleaned and filtered dataframe
 print(df.head())
